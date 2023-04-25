@@ -1,0 +1,7 @@
+{
+    "erebus_directory": "./erebus",
+    "controller": "/home/ale/IITA/rescate_laberinto/src/run.py",
+    "world_set": "./world_sets/test_set.txt",
+    "reps":1,
+    "run_name": "my_run"
+}

@@ -41,14 +41,14 @@ function receive (message){
 				//Load config data
 				updateConfig(parts.slice(1,parts.length + 1));
 				break;
-			case "unloaded0":
+			//case "unloaded0":
 				//Robot 0's controller has been unloaded
-				unloadedController(0);
-				break;
-			case "unloaded1":
+				//unloadedController(0);
+				//break;
+			//case "unloaded1":
 				//Robot 1's controller has been unloaded
-				unloadedController(1);
-				break;
+				//unloadedController(1);
+				//break;
 			case "loaded0":
 				//Robot 0's controller has been unloaded
 				loadedController(0);
@@ -244,24 +244,29 @@ function setDisableRemoteBtn() {
 }
 
 function startup (){
-	resetHistory();
-	unloadedController(0);
-	unloadedController(1);
+	//resetHistory();
+	//unloadedController(0);
+	//unloadedController(1);
 	//Turn on the run button and reset button when the program has loaded
-	setEnableButton("runButton", true);
-	setEnableButton("pauseButton", false);
-	setEnableButton('lopButton', false)
+	//Modified file:
+		//Disabled all the loading buttons (cannot change loaded controllers once simulation starts)
 
-	setEnableButton("load0", true);
-	setEnableButton("unload0", true);
-	setEnableButton("load1", true);
-	setEnableButton("unload1", true);
-	setEnableButton("giveupB", false);
+	setEnableButton("runButton", false);
+	setEnableButton("pauseButton", true);
+	setEnableButton('lopButton', true)
+
+	setEnableButton("load0", false);
+	setEnableButton("unload0", false);
+	setEnableButton("load1", false);
+	setEnableButton("unload1", false);
+	setEnableButton("giveupB", true);
 
 	setEnableButton("enableRemote", true);
 	setEnableButton("disableRemote", true);
 	setEnableRemoteBtn();
 	getWorlds();
+
+	window.robotWindow.send("run");
 }
 
 window.getWorlds = function() {
