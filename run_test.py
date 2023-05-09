@@ -9,7 +9,6 @@ import pathlib
 import datetime
 import math
 from PIL import ImageGrab
-import openpyxl
 
 
 """
@@ -178,42 +177,6 @@ def make_output_file(config):
         writer.writerow(["World", "Score", "Simulation Time", "Real Time"])
     
     return output_file
-
-
-
-# Added function:
-
-def save_to_excel(mission_time, area_traveled, detected_victims, num_swamps, grids_screenshot):
-    
-    name = get_output_file_name(config["run_name"], config["world_set"]) + ".csv"
-
-    # load the existing workbook
-    wb = openpyxl.load_workbook(name)
-    
-    # get the active worksheet
-    ws = wb.active
-    
-    # get the next empty row
-    row = ws.max_row + 1
-    
-    # add the data to the row
-    ws.cell(row=row, column=1, value=mission_time)
-    ws.cell(row=row, column=2, value=area_traveled)
-    ws.cell(row=row, column=3, value=detected_victims)
-    ws.cell(row=row, column=4, value=num_swamps)
-    
-    # add the image to the row
-    img = openpyxl.drawing.image.Image(grids_screenshot)
-    img.width = 250
-    img.height = 200
-    ws.column_dimensions['E'].width = 30
-    ws.row_dimensions[row].height = 100
-    ws.add_image(img, f'E{row}')
-    
-    # save the changes
-    wb.save(name)
-
-
 
 def test_runs(config):
     erebus_directory = pathlib.Path(config["erebus_directory"])
