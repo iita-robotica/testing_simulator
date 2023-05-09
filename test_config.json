@@ -1,7 +1,7 @@
 {
-    "erebus_directory": "G:/Roboliga/testing_simulator/Erebus-v23_0_3",
-    "controller": "G:/Roboliga/testing_simulator/rescate_laberinto/src/run.py",
-    "world_set": "G:/Roboliga/testing_simulator/world_set/test_set.txt",
-    "reps":1,
-    "run_name": "new_run"
+    "erebus_directory": "G:/Roboliga/Repository/Erebus-v23_0_3",
+    "controller": "G:/Roboliga/Repository/rescate_laberinto/src/run.py",
+    "world_set": "G:/Roboliga/Repository/world_set/test_set.txt",
+    "reps":3,
+    "run_name": "run_talos#1"
 }

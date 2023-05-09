@@ -6,6 +6,12 @@ import sys
 import json
 import pathlib
 
+import datetime
+import math
+from PIL import ImageGrab
+import openpyxl
+
+
 """
 parametros:
 
@@ -57,6 +63,74 @@ def processLogs(world, fileName, time_taken, log_directory):
 
             writer.writerow([str(world).split("/")[-1], finalScore, finalTime, time_taken])
 
+
+
+# Added functions:
+
+def get_mission_time(log_file):
+    with open(log_file, "r") as f:
+        last_line = f.readlines()[-1]
+    time_str = last_line.split()[0]
+    mission_time = datetime.datetime.strptime(time_str, "%M:%S")
+    return mission_time
+
+
+def get_area_traveled(log_file):
+    with open(log_file, "r") as f:
+        lines = f.readlines()
+    positions = []
+    for line in lines:
+        if "ROBOT_0_POSITION" in line:
+            x, y, z = map(float, line.split()[-3:])
+            positions.append((x, y))
+    area_traveled = 0
+    for i in range(1, len(positions)):
+        dx = positions[i][0] - positions[i-1][0]
+        dy = positions[i][1] - positions[i-1][1]
+        distance = math.sqrt(dx*dx + dy*dy)
+        area_traveled += distance
+    return area_traveled
+
+
+def get_detected_victims(log_file):
+    with open(log_file, "r") as f:
+        lines = f.readlines()
+    detected_victims = 0
+    for line in lines:
+        if "DETECTED_VICTIM" in line:
+            detected_victims += 1
+    return detected_victims
+
+
+def get_swamps(grid):
+    num_swamps = 0
+    for i in range(len(grid)):
+        for j in range(len(grid[i])):
+            if grid[i][j] == "S":
+                num_swamps += 1
+    return num_swamps
+
+
+def take_grids_screenshot():
+    # Get the position and size of the Webots window
+    window_pos_x = 100
+    window_pos_y = 100
+    window_width = 800
+    window_height = 600
+    window_region = (window_pos_x, window_pos_y, window_pos_x + window_width, window_pos_y + window_height)
+
+    # Take a screenshot of the whole Webots window
+    screenshot = ImageGrab.grab(bbox=window_region)
+
+    # Crop the image to the region of the grids
+    grids_region = (10, 50, 610, 550)
+    grids_screenshot = screenshot.crop(grids_region)
+
+    # Save the image to a file
+    grids_screenshot.save("grids_screenshot.png")
+
+
+
 def testRun(world, fileName, log_directory):
     initialLogNumber = len(os.listdir(log_directory))
     newLogNumber = len(os.listdir(log_directory))
@@ -105,6 +179,42 @@ def make_output_file(config):
     
     return output_file
 
+
+
+# Added function:
+
+def save_to_excel(mission_time, area_traveled, detected_victims, num_swamps, grids_screenshot):
+    
+    name = get_output_file_name(config["run_name"], config["world_set"]) + ".csv"
+
+    # load the existing workbook
+    wb = openpyxl.load_workbook(name)
+    
+    # get the active worksheet
+    ws = wb.active
+    
+    # get the next empty row
+    row = ws.max_row + 1
+    
+    # add the data to the row
+    ws.cell(row=row, column=1, value=mission_time)
+    ws.cell(row=row, column=2, value=area_traveled)
+    ws.cell(row=row, column=3, value=detected_victims)
+    ws.cell(row=row, column=4, value=num_swamps)
+    
+    # add the image to the row
+    img = openpyxl.drawing.image.Image(grids_screenshot)
+    img.width = 250
+    img.height = 200
+    ws.column_dimensions['E'].width = 30
+    ws.row_dimensions[row].height = 100
+    ws.add_image(img, f'E{row}')
+    
+    # save the changes
+    wb.save(name)
+
+
+
 def test_runs(config):
     erebus_directory = pathlib.Path(config["erebus_directory"])
 
@@ -128,6 +238,7 @@ def test_runs(config):
                 actualRuns += 1
                 time.sleep(1)
                 print("Tested", actualRuns, "/", totalRuns, "simulations")
+
 
 if __name__ == "__main__":
     with open(sys.argv[1], "r") as config_file:
