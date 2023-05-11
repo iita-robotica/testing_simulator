@@ -43,7 +43,7 @@ def getKillScript():
         pkill webots
         """
     elif platform.system() == "Windows":
-        return """taskkill/im webots.exe"""
+        return """taskkill/im webots.exe /F"""
     
     else:
         raise OSError("OS not supported. Please use either Windows or Linux")
