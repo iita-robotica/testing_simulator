@@ -4,19 +4,14 @@ import os
 import csv
 import sys
 import json
-import pathlib
-
-import datetime
-import math
-from PIL import ImageGrab
-
+from pathlib import Path
+import platform
 
 """
 parametros:
 
 1. Archivo de mundos
 """
-
 
 def loadController(erebus_directory, controller):
     erebusControllerPath = erebus_directory / "game/controllers/robot0Controller/robot0Controller.py"
@@ -27,19 +22,38 @@ def loadController(erebus_directory, controller):
     
     print(f"Loaded {controller}")
 
+def getOpenScript(world):
+    if platform.system() == "Linux":
+        return f"""#!/bin/bash
+        webots {world} --mode=fast --minimize --no-rendering
+        """
+    elif platform.system() == "Windows":
+        return f"""webots {world} --mode=fast --minimize --no-rendering"""
+    else:
+        raise OSError("OS not supported. Please use either Windows or Linux")
+
 def openWebots(world):
-    script = f"""#!/bin/bash
-    webots {world} --mode=fast --minimize --no-rendering
-    """
+    script = getOpenScript(world)
     rc = subprocess.Popen(script, shell=True)
+
+def getKillScript():
+    if platform.system() == "Linux":
+        return """#!/bin/bash
+        pkill webots
+        """
+    elif platform.system() == "Windows":
+        return """taskkill/im webots.exe /F"""
+    
+    else:
+        raise OSError("OS not supported. Please use either Windows or Linux")
+
 
 def killWebots():
-    script = """#!/bin/bash
-    pkill webots
-    """
+    script = getKillScript()
     rc = subprocess.Popen(script, shell=True)
 
-def processLogs(world, fileName, time_taken, log_directory):
+
+def processLogs(world: Path, fileName: Path, time_taken, log_directory: Path):
     lastLog = sorted(os.listdir(log_directory))[-1]
 
     if "gameLog" in lastLog:
@@ -56,81 +70,32 @@ def processLogs(world, fileName, time_taken, log_directory):
                 line = line.replace("\n", "")
                 finalScore = float(line)
                 print("Final score:", finalScore)
+
+            elif "SWAMP_COUNT:" in line:
+                swamps_detected = int(line.split(":")[1])
+                print("Swamps detected:", swamps_detected)
+
+            elif "ROBOT_0_VICTIMS_DETECTED:" in line:
+                victims_detected = int(line.split(":")[1])
+                print("Victims detected:", victims_detected)
+
+            elif "ROBOT_0_DIST:" in line:
+                distance_traveled = float(line.split(":")[1])
+                print("Meters traveled:", distance_traveled)
+
+            elif "Final Simulation Time" in line:
+                mission_time = int(line.split(":")[1])
+                print("Mission time:", mission_time, "seconds")
+
         
         with open(fileName, "a") as file:
             writer = csv.writer(file)
 
-            writer.writerow([str(world).split("/")[-1], finalScore, finalTime, time_taken])
+            writer.writerow([world.stem, finalScore, finalTime, time_taken, mission_time, distance_traveled,
+                             victims_detected, swamps_detected])
 
 
-
-# Added functions:
-
-def get_mission_time(log_file):
-    with open(log_file, "r") as f:
-        last_line = f.readlines()[-1]
-    time_str = last_line.split()[0]
-    mission_time = datetime.datetime.strptime(time_str, "%M:%S")
-    return mission_time
-
-
-def get_area_traveled(log_file):
-    with open(log_file, "r") as f:
-        lines = f.readlines()
-    positions = []
-    for line in lines:
-        if "ROBOT_0_POSITION" in line:
-            x, y, z = map(float, line.split()[-3:])
-            positions.append((x, y))
-    area_traveled = 0
-    for i in range(1, len(positions)):
-        dx = positions[i][0] - positions[i-1][0]
-        dy = positions[i][1] - positions[i-1][1]
-        distance = math.sqrt(dx*dx + dy*dy)
-        area_traveled += distance
-    return area_traveled
-
-
-def get_detected_victims(log_file):
-    with open(log_file, "r") as f:
-        lines = f.readlines()
-    detected_victims = 0
-    for line in lines:
-        if "DETECTED_VICTIM" in line:
-            detected_victims += 1
-    return detected_victims
-
-
-def get_swamps(grid):
-    num_swamps = 0
-    for i in range(len(grid)):
-        for j in range(len(grid[i])):
-            if grid[i][j] == "S":
-                num_swamps += 1
-    return num_swamps
-
-
-def take_grids_screenshot():
-    # Get the position and size of the Webots window
-    window_pos_x = 100
-    window_pos_y = 100
-    window_width = 800
-    window_height = 600
-    window_region = (window_pos_x, window_pos_y, window_pos_x + window_width, window_pos_y + window_height)
-
-    # Take a screenshot of the whole Webots window
-    screenshot = ImageGrab.grab(bbox=window_region)
-
-    # Crop the image to the region of the grids
-    grids_region = (10, 50, 610, 550)
-    grids_screenshot = screenshot.crop(grids_region)
-
-    # Save the image to a file
-    grids_screenshot.save("grids_screenshot.png")
-
-
-
-def testRun(world, fileName, log_directory):
+def testRun(world: Path, fileName, log_directory: Path):
     initialLogNumber = len(os.listdir(log_directory))
     newLogNumber = len(os.listdir(log_directory))
 
@@ -154,32 +119,30 @@ def testRun(world, fileName, log_directory):
     print("Processing data...")
     processLogs(world, fileName, time_taken, log_directory)
 
-def get_output_file_name(run_name, world_set_dir):
+def get_output_file_name(run_name: str, world_set_dir: Path):
     actual_time = time.strftime("%d-%m-%Y_%H-%M-%S")
 
-    formatted_world_set_name = world_set_dir.split("/")[-1]
-    formatted_world_set_name = formatted_world_set_name.replace(".txt", "")
-
-    return run_name + "_(" + formatted_world_set_name + ")_" + actual_time
+    return run_name + "_(" + world_set_dir.stem + ")_" + actual_time
 
 def make_output_file(config):
     try:
-        os.mkdir(pathlib.Path("./runs") / config["run_name"])
+        os.mkdir(Path("./runs") / config["run_name"])
     except FileExistsError:
         print("Directory already exists")
 
-    name = get_output_file_name(config["run_name"], config["world_set"]) + ".csv"
+    name = get_output_file_name(config["run_name"], Path(config["world_set"])) + ".csv"
 
-    output_file = pathlib.Path("./runs", config["run_name"], name)
+    output_file =Path("./runs", config["run_name"], name)
 
     with open(output_file, "w") as output:
         writer = csv.writer(output)
-        writer.writerow(["World", "Score", "Simulation Time", "Real Time"])
+        writer.writerow(["World", "Score", "Simulation Time", "Real Time", "Mission time", "Meters traveled", 
+                        "Victims detected", "Swamps detected"])
     
     return output_file
 
 def test_runs(config):
-    erebus_directory = pathlib.Path(config["erebus_directory"])
+    erebus_directory = Path(config["erebus_directory"])
 
     log_directory = erebus_directory / "game/logs/"
 
@@ -202,18 +165,9 @@ def test_runs(config):
                 time.sleep(1)
                 print("Tested", actualRuns, "/", totalRuns, "simulations")
 
-
 if __name__ == "__main__":
     with open(sys.argv[1], "r") as config_file:
         config = json.load(config_file)
     
     test_runs(config)
     
-
-
-
-
-
-
-
-
