@@ -4,14 +4,8 @@ import os
 import csv
 import sys
 import json
-from pathlib import Path
-import platform
+import pathlib
 
-"""
-parametros:
-
-1. Archivo de mundos
-"""
 
 def loadController(erebus_directory, controller):
     erebusControllerPath = erebus_directory / "game/controllers/robot0Controller/robot0Controller.py"
@@ -22,38 +16,19 @@ def loadController(erebus_directory, controller):
     
     print(f"Loaded {controller}")
 
-def getOpenScript(world):
-    if platform.system() == "Linux":
-        return f"""#!/bin/bash
-        webots {world} --mode=fast --minimize --no-rendering
-        """
-    elif platform.system() == "Windows":
-        return f"""webots {world} --mode=fast --minimize --no-rendering"""
-    else:
-        raise OSError("OS not supported. Please use either Windows or Linux")
-
 def openWebots(world):
-    script = getOpenScript(world)
+    script = f"""#!/bin/bash
+    webots {world} --mode=fast --minimize --no-rendering
+    """
     rc = subprocess.Popen(script, shell=True)
-
-def getKillScript():
-    if platform.system() == "Linux":
-        return """#!/bin/bash
-        pkill webots
-        """
-    elif platform.system() == "Windows":
-        return """taskkill /im webots.exe /F"""
-    
-    else:
-        raise OSError("OS not supported. Please use either Windows or Linux")
-
 
 def killWebots():
-    script = getKillScript()
+    script = """#!/bin/bash
+    pkill webots
+    """
     rc = subprocess.Popen(script, shell=True)
 
-
-def processLogs(world: Path, fileName: Path, time_taken, log_directory: Path):
+def processLogs(world, fileName, time_taken, log_directory):
     lastLog = sorted(os.listdir(log_directory))[-1]
 
     if "gameLog" in lastLog:
@@ -86,16 +61,14 @@ def processLogs(world: Path, fileName: Path, time_taken, log_directory: Path):
             elif "Final Simulation Time" in line:
                 mission_time = int(line.split(":")[1])
                 print("Mission time:", mission_time, "seconds")
-
         
         with open(fileName, "a") as file:
             writer = csv.writer(file)
 
-            writer.writerow([world.stem, finalScore, finalTime, time_taken, mission_time, distance_traveled,
-                             victims_detected, swamps_detected])
+            writer.writerow([str(world).split("/")[-1], finalScore, finalTime, time_taken, mission_time,
+            distance_traveled, victims_detected, swamps_detected])
 
-
-def testRun(world: Path, fileName, log_directory: Path):
+def testRun(world, fileName, log_directory):
     initialLogNumber = len(os.listdir(log_directory))
     newLogNumber = len(os.listdir(log_directory))
 
@@ -114,25 +87,27 @@ def testRun(world: Path, fileName, log_directory: Path):
 
     print("Closing webots...")
     killWebots()
-
+    
     print("Processing data...")
     processLogs(world, fileName, time_taken, log_directory)
 
-
-def get_output_file_name(run_name: str, world_set_dir: Path):
+def get_output_file_name(run_name, world_set_dir):
     actual_time = time.strftime("%d-%m-%Y_%H-%M-%S")
 
-    return run_name + "_(" + world_set_dir.stem + ")_" + actual_time
+    formatted_world_set_name = world_set_dir.split("/")[-1]
+    formatted_world_set_name = formatted_world_set_name.replace(".txt", "")
+
+    return run_name + "_(" + formatted_world_set_name + ")_" + actual_time
 
 def make_output_file(config):
     try:
-        os.mkdir(Path("./runs") / config["run_name"])
+        os.mkdir(pathlib.Path("./runs") / config["run_name"])
     except FileExistsError:
         print("Directory already exists")
 
-    name = get_output_file_name(config["run_name"], Path(config["world_set"])) + ".csv"
+    name = get_output_file_name(config["run_name"], config["world_set"]) + ".csv"
 
-    output_file =Path("./runs", config["run_name"], name)
+    output_file = pathlib.Path("./runs", config["run_name"], name)
 
     with open(output_file, "w") as output:
         writer = csv.writer(output)
@@ -142,7 +117,7 @@ def make_output_file(config):
     return output_file
 
 def test_runs(config):
-    erebus_directory = Path(config["erebus_directory"])
+    erebus_directory = pathlib.Path(config["erebus_directory"])
 
     log_directory = erebus_directory / "game/logs/"
 
@@ -165,9 +140,17 @@ def test_runs(config):
                 time.sleep(1)
                 print("Tested", actualRuns, "/", totalRuns, "simulations")
 
+
 if __name__ == "__main__":
     with open(sys.argv[1], "r") as config_file:
         config = json.load(config_file)
     
     test_runs(config)
     
+
+
+
+
+
+
+

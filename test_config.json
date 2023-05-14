@@ -3,5 +3,5 @@
     "controller": "G:/Roboliga/testing_simulator/rescate_laberinto/src/run.py",
     "world_set": "G:/Roboliga/testing_simulator/world_set/test_set.txt",
     "reps":1,
-    "run_name": "run_talos_1"
+    "run_name": "talos_1"
 }
