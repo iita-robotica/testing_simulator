@@ -1,3 +1,5 @@
+./Erebus-v23_0_3/game/worlds/world1.wbt
+./Erebus-v23_0_3/game/worlds/world2.wbt
 ./Erebus-v23_0_3/game/worlds/Talos#1.wbt
 ./Erebus-v23_0_3/game/worlds/Talos#2.wbt
 ./Erebus-v23_0_3/game/worlds/Talos#3.wbt

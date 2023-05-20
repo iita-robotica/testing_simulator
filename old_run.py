@@ -45,28 +45,11 @@ def processLogs(world, fileName, time_taken, log_directory):
                 line = line.replace("\n", "")
                 finalScore = float(line)
                 print("Final score:", finalScore)
-
-            elif "SWAMP_COUNT:" in line:
-                swamps_detected = int(line.split(":")[1])
-                print("Swamps detected:", swamps_detected)
-
-            elif "ROBOT_0_VICTIMS_DETECTED:" in line:
-                victims_detected = int(line.split(":")[1])
-                print("Victims detected:", victims_detected)
-
-            elif "ROBOT_0_DIST:" in line:
-                distance_traveled = float(line.split(":")[1])
-                print("Meters traveled:", distance_traveled)
-
-            elif "Final Simulation Time" in line:
-                mission_time = int(line.split(":")[1])
-                print("Mission time:", mission_time, "seconds")
         
         with open(fileName, "a") as file:
             writer = csv.writer(file)
 
-            writer.writerow([str(world).split("/")[-1], finalScore, finalTime, time_taken, mission_time,
-            distance_traveled, victims_detected, swamps_detected])
+            writer.writerow([str(world).split("/")[-1], finalScore, finalTime, time_taken])
 
 def testRun(world, fileName, log_directory):
     initialLogNumber = len(os.listdir(log_directory))
@@ -88,6 +71,7 @@ def testRun(world, fileName, log_directory):
     print("Closing webots...")
     killWebots()
     
+
     print("Processing data...")
     processLogs(world, fileName, time_taken, log_directory)
 
@@ -111,8 +95,7 @@ def make_output_file(config):
 
     with open(output_file, "w") as output:
         writer = csv.writer(output)
-        writer.writerow(["World", " Score", " Simulation Time", " Real Time",
-        " Mission time", " Meters traveled", " Victims detected", " Swamps detected"])
+        writer.writerow(["World", "Score", "Simulation Time", "Real Time"])
     
     return output_file
 
@@ -140,17 +123,9 @@ def test_runs(config):
                 time.sleep(1)
                 print("Tested", actualRuns, "/", totalRuns, "simulations")
 
-
 if __name__ == "__main__":
     with open(sys.argv[1], "r") as config_file:
         config = json.load(config_file)
     
     test_runs(config)
     
-
-
-
-
-
-
-
