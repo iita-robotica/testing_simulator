@@ -1,0 +1,8 @@
+Talos#1.wbt
+Talos#2.wbt
+Talos#3.wbt
+Talos#4.wbt
+Talos#7.wbt
+world1.wbt
+world2.wbt
+room4.wbt
