@@ -81,6 +81,8 @@ def processLogs(world: Path, fileName: Path, time_taken, log_directory: Path):
         victims_correctly_identified = 0
         checkpoints_found = 0
         fixture_type_missidentification = 0
+        completion_percentage = 0
+
         for line in lines:
             if "Successful Hazard Identification" in line:
                 hazards_detected += 1
@@ -97,7 +99,7 @@ def processLogs(world: Path, fileName: Path, time_taken, log_directory: Path):
                 checkpoints_found += 1
 
             elif "Map Correctness" in line:
-                completion_percentage = line[22:27].replace(".", "")
+                completion_percentage = line[-7:-2].replace(".", "").replace(" ", "")
                 completion_percentage = int(completion_percentage) / 10000
 
             elif "Misidentification" in line:
