@@ -82,7 +82,7 @@ def processLogs(world: Path, fileName: Path, time_taken, log_directory: Path):
         checkpoints_found = 0
         fixture_type_missidentification = 0
         completion_percentage = 0
-
+   
         for line in lines:
             if "Successful Hazard Identification" in line:
                 hazards_detected += 1
