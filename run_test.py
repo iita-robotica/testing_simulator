@@ -80,6 +80,7 @@ def processLogs(world: Path, fileName: Path, time_taken, log_directory: Path):
         victims_detected = 0
         victims_correctly_identified = 0
         checkpoints_found = 0
+        fixture_type_missidentification = 0
         for line in lines:
             if "Successful Hazard Identification" in line:
                 hazards_detected += 1
@@ -99,6 +100,10 @@ def processLogs(world: Path, fileName: Path, time_taken, log_directory: Path):
                 completion_percentage = line[22:27].replace(".", "")
                 completion_percentage = int(completion_percentage) / 10000
 
+            elif "Misidentification" in line:
+                fixture_type_missidentification += 1
+
+
         
         with open(fileName, "a") as file:
             writer = csv.writer(file)
@@ -112,6 +117,7 @@ def processLogs(world: Path, fileName: Path, time_taken, log_directory: Path):
                              hazards_correctly_identified,
                              victims_detected,
                              victims_correctly_identified,
+                             fixture_type_missidentification,
                              checkpoints_found])
 
 def testRun(world: Path, fileName, log_directory: Path):
@@ -164,6 +170,7 @@ def make_output_file(config):
                          "hazards_correctly_identified",
                          "victims_detected",
                          "victims_correctly_identified",
+                         "fixture_type_missidentification",
                          "checkpoints found"])
     
     return output_file
