@@ -60,21 +60,67 @@ def processLogs(world: Path, fileName: Path, time_taken, log_directory: Path):
         with open(log_directory / lastLog, "r") as log:
             lines = log.readlines()
         
+        # Time
         finalLine = lines[-1]
         finalTime = (int(finalLine[0:2]) * 60) + int(finalLine[3:5])
         print("Final time:", finalTime, "seconds")
 
+        # Score
         for line in lines:
             if "ROBOT_0_SCORE: " in line:
                 line = line.replace("ROBOT_0_SCORE: ", "")
                 line = line.replace("\n", "")
                 finalScore = float(line)
                 print("Final score:", finalScore)
+
+    
+        # Hazards
+        hazards_detected = 0
+        hazards_correctly_identified = 0
+        victims_detected = 0
+        victims_correctly_identified = 0
+        checkpoints_found = 0
+        fixture_type_missidentification = 0
+        completion_percentage = 0
+   
+        for line in lines:
+            if "Successful Hazard Identification" in line:
+                hazards_detected += 1
+            elif "Successful Hazard Type Correct Bonus" in line:
+                hazards_correctly_identified += 1
+
+            elif "Successful Victim Identification" in line:
+                victims_detected += 1
+            
+            elif "Successful Victim Type Correct Bonus" in line:
+                victims_correctly_identified += 1
+
+            elif "Found checkpoint" in line:
+                checkpoints_found += 1
+
+            elif "Map Correctness" in line:
+                completion_percentage = line[-7:-2].replace(".", "").replace(" ", "")
+                completion_percentage = int(completion_percentage) / 10000
+
+            elif "Misidentification" in line:
+                fixture_type_missidentification += 1
+
+
         
         with open(fileName, "a") as file:
             writer = csv.writer(file)
 
-            writer.writerow([world.stem, finalScore, finalTime, time_taken])
+            writer.writerow([world.stem, 
+                             finalScore, 
+                             finalTime, 
+                             time_taken,
+                             completion_percentage,
+                             hazards_detected, 
+                             hazards_correctly_identified,
+                             victims_detected,
+                             victims_correctly_identified,
+                             fixture_type_missidentification,
+                             checkpoints_found])
 
 def testRun(world: Path, fileName, log_directory: Path):
     initialLogNumber = len(os.listdir(log_directory))
@@ -117,7 +163,17 @@ def make_output_file(config):
 
     with open(output_file, "w") as output:
         writer = csv.writer(output)
-        writer.writerow(["World", "Score", "Simulation Time", "Real Time"])
+        writer.writerow(["World", 
+                         "Score", 
+                         "Simulation Time", 
+                         "Real Time",
+                         "final map correctness",
+                         "hazards_detected", 
+                         "hazards_correctly_identified",
+                         "victims_detected",
+                         "victims_correctly_identified",
+                         "fixture_type_missidentification",
+                         "checkpoints found"])
     
     return output_file
 
