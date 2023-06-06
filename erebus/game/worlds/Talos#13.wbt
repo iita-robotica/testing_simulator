@@ -147,9 +147,9 @@
             zPos 4
             floor TRUE
             topWall 0
-            rightWall 0
-            bottomWall 0
-            leftWall 1
+            rightWall 3
+            bottomWall 15
+            leftWall 3
             topExternal FALSE
             rightExternal FALSE
             bottomExternal FALSE
@@ -173,9 +173,9 @@
             zPos 5
             floor TRUE
             topWall 0
-            rightWall 0
+            rightWall 2
             bottomWall 0
-            leftWall 1
+            leftWall 2
             topExternal FALSE
             rightExternal FALSE
             bottomExternal FALSE
@@ -200,8 +200,8 @@
             floor TRUE
             topWall 0
             rightWall 0
-            bottomWall 0
-            leftWall 1
+            bottomWall 5
+            leftWall 3
             topExternal FALSE
             rightExternal FALSE
             bottomExternal FALSE
@@ -227,7 +227,7 @@
             topWall 0
             rightWall 0
             bottomWall 5
-            leftWall 3
+            leftWall 6
             topExternal FALSE
             rightExternal FALSE
             bottomExternal FALSE
@@ -252,8 +252,8 @@
             floor TRUE
             topWall 0
             rightWall 0
-            bottomWall 3
-            leftWall 0
+            bottomWall 15
+            leftWall 6
             topExternal FALSE
             rightExternal FALSE
             bottomExternal TRUE
@@ -382,7 +382,7 @@
             floor TRUE
             topWall 0
             rightWall 0
-            bottomWall 0
+            bottomWall 6
             leftWall 0
             topExternal FALSE
             rightExternal FALSE
@@ -407,8 +407,8 @@
             zPos 2
             floor TRUE
             topWall 0
-            rightWall 0
-            bottomWall 0
+            rightWall 6
+            bottomWall 3
             leftWall 0
             topExternal FALSE
             rightExternal FALSE
@@ -512,7 +512,7 @@
             floor TRUE
             topWall 0
             rightWall 0
-            bottomWall 0
+            bottomWall 1
             leftWall 0
             topExternal FALSE
             rightExternal FALSE
@@ -668,7 +668,7 @@
             floor TRUE
             topWall 1
             rightWall 0
-            bottomWall 0
+            bottomWall 3
             leftWall 0
             topExternal TRUE
             rightExternal FALSE
@@ -693,8 +693,8 @@
             zPos 1
             floor TRUE
             topWall 0
-            rightWall 0
-            bottomWall 0
+            rightWall 6
+            bottomWall 6
             leftWall 0
             topExternal FALSE
             rightExternal FALSE
@@ -1395,7 +1395,7 @@
             zPos 4
             floor TRUE
             topWall 0
-            rightWall 0
+            rightWall 2
             bottomWall 0
             leftWall 0
             topExternal FALSE
@@ -1687,7 +1687,7 @@
             floor TRUE
             topWall 0
             rightWall 0
-            bottomWall 0
+            bottomWall 15
             leftWall 0
             topExternal FALSE
             rightExternal FALSE
@@ -1712,7 +1712,7 @@
             zPos 4
             floor TRUE
             topWall 0
-            rightWall 0
+            rightWall 6
             bottomWall 0
             leftWall 0
             topExternal FALSE
@@ -1843,7 +1843,7 @@
             floor TRUE
             topWall 0
             rightWall 0
-            bottomWall 0
+            bottomWall 3
             leftWall 0
             topExternal FALSE
             rightExternal FALSE
@@ -2170,7 +2170,7 @@
             floor TRUE
             topWall 0
             rightWall 0
-            bottomWall 5
+            bottomWall 2
             leftWall 0
             tile1Walls [ 0, 0, 0, 0 ]
             tile2Walls [ 0, 0, 0, 0 ]
@@ -2251,8 +2251,8 @@
             xPos 7
             zPos 0
             floor TRUE
-            topWall 1
-            rightWall 0
+            topWall 3
+            rightWall 2
             bottomWall 0
             leftWall 0
             tile1Walls [ 0, 0, 0, 0 ]
@@ -2603,7 +2603,7 @@
             xPos 8
             zPos 0
             floor TRUE
-            topWall 1
+            topWall 2
             rightWall 0
             bottomWall 0
             leftWall 0
@@ -2884,12 +2884,12 @@
             floor TRUE
             topWall 0
             rightWall 0
-            bottomWall 6
+            bottomWall 2
             leftWall 0
             tile1Walls [ 0, 0, 0, 0 ]
             tile2Walls [ 0, 0, 0, 0 ]
             tile3Walls [ 0, 0, 0, 0 ]
-            tile4Walls [ 0, 3, 0, 0 ]
+            tile4Walls [ 0, 0, 0, 0 ]
             tile1External [ FALSE, FALSE, FALSE, FALSE ]
             tile2External [ FALSE, FALSE, FALSE, FALSE ]
             tile3External [ FALSE, FALSE, FALSE, FALSE ]
@@ -3005,7 +3005,7 @@
         DEF TILE halfTile {
             xPos 9
             zPos 1
-            floor FALSE
+            floor TRUE
             topWall 0
             rightWall 0
             bottomWall 0
@@ -3020,7 +3020,7 @@
             tile4External [ FALSE, FALSE, FALSE, FALSE ]
             curve [0,0,0,0]
             start FALSE
-            trap TRUE
+            trap FALSE
             checkpoint FALSE
             swamp FALSE
             width 12
@@ -3260,7 +3260,7 @@
             leftWall 0
             tile1Walls [ 0, 0, 0, 0 ]
             tile2Walls [ 0, 0, 0, 0 ]
-            tile3Walls [ 0, 0, 2, 0 ]
+            tile3Walls [ 0, 0, 1, 0 ]
             tile4Walls [ 0, 0, 0, 0 ]
             tile1External [ FALSE, FALSE, FALSE, FALSE ]
             tile2External [ FALSE, FALSE, FALSE, FALSE ]
@@ -3472,8 +3472,8 @@
             zPos 4
             floor TRUE
             topWall 0
-            rightWall 0
-            bottomWall 0
+            rightWall 6
+            bottomWall 3
             leftWall 0
             tile1Walls [ 0, 0, 0, 0 ]
             tile2Walls [ 0, 0, 0, 0 ]
@@ -3596,8 +3596,8 @@
             zPos 8
             floor TRUE
             topWall 0
-            rightWall 0
-            bottomWall 0
+            rightWall 3
+            bottomWall 3
             leftWall 0
             tile1Walls [ 0, 0, 0, 0 ]
             tile2Walls [ 0, 0, 0, 0 ]
@@ -3627,7 +3627,7 @@
             zPos 9
             floor TRUE
             topWall 0
-            rightWall 0
+            rightWall 2
             bottomWall 0
             leftWall 0
             tile1Walls [ 0, 0, 0, 0 ]
@@ -4072,19 +4072,6 @@
             room 2
           }
         
-        Area4_1 {
-            X 3
-            Y 9
-            DIR 0
-            width 12
-            height 12
-            xScale 0.4
-            zScale 0.4
-            yScale 0.4
-            area4Width 7
-            area4Height 5
-        }
-        
             ]
         }
         
@@ -4144,20 +4131,9 @@
         DEF boundary Group {
             children [
               DEF trap0min Transform {
-                    translation 0.2999999999999999 -0.03 -0.6599999999999999
-              }
-              DEF trap0max Transform {
-                    translation 0.4199999999999999 -0.03 -0.54
-              }
-            ]
-          }
-        
-        DEF boundary Group {
-            children [
-              DEF trap1min Transform {
                     translation 0.4200000000000002 -0.03 0.06000000000000011
               }
-              DEF trap1max Transform {
+              DEF trap0max Transform {
                     translation 0.5400000000000003 -0.03 0.1800000000000001
               }
             ]
@@ -4215,8 +4191,8 @@
             children [
               
         DEF OBSTACLE0 Solid {
-            translation 0.6010300000000001 0 0.3752199999999999
-			rotation 0 1 0 3.821
+            translation -0.48239 0 -0.34913
+			rotation 0 1 0 1.794
             children [
                 Shape {
                     appearance Appearance {
@@ -4225,12 +4201,56 @@
 						}
                     }
                     geometry DEF OBSTACLEBOX0 Box {
-						size 0.04472332168881841 0.06 0.03201552786807455
+						size 0.03652102989855728 0.06 0.055880361169538366
                     }
                 }
             ]
             name "obstacle0"
             boundingObject USE OBSTACLEBOX0
+	    recognitionColors [
+			0.45 0.45 0.45
+		]
+        }
+        
+        DEF OBSTACLE1 Solid {
+            translation 0.19963999999999998 0 -0.1594799999999999
+			rotation 0 1 0 5.115
+            children [
+                Shape {
+                    appearance Appearance {
+						material Material {
+						diffuseColor 0.45 0.45 0.45
+						}
+                    }
+                    geometry DEF OBSTACLEBOX1 Box {
+						size 0.020244785613601518 0.06 0.024649449828742676
+                    }
+                }
+            ]
+            name "obstacle1"
+            boundingObject USE OBSTACLEBOX1
+	    recognitionColors [
+			0.45 0.45 0.45
+		]
+        }
+        
+        DEF OBSTACLE2 Solid {
+            translation 0.5937700000000001 0 0.3242799999999999
+			rotation 0 1 0 0.058
+            children [
+                Shape {
+                    appearance Appearance {
+						material Material {
+						diffuseColor 0.45 0.45 0.45
+						}
+                    }
+                    geometry DEF OBSTACLEBOX2 Box {
+						size 0.03200112674262413 0.06 0.022891318572861943
+                    }
+                }
+            ]
+            name "obstacle2"
+            boundingObject USE OBSTACLEBOX2
 	    recognitionColors [
 			0.45 0.45 0.45
 		]
@@ -4243,43 +4263,67 @@
             children [
               
         Victim {
-            translation -0.305 0 -0.11099999999999988
-            rotation 0 1 0 1.57
+            translation -0.72 0 -0.17499999999999988
+            rotation 0 1 0 3.14
             name "Victim0"
-            type "stable"
-            scoreWorth 15
+            type "unharmed"
+            scoreWorth 5
         }
         
         Victim {
-            translation -0.305 0 0.4590000000000002
+            translation -0.425 0 -0.594
             rotation 0 1 0 1.57
             name "Victim1"
             type "unharmed"
-            scoreWorth 15
+            scoreWorth 5
         }
         
         Victim {
-            translation 0.185 0 0.24
-            rotation 0 1 0 -1.57
+            translation -0.305 0 -0.1379999999999999
+            rotation 0 1 0 1.57
             name "Victim2"
             type "stable"
             scoreWorth 15
         }
         
         Victim {
-            translation 0.4420000000000002 0 -0.535
-            rotation 0 1 0 3.14
+            translation -0.305 0 0.5060000000000002
+            rotation 0 1 0 1.57
             name "Victim3"
-            type "harmed"
-            scoreWorth 5
+            type "unharmed"
+            scoreWorth 15
         }
         
         Victim {
-            translation -0.35 0 0.5979999999999999
-            rotation 0 1 0 1.5708
+            translation 0.034 0 -0.185
+            rotation 0 1 0 0
             name "Victim4"
+            type "unharmed"
+            scoreWorth 15
+        }
+        
+        Victim {
+            translation 0.0650000000000001 0 -0.015
+            rotation 0 1 0 -1.57
+            name "Victim5"
             type "harmed"
             scoreWorth 15
+        }
+        
+        Victim {
+            translation 0.185 0 0.24
+            rotation 0 1 0 -1.57
+            name "Victim6"
+            type "stable"
+            scoreWorth 15
+        }
+        
+        Victim {
+            translation 0.4540000000000002 0 -0.535
+            rotation 0 1 0 3.14
+            name "Victim7"
+            type "harmed"
+            scoreWorth 5
         }
         
             ]
@@ -4289,17 +4333,49 @@
             children [
               
         HazardMap {
+            translation -0.72 0 -0.1856
+            rotation 0 1 0 0
+            name "Hazard0"
+            type "C"
+            scoreWorth 10
+        }
+        
+        HazardMap {
             translation -0.7744 0 0.1200000000000001
             rotation 0 1 0 -1.57
-            name "Hazard0"
+            name "Hazard1"
             type "P"
             scoreWorth 10
         }
         
         HazardMap {
-            translation -0.219 0 0.1856
+            translation -0.5456 0 -0.44599999999999995
+            rotation 0 1 0 1.57
+            name "Hazard2"
+            type "F"
+            scoreWorth 10
+        }
+        
+        HazardMap {
+            translation -0.205 0 0.1856
             rotation 0 1 0 3.14
-            name "Hazard1"
+            name "Hazard3"
+            type "O"
+            scoreWorth 30
+        }
+        
+        HazardMap {
+            translation 0.1200000000000001 0 -0.7744
+            rotation 0 1 0 3.14
+            name "Hazard4"
+            type "F"
+            scoreWorth 10
+        }
+        
+        HazardMap {
+            translation 0.1744000000000001 0 -0.394
+            rotation 0 1 0 1.57
+            name "Hazard5"
             type "O"
             scoreWorth 30
         }
@@ -4307,7 +4383,7 @@
         HazardMap {
             translation 0.1744000000000001 0 0.24
             rotation 0 1 0 1.57
-            name "Hazard2"
+            name "Hazard6"
             type "O"
             scoreWorth 30
         }
@@ -4315,17 +4391,17 @@
         HazardMap {
             translation 0.4256000000000002 0 -0.72
             rotation 0 1 0 -1.57
-            name "Hazard3"
+            name "Hazard7"
             type "F"
             scoreWorth 10
         }
         
         HazardMap {
-            translation 0.18800000000000006 0 0.5533959999999999
-            rotation 0 1 0 1.05
-            name "Hazard4"
+            translation 0.6000000000000001 0 -0.2944
+            rotation 0 1 0 3.14
+            name "Hazard8"
             type "P"
-            scoreWorth 30
+            scoreWorth 10
         }
         
             ]

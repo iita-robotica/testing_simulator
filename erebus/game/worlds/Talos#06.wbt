@@ -38,19 +38,19 @@
         DEF WALLTILES Group {
             children [
               
-        DEF START_TILE worldTile {
+        DEF TILE worldTile {
             xPos 0
             zPos 0
             floor TRUE
-            topWall 1
-            rightWall 0
+            topWall 3
+            rightWall 2
             bottomWall 0
             leftWall 1
             topExternal TRUE
-            rightExternal FALSE
+            rightExternal TRUE
             bottomExternal FALSE
             leftExternal TRUE
-            start TRUE
+            start FALSE
             trap FALSE
             checkpoint FALSE
             swamp FALSE
@@ -61,7 +61,7 @@
             yScale 0.4
             zScale 0.4
             tileColor 0.635 0.635 0.635
-            room 1
+            room 4
           }
         
         DEF TILE worldTile {
@@ -69,11 +69,11 @@
             zPos 1
             floor TRUE
             topWall 0
-            rightWall 0
+            rightWall 1
             bottomWall 0
             leftWall 1
             topExternal FALSE
-            rightExternal FALSE
+            rightExternal TRUE
             bottomExternal FALSE
             leftExternal TRUE
             start FALSE
@@ -87,7 +87,7 @@
             yScale 0.4
             zScale 0.4
             tileColor 0.635 0.635 0.635
-            room 1
+            room 4
           }
         
         DEF TILE worldTile {
@@ -95,11 +95,11 @@
             zPos 2
             floor TRUE
             topWall 0
-            rightWall 0
+            rightWall 3
             bottomWall 0
             leftWall 1
             topExternal FALSE
-            rightExternal FALSE
+            rightExternal TRUE
             bottomExternal FALSE
             leftExternal TRUE
             start FALSE
@@ -113,7 +113,7 @@
             yScale 0.4
             zScale 0.4
             tileColor 0.635 0.635 0.635
-            room 1
+            room 4
           }
         
         DEF TILE worldTile {
@@ -121,9 +121,9 @@
             zPos 3
             floor TRUE
             topWall 0
-            rightWall 6
-            bottomWall 0
-            leftWall 1
+            rightWall 0
+            bottomWall 15
+            leftWall 3
             topExternal FALSE
             rightExternal FALSE
             bottomExternal FALSE
@@ -139,7 +139,7 @@
             yScale 0.4
             zScale 0.4
             tileColor 0.635 0.635 0.635
-            room 1
+            room 4
           }
         
         DEF TILE worldTile {
@@ -147,9 +147,9 @@
             zPos 4
             floor TRUE
             topWall 0
-            rightWall 0
+            rightWall 2
             bottomWall 0
-            leftWall 1
+            leftWall 2
             topExternal FALSE
             rightExternal FALSE
             bottomExternal FALSE
@@ -165,7 +165,7 @@
             yScale 0.4
             zScale 0.4
             tileColor 0.635 0.635 0.635
-            room 1
+            room 4
           }
         
         DEF TILE worldTile {
@@ -173,9 +173,9 @@
             zPos 5
             floor TRUE
             topWall 0
-            rightWall 0
-            bottomWall 5
-            leftWall 3
+            rightWall 1
+            bottomWall 0
+            leftWall 1
             topExternal FALSE
             rightExternal FALSE
             bottomExternal FALSE
@@ -191,29 +191,24 @@
             yScale 0.4
             zScale 0.4
             tileColor 0.635 0.635 0.635
-            room 1
+            room 4
           }
         
-        DEF TILE halfTile {
+        DEF TILE worldTile {
             xPos 0
             zPos 6
             floor TRUE
             topWall 0
             rightWall 0
             bottomWall 0
-            leftWall 2
-            tile1Walls [ 0, 0, 0, 0 ]
-            tile2Walls [ 0, 0, 0, 0 ]
-            tile3Walls [ 0, 0, 0, 0 ]
-            tile4Walls [ 0, 0, 0, 0 ]
-            tile1External [ FALSE, FALSE, FALSE, TRUE ]
-            tile2External [ FALSE, FALSE, FALSE, FALSE ]
-            tile3External [ FALSE, FALSE, FALSE, TRUE ]
-            tile4External [ FALSE, FALSE, FALSE, FALSE ]
-            curve [0,0,0,0]
+            leftWall 1
+            topExternal FALSE
+            rightExternal FALSE
+            bottomExternal FALSE
+            leftExternal TRUE
             start FALSE
             trap FALSE
-            checkpoint FALSE
+            checkpoint TRUE
             swamp FALSE
             width 12
             height 12
@@ -222,26 +217,21 @@
             yScale 0.4
             zScale 0.4
             tileColor 0.635 0.635 0.635
-            room 2
+            room 4
           }
         
-        DEF TILE halfTile {
+        DEF TILE worldTile {
             xPos 0
             zPos 7
             floor TRUE
             topWall 0
             rightWall 0
-            bottomWall 5
-            leftWall 3
-            tile1Walls [ 0, 0, 0, 0 ]
-            tile2Walls [ 0, 0, 0, 0 ]
-            tile3Walls [ 0, 0, 0, 0 ]
-            tile4Walls [ 0, 0, 0, 0 ]
-            tile1External [ FALSE, FALSE, FALSE, TRUE ]
-            tile2External [ FALSE, FALSE, FALSE, FALSE ]
-            tile3External [ FALSE, FALSE, FALSE, TRUE ]
-            tile4External [ FALSE, FALSE, FALSE, FALSE ]
-            curve [0,0,0,0]
+            bottomWall 0
+            leftWall 1
+            topExternal FALSE
+            rightExternal FALSE
+            bottomExternal FALSE
+            leftExternal TRUE
             start FALSE
             trap FALSE
             checkpoint FALSE
@@ -252,27 +242,22 @@
             xScale 0.4
             yScale 0.4
             zScale 0.4
-            tileColor 0.635 0.635 0.635
-            room 2
+            tileColor 0.03137254901960784 0.8352941176470589 0.03137254901960784 
+            room 1
           }
         
-        DEF TILE halfTile {
+        DEF TILE worldTile {
             xPos 0
             zPos 8
             floor TRUE
             topWall 0
             rightWall 0
             bottomWall 0
-            leftWall 2
-            tile1Walls [ 0, 0, 0, 0 ]
-            tile2Walls [ 0, 0, 0, 0 ]
-            tile3Walls [ 0, 0, 0, 0 ]
-            tile4Walls [ 0, 0, 0, 0 ]
-            tile1External [ FALSE, FALSE, FALSE, TRUE ]
-            tile2External [ FALSE, FALSE, FALSE, FALSE ]
-            tile3External [ FALSE, FALSE, FALSE, TRUE ]
-            tile4External [ FALSE, FALSE, FALSE, FALSE ]
-            curve [0,0,0,0]
+            leftWall 1
+            topExternal FALSE
+            rightExternal FALSE
+            bottomExternal FALSE
+            leftExternal TRUE
             start FALSE
             trap FALSE
             checkpoint FALSE
@@ -284,26 +269,21 @@
             yScale 0.4
             zScale 0.4
             tileColor 0.635 0.635 0.635
-            room 2
+            room 1
           }
         
-        DEF TILE halfTile {
+        DEF TILE worldTile {
             xPos 0
             zPos 9
             floor TRUE
             topWall 0
-            rightWall 0
+            rightWall 3
             bottomWall 0
             leftWall 1
-            tile1Walls [ 0, 0, 0, 0 ]
-            tile2Walls [ 0, 0, 0, 0 ]
-            tile3Walls [ 0, 0, 0, 0 ]
-            tile4Walls [ 0, 0, 0, 0 ]
-            tile1External [ FALSE, FALSE, FALSE, TRUE ]
-            tile2External [ FALSE, FALSE, FALSE, FALSE ]
-            tile3External [ FALSE, FALSE, FALSE, TRUE ]
-            tile4External [ FALSE, FALSE, FALSE, FALSE ]
-            curve [0,0,0,0]
+            topExternal FALSE
+            rightExternal FALSE
+            bottomExternal FALSE
+            leftExternal TRUE
             start FALSE
             trap FALSE
             checkpoint FALSE
@@ -315,27 +295,22 @@
             yScale 0.4
             zScale 0.4
             tileColor 0.635 0.635 0.635
-            room 2
+            room 1
           }
         
-        DEF TILE halfTile {
+        DEF START_TILE worldTile {
             xPos 0
             zPos 10
             floor TRUE
             topWall 0
             rightWall 0
-            bottomWall 0
-            leftWall 1
-            tile1Walls [ 0, 0, 0, 0 ]
-            tile2Walls [ 0, 0, 0, 0 ]
-            tile3Walls [ 0, 0, 0, 0 ]
-            tile4Walls [ 0, 3, 0, 0 ]
-            tile1External [ FALSE, FALSE, FALSE, TRUE ]
-            tile2External [ FALSE, FALSE, FALSE, FALSE ]
-            tile3External [ FALSE, FALSE, FALSE, TRUE ]
-            tile4External [ FALSE, FALSE, FALSE, FALSE ]
-            curve [0,0,0,0]
-            start FALSE
+            bottomWall 15
+            leftWall 3
+            topExternal FALSE
+            rightExternal FALSE
+            bottomExternal TRUE
+            leftExternal TRUE
+            start TRUE
             trap FALSE
             checkpoint FALSE
             swamp FALSE
@@ -346,26 +321,21 @@
             yScale 0.4
             zScale 0.4
             tileColor 0.635 0.635 0.635
-            room 2
+            room 1
           }
         
-        DEF TILE halfTile {
+        DEF TILE worldTile {
             xPos 0
             zPos 11
-            floor TRUE
+            floor FALSE
             topWall 0
-            rightWall 0
-            bottomWall 5
-            leftWall 3
-            tile1Walls [ 0, 0, 0, 0 ]
-            tile2Walls [ 0, 0, 0, 0 ]
-            tile3Walls [ 0, 0, 0, 0 ]
-            tile4Walls [ 0, 0, 0, 0 ]
-            tile1External [ FALSE, FALSE, FALSE, TRUE ]
-            tile2External [ FALSE, FALSE, FALSE, FALSE ]
-            tile3External [ FALSE, FALSE, TRUE, TRUE ]
-            tile4External [ FALSE, FALSE, TRUE, FALSE ]
-            curve [0,0,0,0]
+            rightWall 6
+            bottomWall 0
+            leftWall 0
+            topExternal FALSE
+            rightExternal FALSE
+            bottomExternal FALSE
+            leftExternal FALSE
             start FALSE
             trap FALSE
             checkpoint FALSE
@@ -377,18 +347,18 @@
             yScale 0.4
             zScale 0.4
             tileColor 0.635 0.635 0.635
-            room 2
+            room 1
           }
         
         DEF TILE worldTile {
             xPos 1
             zPos 0
-            floor TRUE
-            topWall 1
-            rightWall 0
-            bottomWall 3
+            floor FALSE
+            topWall 0
+            rightWall 2
+            bottomWall 0
             leftWall 0
-            topExternal TRUE
+            topExternal FALSE
             rightExternal FALSE
             bottomExternal FALSE
             leftExternal FALSE
@@ -409,9 +379,9 @@
         DEF TILE worldTile {
             xPos 1
             zPos 1
-            floor TRUE
+            floor FALSE
             topWall 0
-            rightWall 2
+            rightWall 3
             bottomWall 0
             leftWall 0
             topExternal FALSE
@@ -435,9 +405,9 @@
         DEF TILE worldTile {
             xPos 1
             zPos 2
-            floor TRUE
+            floor FALSE
             topWall 0
-            rightWall 3
+            rightWall 6
             bottomWall 15
             leftWall 0
             topExternal FALSE
@@ -464,9 +434,9 @@
             floor TRUE
             topWall 0
             rightWall 0
-            bottomWall 15
+            bottomWall 0
             leftWall 0
-            topExternal FALSE
+            topExternal TRUE
             rightExternal FALSE
             bottomExternal FALSE
             leftExternal FALSE
@@ -481,7 +451,7 @@
             yScale 0.4
             zScale 0.4
             tileColor 0.635 0.635 0.635
-            room 1
+            room 4
           }
         
         DEF TILE worldTile {
@@ -489,8 +459,8 @@
             zPos 4
             floor TRUE
             topWall 0
-            rightWall 6
-            bottomWall 3
+            rightWall 0
+            bottomWall 0
             leftWall 0
             topExternal FALSE
             rightExternal FALSE
@@ -498,7 +468,7 @@
             leftExternal FALSE
             start FALSE
             trap FALSE
-            checkpoint TRUE
+            checkpoint FALSE
             swamp FALSE
             width 12
             height 12
@@ -507,7 +477,7 @@
             yScale 0.4
             zScale 0.4
             tileColor 0.635 0.635 0.635
-            room 1
+            room 4
           }
         
         DEF TILE worldTile {
@@ -516,7 +486,7 @@
             floor TRUE
             topWall 0
             rightWall 0
-            bottomWall 1
+            bottomWall 0
             leftWall 0
             topExternal FALSE
             rightExternal FALSE
@@ -533,26 +503,21 @@
             yScale 0.4
             zScale 0.4
             tileColor 0.635 0.635 0.635
-            room 1
+            room 4
           }
         
-        DEF TILE halfTile {
+        DEF TILE worldTile {
             xPos 1
             zPos 6
             floor TRUE
             topWall 0
             rightWall 0
-            bottomWall 3
+            bottomWall 1
             leftWall 0
-            tile1Walls [ 0, 0, 0, 0 ]
-            tile2Walls [ 0, 0, 0, 0 ]
-            tile3Walls [ 0, 0, 0, 0 ]
-            tile4Walls [ 0, 0, 0, 0 ]
-            tile1External [ FALSE, FALSE, FALSE, FALSE ]
-            tile2External [ FALSE, FALSE, FALSE, FALSE ]
-            tile3External [ FALSE, FALSE, FALSE, FALSE ]
-            tile4External [ FALSE, FALSE, FALSE, FALSE ]
-            curve [0,0,0,0]
+            topExternal FALSE
+            rightExternal FALSE
+            bottomExternal FALSE
+            leftExternal FALSE
             start FALSE
             trap FALSE
             checkpoint FALSE
@@ -564,26 +529,21 @@
             yScale 0.4
             zScale 0.4
             tileColor 0.635 0.635 0.635
-            room 2
+            room 4
           }
         
-        DEF TILE halfTile {
+        DEF TILE worldTile {
             xPos 1
             zPos 7
             floor TRUE
             topWall 0
-            rightWall 6
-            bottomWall 3
+            rightWall 0
+            bottomWall 1
             leftWall 0
-            tile1Walls [ 0, 0, 0, 0 ]
-            tile2Walls [ 0, 0, 0, 0 ]
-            tile3Walls [ 0, 0, 0, 0 ]
-            tile4Walls [ 0, 0, 0, 0 ]
-            tile1External [ FALSE, FALSE, FALSE, FALSE ]
-            tile2External [ FALSE, FALSE, FALSE, FALSE ]
-            tile3External [ FALSE, FALSE, FALSE, FALSE ]
-            tile4External [ FALSE, FALSE, FALSE, FALSE ]
-            curve [0,0,0,0]
+            topExternal FALSE
+            rightExternal FALSE
+            bottomExternal FALSE
+            leftExternal FALSE
             start FALSE
             trap FALSE
             checkpoint FALSE
@@ -595,188 +555,12 @@
             yScale 0.4
             zScale 0.4
             tileColor 0.635 0.635 0.635
-            room 2
+            room 1
           }
         
-        DEF TILE halfTile {
+        DEF TILE worldTile {
             xPos 1
             zPos 8
-            floor TRUE
-            topWall 0
-            rightWall 0
-            bottomWall 3
-            leftWall 0
-            tile1Walls [ 0, 0, 0, 0 ]
-            tile2Walls [ 0, 0, 0, 0 ]
-            tile3Walls [ 0, 0, 0, 0 ]
-            tile4Walls [ 0, 0, 0, 0 ]
-            tile1External [ FALSE, FALSE, FALSE, FALSE ]
-            tile2External [ FALSE, FALSE, FALSE, FALSE ]
-            tile3External [ FALSE, FALSE, FALSE, FALSE ]
-            tile4External [ FALSE, FALSE, FALSE, FALSE ]
-            curve [0,0,0,0]
-            start FALSE
-            trap FALSE
-            checkpoint FALSE
-            swamp FALSE
-            width 12
-            height 12
-            id "20"
-            xScale 0.4
-            yScale 0.4
-            zScale 0.4
-            tileColor 0.635 0.635 0.635
-            room 2
-          }
-        
-        DEF TILE halfTile {
-            xPos 1
-            zPos 9
-            floor TRUE
-            topWall 0
-            rightWall 2
-            bottomWall 0
-            leftWall 0
-            tile1Walls [ 0, 0, 0, 0 ]
-            tile2Walls [ 0, 0, 0, 0 ]
-            tile3Walls [ 0, 0, 1, 0 ]
-            tile4Walls [ 0, 0, 0, 0 ]
-            tile1External [ FALSE, FALSE, FALSE, FALSE ]
-            tile2External [ FALSE, FALSE, FALSE, FALSE ]
-            tile3External [ FALSE, FALSE, FALSE, FALSE ]
-            tile4External [ FALSE, FALSE, FALSE, FALSE ]
-            curve [0,0,0,0]
-            start FALSE
-            trap FALSE
-            checkpoint FALSE
-            swamp FALSE
-            width 12
-            height 12
-            id "21"
-            xScale 0.4
-            yScale 0.4
-            zScale 0.4
-            tileColor 0.635 0.635 0.635
-            room 2
-          }
-        
-        DEF TILE halfTile {
-            xPos 1
-            zPos 10
-            floor TRUE
-            topWall 0
-            rightWall 0
-            bottomWall 0
-            leftWall 0
-            tile1Walls [ 0, 0, 0, 0 ]
-            tile2Walls [ 0, 0, 0, 0 ]
-            tile3Walls [ 0, 0, 5, 0 ]
-            tile4Walls [ 0, 0, 0, 0 ]
-            tile1External [ FALSE, FALSE, FALSE, FALSE ]
-            tile2External [ FALSE, FALSE, FALSE, FALSE ]
-            tile3External [ FALSE, FALSE, FALSE, FALSE ]
-            tile4External [ FALSE, FALSE, FALSE, FALSE ]
-            curve [0,0,0,0]
-            start FALSE
-            trap FALSE
-            checkpoint FALSE
-            swamp FALSE
-            width 12
-            height 12
-            id "22"
-            xScale 0.4
-            yScale 0.4
-            zScale 0.4
-            tileColor 0.635 0.635 0.635
-            room 2
-          }
-        
-        DEF TILE halfTile {
-            xPos 1
-            zPos 11
-            floor TRUE
-            topWall 0
-            rightWall 0
-            bottomWall 1
-            leftWall 0
-            tile1Walls [ 0, 0, 0, 0 ]
-            tile2Walls [ 0, 0, 0, 0 ]
-            tile3Walls [ 0, 0, 0, 0 ]
-            tile4Walls [ 0, 0, 0, 0 ]
-            tile1External [ FALSE, FALSE, FALSE, FALSE ]
-            tile2External [ FALSE, FALSE, FALSE, FALSE ]
-            tile3External [ FALSE, FALSE, TRUE, FALSE ]
-            tile4External [ FALSE, FALSE, TRUE, FALSE ]
-            curve [0,0,0,0]
-            start FALSE
-            trap FALSE
-            checkpoint FALSE
-            swamp FALSE
-            width 12
-            height 12
-            id "23"
-            xScale 0.4
-            yScale 0.4
-            zScale 0.4
-            tileColor 0.635 0.635 0.635
-            room 2
-          }
-        
-        DEF TILE worldTile {
-            xPos 2
-            zPos 0
-            floor TRUE
-            topWall 3
-            rightWall 2
-            bottomWall 0
-            leftWall 0
-            topExternal TRUE
-            rightExternal TRUE
-            bottomExternal FALSE
-            leftExternal FALSE
-            start FALSE
-            trap FALSE
-            checkpoint FALSE
-            swamp FALSE
-            width 12
-            height 12
-            id "24"
-            xScale 0.4
-            yScale 0.4
-            zScale 0.4
-            tileColor 0.635 0.635 0.635
-            room 1
-          }
-        
-        DEF TILE worldTile {
-            xPos 2
-            zPos 1
-            floor TRUE
-            topWall 0
-            rightWall 3
-            bottomWall 0
-            leftWall 0
-            topExternal FALSE
-            rightExternal TRUE
-            bottomExternal FALSE
-            leftExternal FALSE
-            start FALSE
-            trap FALSE
-            checkpoint FALSE
-            swamp TRUE
-            width 12
-            height 12
-            id "25"
-            xScale 0.4
-            yScale 0.4
-            zScale 0.4
-            tileColor 0.635 0.635 0.635
-            room 1
-          }
-        
-        DEF TILE worldTile {
-            xPos 2
-            zPos 2
             floor TRUE
             topWall 0
             rightWall 0
@@ -792,7 +576,85 @@
             swamp FALSE
             width 12
             height 12
-            id "26"
+            id "20"
+            xScale 0.4
+            yScale 0.4
+            zScale 0.4
+            tileColor 0.635 0.635 0.635
+            room 1
+          }
+        
+        DEF TILE worldTile {
+            xPos 1
+            zPos 9
+            floor TRUE
+            topWall 0
+            rightWall 6
+            bottomWall 15
+            leftWall 0
+            topExternal FALSE
+            rightExternal FALSE
+            bottomExternal FALSE
+            leftExternal FALSE
+            start FALSE
+            trap FALSE
+            checkpoint FALSE
+            swamp FALSE
+            width 12
+            height 12
+            id "21"
+            xScale 0.4
+            yScale 0.4
+            zScale 0.4
+            tileColor 0.635 0.635 0.635
+            room 1
+          }
+        
+        DEF TILE worldTile {
+            xPos 1
+            zPos 10
+            floor TRUE
+            topWall 0
+            rightWall 0
+            bottomWall 0
+            leftWall 0
+            topExternal FALSE
+            rightExternal FALSE
+            bottomExternal FALSE
+            leftExternal FALSE
+            start FALSE
+            trap FALSE
+            checkpoint FALSE
+            swamp FALSE
+            width 12
+            height 12
+            id "22"
+            xScale 0.4
+            yScale 0.4
+            zScale 0.4
+            tileColor 0.635 0.635 0.635
+            room 1
+          }
+        
+        DEF TILE worldTile {
+            xPos 1
+            zPos 11
+            floor TRUE
+            topWall 0
+            rightWall 0
+            bottomWall 5
+            leftWall 0
+            topExternal FALSE
+            rightExternal FALSE
+            bottomExternal TRUE
+            leftExternal TRUE
+            start FALSE
+            trap FALSE
+            checkpoint FALSE
+            swamp FALSE
+            width 12
+            height 12
+            id "23"
             xScale 0.4
             yScale 0.4
             zScale 0.4
@@ -802,11 +664,89 @@
         
         DEF TILE worldTile {
             xPos 2
-            zPos 3
+            zPos 0
+            floor TRUE
+            topWall 3
+            rightWall 2
+            bottomWall 0
+            leftWall 0
+            topExternal TRUE
+            rightExternal FALSE
+            bottomExternal FALSE
+            leftExternal TRUE
+            start FALSE
+            trap FALSE
+            checkpoint FALSE
+            swamp FALSE
+            width 12
+            height 12
+            id "24"
+            xScale 0.4
+            yScale 0.4
+            zScale 0.4
+            tileColor 0.635 0.635 0.635
+            room 4
+          }
+        
+        DEF TILE worldTile {
+            xPos 2
+            zPos 1
+            floor TRUE
+            topWall 0
+            rightWall 0
+            bottomWall 15
+            leftWall 0
+            topExternal FALSE
+            rightExternal FALSE
+            bottomExternal FALSE
+            leftExternal TRUE
+            start FALSE
+            trap FALSE
+            checkpoint FALSE
+            swamp FALSE
+            width 12
+            height 12
+            id "25"
+            xScale 0.4
+            yScale 0.4
+            zScale 0.4
+            tileColor 0.635 0.635 0.635
+            room 4
+          }
+        
+        DEF TILE worldTile {
+            xPos 2
+            zPos 2
             floor TRUE
             topWall 0
             rightWall 2
             bottomWall 0
+            leftWall 0
+            topExternal FALSE
+            rightExternal FALSE
+            bottomExternal FALSE
+            leftExternal TRUE
+            start FALSE
+            trap FALSE
+            checkpoint FALSE
+            swamp FALSE
+            width 12
+            height 12
+            id "26"
+            xScale 0.4
+            yScale 0.4
+            zScale 0.4
+            tileColor 0.635 0.635 0.635
+            room 4
+          }
+        
+        DEF TILE worldTile {
+            xPos 2
+            zPos 3
+            floor TRUE
+            topWall 0
+            rightWall 3
+            bottomWall 3
             leftWall 0
             topExternal FALSE
             rightExternal FALSE
@@ -823,7 +763,7 @@
             yScale 0.4
             zScale 0.4
             tileColor 0.635 0.635 0.635
-            room 1
+            room 4
           }
         
         DEF TILE worldTile {
@@ -849,7 +789,7 @@
             yScale 0.4
             zScale 0.4
             tileColor 0.635 0.635 0.635
-            room 1
+            room 4
           }
         
         DEF TILE worldTile {
@@ -875,26 +815,21 @@
             yScale 0.4
             zScale 0.4
             tileColor 0.635 0.635 0.635
-            room 1
+            room 4
           }
         
-        DEF TILE halfTile {
+        DEF TILE worldTile {
             xPos 2
             zPos 6
             floor TRUE
             topWall 0
             rightWall 0
-            bottomWall 0
+            bottomWall 1
             leftWall 0
-            tile1Walls [ 0, 0, 0, 0 ]
-            tile2Walls [ 0, 0, 0, 0 ]
-            tile3Walls [ 0, 0, 0, 0 ]
-            tile4Walls [ 0, 0, 0, 0 ]
-            tile1External [ FALSE, FALSE, FALSE, FALSE ]
-            tile2External [ FALSE, FALSE, FALSE, FALSE ]
-            tile3External [ FALSE, FALSE, FALSE, FALSE ]
-            tile4External [ FALSE, FALSE, FALSE, FALSE ]
-            curve [0,0,0,0]
+            topExternal FALSE
+            rightExternal FALSE
+            bottomExternal FALSE
+            leftExternal FALSE
             start FALSE
             trap FALSE
             checkpoint FALSE
@@ -906,26 +841,21 @@
             yScale 0.4
             zScale 0.4
             tileColor 0.635 0.635 0.635
-            room 2
+            room 4
           }
         
-        DEF TILE halfTile {
+        DEF TILE worldTile {
             xPos 2
             zPos 7
             floor TRUE
             topWall 0
             rightWall 0
-            bottomWall 0
+            bottomWall 3
             leftWall 0
-            tile1Walls [ 0, 0, 0, 0 ]
-            tile2Walls [ 0, 0, 0, 0 ]
-            tile3Walls [ 0, 0, 0, 0 ]
-            tile4Walls [ 0, 0, 0, 0 ]
-            tile1External [ FALSE, FALSE, FALSE, FALSE ]
-            tile2External [ FALSE, FALSE, FALSE, FALSE ]
-            tile3External [ FALSE, FALSE, FALSE, FALSE ]
-            tile4External [ FALSE, FALSE, FALSE, FALSE ]
-            curve [0,0,0,0]
+            topExternal FALSE
+            rightExternal FALSE
+            bottomExternal FALSE
+            leftExternal FALSE
             start FALSE
             trap FALSE
             checkpoint FALSE
@@ -937,26 +867,21 @@
             yScale 0.4
             zScale 0.4
             tileColor 0.635 0.635 0.635
-            room 2
+            room 1
           }
         
-        DEF TILE halfTile {
+        DEF TILE worldTile {
             xPos 2
             zPos 8
             floor TRUE
             topWall 0
-            rightWall 0
-            bottomWall 0
+            rightWall 6
+            bottomWall 15
             leftWall 0
-            tile1Walls [ 0, 0, 0, 0 ]
-            tile2Walls [ 0, 0, 0, 0 ]
-            tile3Walls [ 0, 0, 0, 0 ]
-            tile4Walls [ 0, 0, 0, 0 ]
-            tile1External [ FALSE, FALSE, FALSE, FALSE ]
-            tile2External [ FALSE, FALSE, FALSE, FALSE ]
-            tile3External [ FALSE, FALSE, FALSE, FALSE ]
-            tile4External [ FALSE, FALSE, FALSE, FALSE ]
-            curve [0,0,0,0]
+            topExternal FALSE
+            rightExternal FALSE
+            bottomExternal FALSE
+            leftExternal FALSE
             start FALSE
             trap FALSE
             checkpoint FALSE
@@ -968,106 +893,13 @@
             yScale 0.4
             zScale 0.4
             tileColor 0.635 0.635 0.635
-            room 2
-          }
-        
-        DEF TILE halfTile {
-            xPos 2
-            zPos 9
-            floor TRUE
-            topWall 0
-            rightWall 0
-            bottomWall 0
-            leftWall 0
-            tile1Walls [ 0, 0, 0, 0 ]
-            tile2Walls [ 0, 0, 0, 0 ]
-            tile3Walls [ 0, 0, 0, 0 ]
-            tile4Walls [ 0, 0, 0, 0 ]
-            tile1External [ FALSE, FALSE, FALSE, FALSE ]
-            tile2External [ FALSE, FALSE, FALSE, FALSE ]
-            tile3External [ FALSE, FALSE, FALSE, FALSE ]
-            tile4External [ FALSE, FALSE, FALSE, FALSE ]
-            curve [0,0,0,0]
-            start FALSE
-            trap FALSE
-            checkpoint FALSE
-            swamp FALSE
-            width 12
-            height 12
-            id "33"
-            xScale 0.4
-            yScale 0.4
-            zScale 0.4
-            tileColor 0.635 0.635 0.635
-            room 2
-          }
-        
-        DEF TILE halfTile {
-            xPos 2
-            zPos 10
-            floor TRUE
-            topWall 0
-            rightWall 3
-            bottomWall 3
-            leftWall 0
-            tile1Walls [ 0, 0, 0, 0 ]
-            tile2Walls [ 0, 0, 0, 0 ]
-            tile3Walls [ 0, 0, 0, 0 ]
-            tile4Walls [ 0, 0, 0, 0 ]
-            tile1External [ FALSE, FALSE, FALSE, FALSE ]
-            tile2External [ FALSE, FALSE, FALSE, FALSE ]
-            tile3External [ FALSE, FALSE, FALSE, FALSE ]
-            tile4External [ FALSE, FALSE, FALSE, FALSE ]
-            curve [0,0,0,0]
-            start FALSE
-            trap FALSE
-            checkpoint FALSE
-            swamp FALSE
-            width 12
-            height 12
-            id "34"
-            xScale 0.4
-            yScale 0.4
-            zScale 0.4
-            tileColor 0.635 0.635 0.635
-            room 2
-          }
-        
-        DEF TILE halfTile {
-            xPos 2
-            zPos 11
-            floor TRUE
-            topWall 0
-            rightWall 0
-            bottomWall 1
-            leftWall 0
-            tile1Walls [ 0, 0, 0, 0 ]
-            tile2Walls [ 0, 0, 0, 0 ]
-            tile3Walls [ 0, 0, 0, 0 ]
-            tile4Walls [ 0, 0, 0, 0 ]
-            tile1External [ FALSE, FALSE, FALSE, FALSE ]
-            tile2External [ FALSE, FALSE, FALSE, FALSE ]
-            tile3External [ FALSE, FALSE, TRUE, FALSE ]
-            tile4External [ FALSE, FALSE, TRUE, FALSE ]
-            curve [0,0,0,0]
-            start FALSE
-            trap FALSE
-            checkpoint TRUE
-            swamp FALSE
-            width 12
-            height 12
-            id "35"
-            xScale 0.4
-            yScale 0.4
-            zScale 0.4
-            tileColor 0.635 0.635 0.635
-            room 2
+            room 1
           }
         
         DEF TILE worldTile {
-            xPos 3
-            zPos 0
-            floor FALSE
+            xPos 2
+            zPos 9
+            floor TRUE
             topWall 0
             rightWall 0
             bottomWall 0
@@ -1082,7 +914,59 @@
             swamp FALSE
             width 12
             height 12
-            id "36"
+            id "33"
+            xScale 0.4
+            yScale 0.4
+            zScale 0.4
+            tileColor 0.635 0.635 0.635
+            room 1
+          }
+        
+        DEF TILE worldTile {
+            xPos 2
+            zPos 10
+            floor TRUE
+            topWall 0
+            rightWall 0
+            bottomWall 0
+            leftWall 0
+            topExternal FALSE
+            rightExternal FALSE
+            bottomExternal FALSE
+            leftExternal FALSE
+            start FALSE
+            trap FALSE
+            checkpoint FALSE
+            swamp FALSE
+            width 12
+            height 12
+            id "34"
+            xScale 0.4
+            yScale 0.4
+            zScale 0.4
+            tileColor 0.635 0.635 0.635
+            room 1
+          }
+        
+        DEF TILE worldTile {
+            xPos 2
+            zPos 11
+            floor TRUE
+            topWall 0
+            rightWall 6
+            bottomWall 3
+            leftWall 0
+            topExternal FALSE
+            rightExternal TRUE
+            bottomExternal TRUE
+            leftExternal FALSE
+            start FALSE
+            trap FALSE
+            checkpoint FALSE
+            swamp TRUE
+            width 12
+            height 12
+            id "35"
             xScale 0.4
             yScale 0.4
             zScale 0.4
@@ -1092,11 +976,37 @@
         
         DEF TILE worldTile {
             xPos 3
+            zPos 0
+            floor TRUE
+            topWall 6
+            rightWall 2
+            bottomWall 0
+            leftWall 0
+            topExternal TRUE
+            rightExternal FALSE
+            bottomExternal FALSE
+            leftExternal FALSE
+            start FALSE
+            trap FALSE
+            checkpoint FALSE
+            swamp FALSE
+            width 12
+            height 12
+            id "36"
+            xScale 0.4
+            yScale 0.4
+            zScale 0.4
+            tileColor 0.635 0.635 0.635
+            room 4
+          }
+        
+        DEF TILE worldTile {
+            xPos 3
             zPos 1
-            floor FALSE
+            floor TRUE
             topWall 0
-            rightWall 0
-            bottomWall 5
+            rightWall 1
+            bottomWall 0
             leftWall 0
             topExternal FALSE
             rightExternal FALSE
@@ -1113,7 +1023,7 @@
             yScale 0.4
             zScale 0.4
             tileColor 0.635 0.635 0.635
-            room 1
+            room 4
           }
         
         DEF TILE worldTile {
@@ -1121,10 +1031,10 @@
             zPos 2
             floor TRUE
             topWall 0
-            rightWall 0
-            bottomWall 15
+            rightWall 1
+            bottomWall 0
             leftWall 0
-            topExternal TRUE
+            topExternal FALSE
             rightExternal FALSE
             bottomExternal FALSE
             leftExternal FALSE
@@ -1138,8 +1048,8 @@
             xScale 0.4
             yScale 0.4
             zScale 0.4
-            tileColor 0.03137254901960784 0.8352941176470589 0.03137254901960784 
-            room 1
+            tileColor 0.635 0.635 0.635
+            room 4
           }
         
         DEF TILE worldTile {
@@ -1147,7 +1057,7 @@
             zPos 3
             floor TRUE
             topWall 0
-            rightWall 6
+            rightWall 1
             bottomWall 0
             leftWall 0
             topExternal FALSE
@@ -1165,7 +1075,7 @@
             yScale 0.4
             zScale 0.4
             tileColor 0.635 0.635 0.635
-            room 1
+            room 4
           }
         
         DEF TILE worldTile {
@@ -1173,7 +1083,7 @@
             zPos 4
             floor TRUE
             topWall 0
-            rightWall 6
+            rightWall 1
             bottomWall 0
             leftWall 0
             topExternal FALSE
@@ -1191,7 +1101,7 @@
             yScale 0.4
             zScale 0.4
             tileColor 0.635 0.635 0.635
-            room 1
+            room 4
           }
         
         DEF TILE worldTile {
@@ -1199,7 +1109,7 @@
             zPos 5
             floor TRUE
             topWall 0
-            rightWall 6
+            rightWall 1
             bottomWall 0
             leftWall 0
             topExternal FALSE
@@ -1216,27 +1126,22 @@
             xScale 0.4
             yScale 0.4
             zScale 0.4
-            tileColor 0.10196078431372549 0.10196078431372549 0.9019607843137255 
-            room 1
+            tileColor 0.635 0.635 0.635
+            room 4
           }
         
-        DEF TILE halfTile {
+        DEF TILE worldTile {
             xPos 3
             zPos 6
             floor TRUE
             topWall 0
             rightWall 0
-            bottomWall 0
+            bottomWall 1
             leftWall 0
-            tile1Walls [ 0, 0, 0, 0 ]
-            tile2Walls [ 0, 0, 0, 0 ]
-            tile3Walls [ 0, 0, 0, 0 ]
-            tile4Walls [ 0, 0, 0, 0 ]
-            tile1External [ FALSE, FALSE, FALSE, FALSE ]
-            tile2External [ FALSE, FALSE, FALSE, FALSE ]
-            tile3External [ FALSE, FALSE, FALSE, FALSE ]
-            tile4External [ FALSE, FALSE, FALSE, FALSE ]
-            curve [0,0,0,0]
+            topExternal FALSE
+            rightExternal FALSE
+            bottomExternal FALSE
+            leftExternal FALSE
             start FALSE
             trap FALSE
             checkpoint FALSE
@@ -1248,28 +1153,23 @@
             yScale 0.4
             zScale 0.4
             tileColor 0.635 0.635 0.635
-            room 2
+            room 4
           }
         
-        DEF TILE halfTile {
+        DEF TILE worldTile {
             xPos 3
             zPos 7
-            floor FALSE
+            floor TRUE
             topWall 0
             rightWall 0
             bottomWall 0
             leftWall 0
-            tile1Walls [ 0, 0, 0, 0 ]
-            tile2Walls [ 0, 0, 0, 0 ]
-            tile3Walls [ 0, 0, 0, 0 ]
-            tile4Walls [ 0, 0, 0, 0 ]
-            tile1External [ FALSE, FALSE, FALSE, FALSE ]
-            tile2External [ FALSE, FALSE, FALSE, FALSE ]
-            tile3External [ FALSE, FALSE, FALSE, FALSE ]
-            tile4External [ FALSE, FALSE, FALSE, FALSE ]
-            curve [0,0,0,0]
+            topExternal FALSE
+            rightExternal FALSE
+            bottomExternal FALSE
+            leftExternal FALSE
             start FALSE
-            trap TRUE
+            trap FALSE
             checkpoint FALSE
             swamp FALSE
             width 12
@@ -1278,27 +1178,22 @@
             xScale 0.4
             yScale 0.4
             zScale 0.4
-            tileColor 0.635 0.635 0.635
-            room 2
+            tileColor 0.10196078431372549 0.10196078431372549 0.9019607843137255 
+            room 1
           }
         
-        DEF TILE halfTile {
+        DEF TILE worldTile {
             xPos 3
             zPos 8
             floor TRUE
             topWall 0
-            rightWall 0
+            rightWall 2
             bottomWall 0
             leftWall 0
-            tile1Walls [ 0, 0, 0, 0 ]
-            tile2Walls [ 0, 0, 0, 0 ]
-            tile3Walls [ 0, 0, 0, 0 ]
-            tile4Walls [ 0, 0, 0, 0 ]
-            tile1External [ FALSE, FALSE, FALSE, FALSE ]
-            tile2External [ FALSE, FALSE, FALSE, FALSE ]
-            tile3External [ FALSE, FALSE, FALSE, FALSE ]
-            tile4External [ FALSE, FALSE, FALSE, FALSE ]
-            curve [0,0,0,0]
+            topExternal FALSE
+            rightExternal FALSE
+            bottomExternal FALSE
+            leftExternal FALSE
             start FALSE
             trap FALSE
             checkpoint FALSE
@@ -1310,29 +1205,24 @@
             yScale 0.4
             zScale 0.4
             tileColor 0.635 0.635 0.635
-            room 2
+            room 1
           }
         
-        DEF TILE halfTile {
+        DEF TILE worldTile {
             xPos 3
             zPos 9
             floor TRUE
             topWall 0
-            rightWall 6
+            rightWall 1
             bottomWall 0
             leftWall 0
-            tile1Walls [ 0, 0, 0, 0 ]
-            tile2Walls [ 0, 0, 0, 0 ]
-            tile3Walls [ 0, 0, 0, 0 ]
-            tile4Walls [ 0, 0, 0, 0 ]
-            tile1External [ FALSE, FALSE, FALSE, FALSE ]
-            tile2External [ FALSE, FALSE, FALSE, FALSE ]
-            tile3External [ FALSE, FALSE, FALSE, FALSE ]
-            tile4External [ FALSE, FALSE, FALSE, FALSE ]
-            curve [0,0,0,0]
+            topExternal FALSE
+            rightExternal FALSE
+            bottomExternal FALSE
+            leftExternal FALSE
             start FALSE
             trap FALSE
-            checkpoint FALSE
+            checkpoint TRUE
             swamp FALSE
             width 12
             height 12
@@ -1341,26 +1231,21 @@
             yScale 0.4
             zScale 0.4
             tileColor 0.635 0.635 0.635
-            room 2
+            room 1
           }
         
-        DEF TILE halfTile {
+        DEF TILE worldTile {
             xPos 3
             zPos 10
             floor TRUE
             topWall 0
-            rightWall 0
-            bottomWall 0
+            rightWall 3
+            bottomWall 15
             leftWall 0
-            tile1Walls [ 0, 0, 0, 0 ]
-            tile2Walls [ 0, 0, 0, 0 ]
-            tile3Walls [ 0, 0, 0, 0 ]
-            tile4Walls [ 0, 0, 0, 0 ]
-            tile1External [ FALSE, FALSE, FALSE, FALSE ]
-            tile2External [ FALSE, FALSE, FALSE, FALSE ]
-            tile3External [ FALSE, FALSE, FALSE, FALSE ]
-            tile4External [ FALSE, FALSE, FALSE, FALSE ]
-            curve [0,0,0,0]
+            topExternal FALSE
+            rightExternal FALSE
+            bottomExternal TRUE
+            leftExternal FALSE
             start FALSE
             trap FALSE
             checkpoint FALSE
@@ -1372,26 +1257,21 @@
             yScale 0.4
             zScale 0.4
             tileColor 0.635 0.635 0.635
-            room 2
+            room 1
           }
         
-        DEF TILE halfTile {
+        DEF TILE worldTile {
             xPos 3
             zPos 11
-            floor TRUE
+            floor FALSE
             topWall 0
             rightWall 0
-            bottomWall 1
+            bottomWall 0
             leftWall 0
-            tile1Walls [ 0, 0, 0, 0 ]
-            tile2Walls [ 0, 0, 0, 0 ]
-            tile3Walls [ 0, 0, 0, 0 ]
-            tile4Walls [ 0, 0, 0, 0 ]
-            tile1External [ FALSE, FALSE, FALSE, FALSE ]
-            tile2External [ FALSE, FALSE, FALSE, FALSE ]
-            tile3External [ FALSE, FALSE, TRUE, FALSE ]
-            tile4External [ FALSE, FALSE, TRUE, FALSE ]
-            curve [0,0,0,0]
+            topExternal FALSE
+            rightExternal FALSE
+            bottomExternal FALSE
+            leftExternal FALSE
             start FALSE
             trap FALSE
             checkpoint FALSE
@@ -1403,14 +1283,14 @@
             yScale 0.4
             zScale 0.4
             tileColor 0.635 0.635 0.635
-            room 2
+            room 1
           }
         
         DEF TILE halfTile {
             xPos 4
             zPos 0
-            floor FALSE
-            topWall 0
+            floor TRUE
+            topWall 2
             rightWall 0
             bottomWall 0
             leftWall 0
@@ -1418,8 +1298,8 @@
             tile2Walls [ 0, 0, 0, 0 ]
             tile3Walls [ 0, 0, 0, 0 ]
             tile4Walls [ 0, 0, 0, 0 ]
-            tile1External [ FALSE, FALSE, FALSE, FALSE ]
-            tile2External [ FALSE, FALSE, FALSE, FALSE ]
+            tile1External [ TRUE, FALSE, FALSE, FALSE ]
+            tile2External [ TRUE, FALSE, FALSE, FALSE ]
             tile3External [ FALSE, FALSE, FALSE, FALSE ]
             tile4External [ FALSE, FALSE, FALSE, FALSE ]
             curve [0,0,0,0]
@@ -1434,145 +1314,15 @@
             yScale 0.4
             zScale 0.4
             tileColor 0.635 0.635 0.635
-            room 2
-          }
-        
-        DEF TILE worldTile {
-            xPos 4
-            zPos 1
-            floor FALSE
-            topWall 0
-            rightWall 0
-            bottomWall 1
-            leftWall 0
-            topExternal FALSE
-            rightExternal FALSE
-            bottomExternal FALSE
-            leftExternal FALSE
-            start FALSE
-            trap FALSE
-            checkpoint FALSE
-            swamp FALSE
-            width 12
-            height 12
-            id "49"
-            xScale 0.4
-            yScale 0.4
-            zScale 0.4
-            tileColor 0.635 0.635 0.635
-            room 1
-          }
-        
-        DEF TILE worldTile {
-            xPos 4
-            zPos 2
-            floor TRUE
-            topWall 0
-            rightWall 0
-            bottomWall 0
-            leftWall 0
-            topExternal TRUE
-            rightExternal FALSE
-            bottomExternal FALSE
-            leftExternal FALSE
-            start FALSE
-            trap FALSE
-            checkpoint FALSE
-            swamp FALSE
-            width 12
-            height 12
-            id "50"
-            xScale 0.4
-            yScale 0.4
-            zScale 0.4
-            tileColor 0.635 0.635 0.635
-            room 4
-          }
-        
-        DEF TILE worldTile {
-            xPos 4
-            zPos 3
-            floor TRUE
-            topWall 0
-            rightWall 0
-            bottomWall 5
-            leftWall 0
-            topExternal FALSE
-            rightExternal FALSE
-            bottomExternal FALSE
-            leftExternal FALSE
-            start FALSE
-            trap FALSE
-            checkpoint TRUE
-            swamp FALSE
-            width 12
-            height 12
-            id "51"
-            xScale 0.4
-            yScale 0.4
-            zScale 0.4
-            tileColor 0.635 0.635 0.635
-            room 4
-          }
-        
-        DEF TILE worldTile {
-            xPos 4
-            zPos 4
-            floor TRUE
-            topWall 0
-            rightWall 0
-            bottomWall 5
-            leftWall 0
-            topExternal FALSE
-            rightExternal FALSE
-            bottomExternal FALSE
-            leftExternal FALSE
-            start FALSE
-            trap FALSE
-            checkpoint FALSE
-            swamp FALSE
-            width 12
-            height 12
-            id "52"
-            xScale 0.4
-            yScale 0.4
-            zScale 0.4
-            tileColor 0.635 0.635 0.635
-            room 4
-          }
-        
-        DEF TILE worldTile {
-            xPos 4
-            zPos 5
-            floor TRUE
-            topWall 0
-            rightWall 0
-            bottomWall 15
-            leftWall 0
-            topExternal FALSE
-            rightExternal FALSE
-            bottomExternal FALSE
-            leftExternal FALSE
-            start FALSE
-            trap FALSE
-            checkpoint FALSE
-            swamp FALSE
-            width 12
-            height 12
-            id "53"
-            xScale 0.4
-            yScale 0.4
-            zScale 0.4
-            tileColor 0.635 0.635 0.635
-            room 4
+            room 3
           }
         
         DEF TILE halfTile {
             xPos 4
-            zPos 6
+            zPos 1
             floor TRUE
             topWall 0
-            rightWall 6
+            rightWall 0
             bottomWall 0
             leftWall 0
             tile1Walls [ 0, 0, 0, 0 ]
@@ -1590,17 +1340,17 @@
             swamp FALSE
             width 12
             height 12
-            id "54"
+            id "49"
             xScale 0.4
             yScale 0.4
             zScale 0.4
             tileColor 0.635 0.635 0.635
-            room 2
+            room 3
           }
         
         DEF TILE halfTile {
             xPos 4
-            zPos 7
+            zPos 2
             floor TRUE
             topWall 0
             rightWall 0
@@ -1609,7 +1359,157 @@
             tile1Walls [ 0, 0, 0, 0 ]
             tile2Walls [ 0, 0, 0, 0 ]
             tile3Walls [ 0, 0, 0, 0 ]
-            tile4Walls [ 0, 0, 1, 0 ]
+            tile4Walls [ 0, 0, 0, 0 ]
+            tile1External [ FALSE, FALSE, FALSE, FALSE ]
+            tile2External [ FALSE, FALSE, FALSE, FALSE ]
+            tile3External [ FALSE, FALSE, FALSE, FALSE ]
+            tile4External [ FALSE, FALSE, FALSE, FALSE ]
+            curve [4,1,3,2]
+            start FALSE
+            trap FALSE
+            checkpoint FALSE
+            swamp FALSE
+            width 12
+            height 12
+            id "50"
+            xScale 0.4
+            yScale 0.4
+            zScale 0.4
+            tileColor 0.635 0.635 0.635
+            room 3
+          }
+        
+        DEF TILE halfTile {
+            xPos 4
+            zPos 3
+            floor TRUE
+            topWall 0
+            rightWall 0
+            bottomWall 0
+            leftWall 0
+            tile1Walls [ 0, 0, 0, 0 ]
+            tile2Walls [ 0, 0, 0, 0 ]
+            tile3Walls [ 0, 0, 0, 0 ]
+            tile4Walls [ 0, 0, 0, 0 ]
+            tile1External [ FALSE, FALSE, FALSE, FALSE ]
+            tile2External [ FALSE, FALSE, FALSE, FALSE ]
+            tile3External [ FALSE, FALSE, FALSE, FALSE ]
+            tile4External [ FALSE, FALSE, FALSE, FALSE ]
+            curve [0,0,0,0]
+            start FALSE
+            trap FALSE
+            checkpoint FALSE
+            swamp FALSE
+            width 12
+            height 12
+            id "51"
+            xScale 0.4
+            yScale 0.4
+            zScale 0.4
+            tileColor 0.635 0.635 0.635
+            room 3
+          }
+        
+        DEF TILE halfTile {
+            xPos 4
+            zPos 4
+            floor TRUE
+            topWall 0
+            rightWall 0
+            bottomWall 0
+            leftWall 0
+            tile1Walls [ 0, 0, 0, 0 ]
+            tile2Walls [ 0, 0, 0, 0 ]
+            tile3Walls [ 0, 0, 0, 0 ]
+            tile4Walls [ 0, 0, 0, 0 ]
+            tile1External [ FALSE, FALSE, FALSE, FALSE ]
+            tile2External [ FALSE, FALSE, FALSE, FALSE ]
+            tile3External [ FALSE, FALSE, FALSE, FALSE ]
+            tile4External [ FALSE, FALSE, FALSE, FALSE ]
+            curve [0,0,0,0]
+            start FALSE
+            trap FALSE
+            checkpoint FALSE
+            swamp FALSE
+            width 12
+            height 12
+            id "52"
+            xScale 0.4
+            yScale 0.4
+            zScale 0.4
+            tileColor 0.635 0.635 0.635
+            room 3
+          }
+        
+        DEF TILE halfTile {
+            xPos 4
+            zPos 5
+            floor TRUE
+            topWall 0
+            rightWall 0
+            bottomWall 0
+            leftWall 0
+            tile1Walls [ 0, 0, 0, 0 ]
+            tile2Walls [ 0, 0, 0, 0 ]
+            tile3Walls [ 0, 0, 0, 0 ]
+            tile4Walls [ 0, 0, 0, 0 ]
+            tile1External [ FALSE, FALSE, FALSE, FALSE ]
+            tile2External [ FALSE, FALSE, FALSE, FALSE ]
+            tile3External [ FALSE, FALSE, FALSE, FALSE ]
+            tile4External [ FALSE, FALSE, FALSE, FALSE ]
+            curve [0,0,0,0]
+            start FALSE
+            trap FALSE
+            checkpoint FALSE
+            swamp FALSE
+            width 12
+            height 12
+            id "53"
+            xScale 0.4
+            yScale 0.4
+            zScale 0.4
+            tileColor 0.635 0.635 0.635
+            room 3
+          }
+        
+        DEF TILE worldTile {
+            xPos 4
+            zPos 6
+            floor TRUE
+            topWall 0
+            rightWall 0
+            bottomWall 1
+            leftWall 0
+            topExternal FALSE
+            rightExternal FALSE
+            bottomExternal FALSE
+            leftExternal FALSE
+            start FALSE
+            trap FALSE
+            checkpoint FALSE
+            swamp FALSE
+            width 12
+            height 12
+            id "54"
+            xScale 0.4
+            yScale 0.4
+            zScale 0.4
+            tileColor 0.9058823529411765 0.10196078431372549 0.10196078431372549 
+            room 1
+          }
+        
+        DEF TILE halfTile {
+            xPos 4
+            zPos 7
+            floor TRUE
+            topWall 0
+            rightWall 0
+            bottomWall 15
+            leftWall 0
+            tile1Walls [ 0, 0, 0, 0 ]
+            tile2Walls [ 0, 0, 0, 0 ]
+            tile3Walls [ 0, 0, 0, 0 ]
+            tile4Walls [ 0, 0, 0, 0 ]
             tile1External [ FALSE, FALSE, FALSE, FALSE ]
             tile2External [ FALSE, FALSE, FALSE, FALSE ]
             tile3External [ FALSE, FALSE, FALSE, FALSE ]
@@ -1634,8 +1534,8 @@
             zPos 8
             floor TRUE
             topWall 0
-            rightWall 0
-            bottomWall 5
+            rightWall 6
+            bottomWall 0
             leftWall 0
             tile1Walls [ 0, 0, 0, 0 ]
             tile2Walls [ 0, 0, 0, 0 ]
@@ -1666,7 +1566,7 @@
             floor TRUE
             topWall 0
             rightWall 0
-            bottomWall 15
+            bottomWall 0
             leftWall 0
             tile1Walls [ 0, 0, 0, 0 ]
             tile2Walls [ 0, 0, 0, 0 ]
@@ -1688,7 +1588,7 @@
             yScale 0.4
             zScale 0.4
             tileColor 0.635 0.635 0.635
-            room 3
+            room 2
           }
         
         DEF TILE halfTile {
@@ -1696,8 +1596,8 @@
             zPos 10
             floor TRUE
             topWall 0
-            rightWall 6
-            bottomWall 3
+            rightWall 0
+            bottomWall 2
             leftWall 0
             tile1Walls [ 0, 0, 0, 0 ]
             tile2Walls [ 0, 0, 0, 0 ]
@@ -1705,8 +1605,8 @@
             tile4Walls [ 0, 0, 0, 0 ]
             tile1External [ FALSE, FALSE, FALSE, FALSE ]
             tile2External [ FALSE, FALSE, FALSE, FALSE ]
-            tile3External [ FALSE, FALSE, FALSE, FALSE ]
-            tile4External [ FALSE, FALSE, FALSE, FALSE ]
+            tile3External [ FALSE, FALSE, TRUE, FALSE ]
+            tile4External [ FALSE, FALSE, TRUE, FALSE ]
             curve [0,0,0,0]
             start FALSE
             trap FALSE
@@ -1725,14 +1625,14 @@
         DEF TILE worldTile {
             xPos 4
             zPos 11
-            floor TRUE
+            floor FALSE
             topWall 0
             rightWall 0
-            bottomWall 1
+            bottomWall 0
             leftWall 0
             topExternal FALSE
             rightExternal FALSE
-            bottomExternal TRUE
+            bottomExternal FALSE
             leftExternal FALSE
             start FALSE
             trap FALSE
@@ -1744,22 +1644,27 @@
             xScale 0.4
             yScale 0.4
             zScale 0.4
-            tileColor 0.30196078431372547 0.10196078431372549 0.6 
+            tileColor 0.635 0.635 0.635
             room 1
           }
         
-        DEF TILE worldTile {
+        DEF TILE halfTile {
             xPos 5
             zPos 0
-            floor FALSE
-            topWall 0
-            rightWall 6
+            floor TRUE
+            topWall 3
+            rightWall 2
             bottomWall 0
             leftWall 0
-            topExternal FALSE
-            rightExternal FALSE
-            bottomExternal FALSE
-            leftExternal FALSE
+            tile1Walls [ 0, 0, 0, 0 ]
+            tile2Walls [ 0, 0, 0, 0 ]
+            tile3Walls [ 0, 0, 0, 0 ]
+            tile4Walls [ 0, 0, 0, 0 ]
+            tile1External [ TRUE, FALSE, FALSE, FALSE ]
+            tile2External [ TRUE, TRUE, FALSE, FALSE ]
+            tile3External [ FALSE, FALSE, FALSE, FALSE ]
+            tile4External [ FALSE, TRUE, FALSE, FALSE ]
+            curve [0,0,0,0]
             start FALSE
             trap FALSE
             checkpoint FALSE
@@ -1771,21 +1676,26 @@
             yScale 0.4
             zScale 0.4
             tileColor 0.635 0.635 0.635
-            room 1
+            room 3
           }
         
-        DEF TILE worldTile {
+        DEF TILE halfTile {
             xPos 5
             zPos 1
-            floor FALSE
+            floor TRUE
             topWall 0
-            rightWall 6
-            bottomWall 3
+            rightWall 1
+            bottomWall 0
             leftWall 0
-            topExternal FALSE
-            rightExternal FALSE
-            bottomExternal FALSE
-            leftExternal FALSE
+            tile1Walls [ 0, 0, 0, 0 ]
+            tile2Walls [ 0, 0, 0, 0 ]
+            tile3Walls [ 0, 0, 0, 0 ]
+            tile4Walls [ 0, 0, 0, 0 ]
+            tile1External [ FALSE, FALSE, FALSE, FALSE ]
+            tile2External [ FALSE, TRUE, FALSE, FALSE ]
+            tile3External [ FALSE, FALSE, FALSE, FALSE ]
+            tile4External [ FALSE, TRUE, FALSE, FALSE ]
+            curve [0,0,0,0]
             start FALSE
             trap FALSE
             checkpoint FALSE
@@ -1797,21 +1707,26 @@
             yScale 0.4
             zScale 0.4
             tileColor 0.635 0.635 0.635
-            room 1
+            room 3
           }
         
-        DEF TILE worldTile {
+        DEF TILE halfTile {
             xPos 5
             zPos 2
             floor TRUE
             topWall 0
-            rightWall 0
+            rightWall 3
             bottomWall 0
             leftWall 0
-            topExternal TRUE
-            rightExternal FALSE
-            bottomExternal FALSE
-            leftExternal FALSE
+            tile1Walls [ 0, 0, 0, 0 ]
+            tile2Walls [ 0, 0, 0, 0 ]
+            tile3Walls [ 0, 0, 0, 0 ]
+            tile4Walls [ 0, 0, 0, 0 ]
+            tile1External [ FALSE, FALSE, FALSE, FALSE ]
+            tile2External [ FALSE, TRUE, FALSE, FALSE ]
+            tile3External [ FALSE, FALSE, FALSE, FALSE ]
+            tile4External [ FALSE, TRUE, FALSE, FALSE ]
+            curve [0,0,0,0]
             start FALSE
             trap FALSE
             checkpoint FALSE
@@ -1823,21 +1738,26 @@
             yScale 0.4
             zScale 0.4
             tileColor 0.635 0.635 0.635
-            room 4
+            room 3
           }
         
-        DEF TILE worldTile {
+        DEF TILE halfTile {
             xPos 5
             zPos 3
             floor TRUE
             topWall 0
             rightWall 0
-            bottomWall 1
+            bottomWall 0
             leftWall 0
-            topExternal FALSE
-            rightExternal FALSE
-            bottomExternal FALSE
-            leftExternal FALSE
+            tile1Walls [ 0, 0, 0, 0 ]
+            tile2Walls [ 0, 0, 0, 0 ]
+            tile3Walls [ 0, 0, 0, 0 ]
+            tile4Walls [ 0, 0, 0, 0 ]
+            tile1External [ FALSE, FALSE, FALSE, FALSE ]
+            tile2External [ FALSE, FALSE, FALSE, FALSE ]
+            tile3External [ FALSE, FALSE, FALSE, FALSE ]
+            tile4External [ FALSE, FALSE, FALSE, FALSE ]
+            curve [0,0,0,0]
             start FALSE
             trap FALSE
             checkpoint FALSE
@@ -1849,25 +1769,30 @@
             yScale 0.4
             zScale 0.4
             tileColor 0.635 0.635 0.635
-            room 4
+            room 3
           }
         
-        DEF TILE worldTile {
+        DEF TILE halfTile {
             xPos 5
             zPos 4
             floor TRUE
             topWall 0
-            rightWall 0
+            rightWall 6
             bottomWall 0
             leftWall 0
-            topExternal FALSE
-            rightExternal FALSE
-            bottomExternal FALSE
-            leftExternal FALSE
+            tile1Walls [ 0, 0, 0, 0 ]
+            tile2Walls [ 0, 0, 0, 0 ]
+            tile3Walls [ 0, 0, 0, 0 ]
+            tile4Walls [ 0, 0, 0, 0 ]
+            tile1External [ FALSE, FALSE, FALSE, FALSE ]
+            tile2External [ FALSE, FALSE, FALSE, FALSE ]
+            tile3External [ FALSE, FALSE, FALSE, FALSE ]
+            tile4External [ FALSE, FALSE, FALSE, FALSE ]
+            curve [0,0,0,0]
             start FALSE
             trap FALSE
             checkpoint FALSE
-            swamp FALSE
+            swamp TRUE
             width 12
             height 12
             id "64"
@@ -1875,25 +1800,30 @@
             yScale 0.4
             zScale 0.4
             tileColor 0.635 0.635 0.635
-            room 4
+            room 3
           }
         
-        DEF TILE worldTile {
+        DEF TILE halfTile {
             xPos 5
             zPos 5
             floor TRUE
             topWall 0
-            rightWall 3
-            bottomWall 6
+            rightWall 0
+            bottomWall 0
             leftWall 0
-            topExternal FALSE
-            rightExternal FALSE
-            bottomExternal FALSE
-            leftExternal FALSE
+            tile1Walls [ 0, 0, 0, 0 ]
+            tile2Walls [ 0, 0, 0, 0 ]
+            tile3Walls [ 0, 0, 0, 0 ]
+            tile4Walls [ 0, 0, 0, 0 ]
+            tile1External [ FALSE, FALSE, FALSE, FALSE ]
+            tile2External [ FALSE, FALSE, FALSE, FALSE ]
+            tile3External [ FALSE, FALSE, FALSE, FALSE ]
+            tile4External [ FALSE, FALSE, FALSE, FALSE ]
+            curve [0,0,0,0]
             start FALSE
             trap FALSE
             checkpoint FALSE
-            swamp TRUE
+            swamp FALSE
             width 12
             height 12
             id "65"
@@ -1901,24 +1831,29 @@
             yScale 0.4
             zScale 0.4
             tileColor 0.635 0.635 0.635
-            room 4
+            room 3
           }
         
-        DEF TILE worldTile {
+        DEF TILE halfTile {
             xPos 5
             zPos 6
             floor TRUE
             topWall 0
             rightWall 0
-            bottomWall 15
+            bottomWall 1
             leftWall 0
-            topExternal FALSE
-            rightExternal FALSE
-            bottomExternal FALSE
-            leftExternal FALSE
+            tile1Walls [ 0, 0, 0, 0 ]
+            tile2Walls [ 0, 0, 0, 0 ]
+            tile3Walls [ 0, 0, 0, 0 ]
+            tile4Walls [ 0, 0, 0, 0 ]
+            tile1External [ FALSE, FALSE, FALSE, FALSE ]
+            tile2External [ FALSE, FALSE, FALSE, FALSE ]
+            tile3External [ FALSE, FALSE, FALSE, FALSE ]
+            tile4External [ FALSE, FALSE, FALSE, FALSE ]
+            curve [0,0,0,0]
             start FALSE
             trap FALSE
-            checkpoint FALSE
+            checkpoint TRUE
             swamp FALSE
             width 12
             height 12
@@ -1927,7 +1862,7 @@
             yScale 0.4
             zScale 0.4
             tileColor 0.635 0.635 0.635
-            room 4
+            room 3
           }
         
         DEF TILE halfTile {
@@ -1935,8 +1870,8 @@
             zPos 7
             floor TRUE
             topWall 0
-            rightWall 6
-            bottomWall 3
+            rightWall 0
+            bottomWall 0
             leftWall 0
             tile1Walls [ 0, 0, 0, 0 ]
             tile2Walls [ 0, 0, 0, 0 ]
@@ -1966,8 +1901,8 @@
             zPos 8
             floor TRUE
             topWall 0
-            rightWall 6
-            bottomWall 3
+            rightWall 0
+            bottomWall 15
             leftWall 0
             tile1Walls [ 0, 0, 0, 0 ]
             tile2Walls [ 0, 0, 0, 0 ]
@@ -1997,8 +1932,8 @@
             zPos 9
             floor TRUE
             topWall 0
-            rightWall 0
-            bottomWall 2
+            rightWall 6
+            bottomWall 3
             leftWall 0
             tile1Walls [ 0, 0, 0, 0 ]
             tile2Walls [ 0, 0, 0, 0 ]
@@ -2020,43 +1955,12 @@
             yScale 0.4
             zScale 0.4
             tileColor 0.635 0.635 0.635
-            room 3
+            room 2
           }
         
         DEF TILE halfTile {
             xPos 5
             zPos 10
-            floor TRUE
-            topWall 0
-            rightWall 0
-            bottomWall 0
-            leftWall 0
-            tile1Walls [ 0, 0, 0, 0 ]
-            tile2Walls [ 0, 0, 0, 0 ]
-            tile3Walls [ 0, 0, 0, 0 ]
-            tile4Walls [ 0, 0, 0, 0 ]
-            tile1External [ FALSE, FALSE, FALSE, FALSE ]
-            tile2External [ FALSE, FALSE, FALSE, FALSE ]
-            tile3External [ FALSE, FALSE, FALSE, FALSE ]
-            tile4External [ FALSE, FALSE, FALSE, FALSE ]
-            curve [0,0,0,0]
-            start FALSE
-            trap FALSE
-            checkpoint FALSE
-            swamp FALSE
-            width 12
-            height 12
-            id "70"
-            xScale 0.4
-            yScale 0.4
-            zScale 0.4
-            tileColor 0.635 0.635 0.635
-            room 3
-          }
-        
-        DEF TILE halfTile {
-            xPos 5
-            zPos 11
             floor TRUE
             topWall 0
             rightWall 0
@@ -2077,26 +1981,52 @@
             swamp FALSE
             width 12
             height 12
+            id "70"
+            xScale 0.4
+            yScale 0.4
+            zScale 0.4
+            tileColor 0.635 0.635 0.635
+            room 2
+          }
+        
+        DEF TILE worldTile {
+            xPos 5
+            zPos 11
+            floor FALSE
+            topWall 0
+            rightWall 0
+            bottomWall 0
+            leftWall 0
+            topExternal FALSE
+            rightExternal FALSE
+            bottomExternal FALSE
+            leftExternal FALSE
+            start FALSE
+            trap FALSE
+            checkpoint FALSE
+            swamp FALSE
+            width 12
+            height 12
             id "71"
             xScale 0.4
             yScale 0.4
             zScale 0.4
             tileColor 0.635 0.635 0.635
-            room 3
+            room 1
           }
         
         DEF TILE worldTile {
             xPos 6
             zPos 0
-            floor TRUE
-            topWall 1
-            rightWall 0
-            bottomWall 5
+            floor FALSE
+            topWall 0
+            rightWall 2
+            bottomWall 0
             leftWall 0
-            topExternal TRUE
+            topExternal FALSE
             rightExternal FALSE
             bottomExternal FALSE
-            leftExternal TRUE
+            leftExternal FALSE
             start FALSE
             trap FALSE
             checkpoint FALSE
@@ -2108,7 +2038,7 @@
             yScale 0.4
             zScale 0.4
             tileColor 0.635 0.635 0.635
-            room 4
+            room 1
           }
         
         DEF TILE worldTile {
@@ -2116,15 +2046,15 @@
             zPos 1
             floor FALSE
             topWall 0
-            rightWall 0
+            rightWall 3
             bottomWall 0
             leftWall 0
             topExternal FALSE
             rightExternal FALSE
             bottomExternal FALSE
-            leftExternal TRUE
+            leftExternal FALSE
             start FALSE
-            trap TRUE
+            trap FALSE
             checkpoint FALSE
             swamp FALSE
             width 12
@@ -2134,16 +2064,16 @@
             yScale 0.4
             zScale 0.4
             tileColor 0.635 0.635 0.635
-            room 4
+            room 1
           }
         
         DEF TILE worldTile {
             xPos 6
             zPos 2
-            floor TRUE
+            floor FALSE
             topWall 0
-            rightWall 0
-            bottomWall 0
+            rightWall 6
+            bottomWall 15
             leftWall 0
             topExternal FALSE
             rightExternal FALSE
@@ -2160,21 +2090,26 @@
             yScale 0.4
             zScale 0.4
             tileColor 0.635 0.635 0.635
-            room 4
+            room 1
           }
         
-        DEF TILE worldTile {
+        DEF TILE halfTile {
             xPos 6
             zPos 3
             floor TRUE
             topWall 0
             rightWall 0
-            bottomWall 0
+            bottomWall 5
             leftWall 0
-            topExternal FALSE
-            rightExternal FALSE
-            bottomExternal FALSE
-            leftExternal FALSE
+            tile1Walls [ 0, 0, 0, 0 ]
+            tile2Walls [ 0, 0, 0, 0 ]
+            tile3Walls [ 0, 0, 0, 0 ]
+            tile4Walls [ 0, 0, 0, 0 ]
+            tile1External [ TRUE, FALSE, FALSE, FALSE ]
+            tile2External [ TRUE, FALSE, FALSE, FALSE ]
+            tile3External [ FALSE, FALSE, FALSE, FALSE ]
+            tile4External [ FALSE, FALSE, FALSE, FALSE ]
+            curve [0,0,0,0]
             start FALSE
             trap FALSE
             checkpoint FALSE
@@ -2186,21 +2121,26 @@
             yScale 0.4
             zScale 0.4
             tileColor 0.635 0.635 0.635
-            room 4
+            room 3
           }
         
-        DEF TILE worldTile {
+        DEF TILE halfTile {
             xPos 6
             zPos 4
             floor TRUE
             topWall 0
             rightWall 0
-            bottomWall 0
+            bottomWall 5
             leftWall 0
-            topExternal FALSE
-            rightExternal FALSE
-            bottomExternal FALSE
-            leftExternal FALSE
+            tile1Walls [ 0, 0, 0, 0 ]
+            tile2Walls [ 0, 0, 0, 0 ]
+            tile3Walls [ 0, 0, 0, 0 ]
+            tile4Walls [ 0, 0, 0, 0 ]
+            tile1External [ FALSE, FALSE, FALSE, FALSE ]
+            tile2External [ FALSE, FALSE, FALSE, FALSE ]
+            tile3External [ FALSE, FALSE, FALSE, FALSE ]
+            tile4External [ FALSE, FALSE, FALSE, FALSE ]
+            curve [0,0,0,0]
             start FALSE
             trap FALSE
             checkpoint FALSE
@@ -2212,10 +2152,10 @@
             yScale 0.4
             zScale 0.4
             tileColor 0.635 0.635 0.635
-            room 4
+            room 3
           }
         
-        DEF TILE worldTile {
+        DEF TILE halfTile {
             xPos 6
             zPos 5
             floor TRUE
@@ -2223,10 +2163,15 @@
             rightWall 0
             bottomWall 0
             leftWall 0
-            topExternal FALSE
-            rightExternal FALSE
-            bottomExternal FALSE
-            leftExternal FALSE
+            tile1Walls [ 0, 0, 0, 0 ]
+            tile2Walls [ 0, 0, 0, 0 ]
+            tile3Walls [ 0, 0, 0, 0 ]
+            tile4Walls [ 0, 0, 0, 0 ]
+            tile1External [ FALSE, FALSE, FALSE, FALSE ]
+            tile2External [ FALSE, FALSE, FALSE, FALSE ]
+            tile3External [ FALSE, FALSE, FALSE, FALSE ]
+            tile4External [ FALSE, FALSE, FALSE, FALSE ]
+            curve [0,0,0,0]
             start FALSE
             trap FALSE
             checkpoint FALSE
@@ -2238,21 +2183,26 @@
             yScale 0.4
             zScale 0.4
             tileColor 0.635 0.635 0.635
-            room 4
+            room 3
           }
         
-        DEF TILE worldTile {
+        DEF TILE halfTile {
             xPos 6
             zPos 6
             floor TRUE
             topWall 0
             rightWall 0
-            bottomWall 0
+            bottomWall 1
             leftWall 0
-            topExternal FALSE
-            rightExternal FALSE
-            bottomExternal FALSE
-            leftExternal FALSE
+            tile1Walls [ 0, 0, 0, 0 ]
+            tile2Walls [ 0, 0, 0, 0 ]
+            tile3Walls [ 0, 0, 0, 0 ]
+            tile4Walls [ 0, 0, 0, 0 ]
+            tile1External [ FALSE, FALSE, FALSE, FALSE ]
+            tile2External [ FALSE, FALSE, FALSE, FALSE ]
+            tile3External [ FALSE, FALSE, FALSE, FALSE ]
+            tile4External [ FALSE, FALSE, FALSE, FALSE ]
+            curve [0,0,0,0]
             start FALSE
             trap FALSE
             checkpoint FALSE
@@ -2264,10 +2214,10 @@
             yScale 0.4
             zScale 0.4
             tileColor 0.635 0.635 0.635
-            room 4
+            room 3
           }
         
-        DEF TILE worldTile {
+        DEF TILE halfTile {
             xPos 6
             zPos 7
             floor TRUE
@@ -2275,10 +2225,15 @@
             rightWall 0
             bottomWall 0
             leftWall 0
-            topExternal FALSE
-            rightExternal FALSE
-            bottomExternal FALSE
-            leftExternal FALSE
+            tile1Walls [ 0, 0, 0, 0 ]
+            tile2Walls [ 0, 0, 0, 0 ]
+            tile3Walls [ 0, 0, 0, 0 ]
+            tile4Walls [ 0, 0, 0, 0 ]
+            tile1External [ FALSE, FALSE, FALSE, FALSE ]
+            tile2External [ FALSE, FALSE, FALSE, FALSE ]
+            tile3External [ FALSE, FALSE, FALSE, FALSE ]
+            tile4External [ FALSE, FALSE, FALSE, FALSE ]
+            curve [0,0,0,0]
             start FALSE
             trap FALSE
             checkpoint FALSE
@@ -2290,23 +2245,28 @@
             yScale 0.4
             zScale 0.4
             tileColor 0.635 0.635 0.635
-            room 4
+            room 2
           }
         
-        DEF TILE worldTile {
+        DEF TILE halfTile {
             xPos 6
             zPos 8
-            floor TRUE
+            floor FALSE
             topWall 0
             rightWall 0
-            bottomWall 2
+            bottomWall 0
             leftWall 0
-            topExternal FALSE
-            rightExternal FALSE
-            bottomExternal FALSE
-            leftExternal FALSE
+            tile1Walls [ 0, 0, 0, 0 ]
+            tile2Walls [ 0, 0, 0, 0 ]
+            tile3Walls [ 0, 0, 0, 0 ]
+            tile4Walls [ 0, 0, 0, 0 ]
+            tile1External [ FALSE, FALSE, FALSE, FALSE ]
+            tile2External [ FALSE, FALSE, FALSE, FALSE ]
+            tile3External [ FALSE, FALSE, FALSE, FALSE ]
+            tile4External [ FALSE, FALSE, FALSE, FALSE ]
+            curve [0,0,0,0]
             start FALSE
-            trap FALSE
+            trap TRUE
             checkpoint FALSE
             swamp FALSE
             width 12
@@ -2316,7 +2276,7 @@
             yScale 0.4
             zScale 0.4
             tileColor 0.635 0.635 0.635
-            room 4
+            room 2
           }
         
         DEF TILE halfTile {
@@ -2347,43 +2307,12 @@
             yScale 0.4
             zScale 0.4
             tileColor 0.635 0.635 0.635
-            room 3
+            room 2
           }
         
         DEF TILE halfTile {
             xPos 6
             zPos 10
-            floor TRUE
-            topWall 0
-            rightWall 0
-            bottomWall 0
-            leftWall 0
-            tile1Walls [ 0, 0, 0, 0 ]
-            tile2Walls [ 0, 0, 0, 0 ]
-            tile3Walls [ 0, 0, 0, 0 ]
-            tile4Walls [ 0, 0, 1, 0 ]
-            tile1External [ FALSE, FALSE, FALSE, FALSE ]
-            tile2External [ FALSE, FALSE, FALSE, FALSE ]
-            tile3External [ FALSE, FALSE, FALSE, FALSE ]
-            tile4External [ FALSE, FALSE, FALSE, FALSE ]
-            curve [0,0,0,0]
-            start FALSE
-            trap FALSE
-            checkpoint FALSE
-            swamp FALSE
-            width 12
-            height 12
-            id "82"
-            xScale 0.4
-            yScale 0.4
-            zScale 0.4
-            tileColor 0.635 0.635 0.635
-            room 3
-          }
-        
-        DEF TILE halfTile {
-            xPos 6
-            zPos 11
             floor TRUE
             topWall 0
             rightWall 0
@@ -2404,26 +2333,57 @@
             swamp FALSE
             width 12
             height 12
+            id "82"
+            xScale 0.4
+            yScale 0.4
+            zScale 0.4
+            tileColor 0.635 0.635 0.635
+            room 2
+          }
+        
+        DEF TILE worldTile {
+            xPos 6
+            zPos 11
+            floor FALSE
+            topWall 0
+            rightWall 0
+            bottomWall 0
+            leftWall 0
+            topExternal FALSE
+            rightExternal FALSE
+            bottomExternal FALSE
+            leftExternal FALSE
+            start FALSE
+            trap FALSE
+            checkpoint FALSE
+            swamp FALSE
+            width 12
+            height 12
             id "83"
             xScale 0.4
             yScale 0.4
             zScale 0.4
             tileColor 0.635 0.635 0.635
-            room 3
+            room 1
           }
         
-        DEF TILE worldTile {
+        DEF TILE halfTile {
             xPos 7
             zPos 0
             floor TRUE
-            topWall 1
-            rightWall 0
-            bottomWall 1
+            topWall 3
+            rightWall 2
+            bottomWall 0
             leftWall 0
-            topExternal TRUE
-            rightExternal FALSE
-            bottomExternal FALSE
-            leftExternal FALSE
+            tile1Walls [ 0, 0, 0, 0 ]
+            tile2Walls [ 0, 0, 0, 0 ]
+            tile3Walls [ 0, 0, 0, 0 ]
+            tile4Walls [ 0, 0, 0, 0 ]
+            tile1External [ TRUE, FALSE, FALSE, TRUE ]
+            tile2External [ TRUE, FALSE, FALSE, FALSE ]
+            tile3External [ FALSE, FALSE, FALSE, TRUE ]
+            tile4External [ FALSE, FALSE, FALSE, FALSE ]
+            curve [0,0,0,0]
             start FALSE
             trap FALSE
             checkpoint FALSE
@@ -2435,21 +2395,26 @@
             yScale 0.4
             zScale 0.4
             tileColor 0.635 0.635 0.635
-            room 4
+            room 3
           }
         
-        DEF TILE worldTile {
+        DEF TILE halfTile {
             xPos 7
             zPos 1
             floor TRUE
             topWall 0
             rightWall 0
-            bottomWall 0
+            bottomWall 5
             leftWall 0
-            topExternal FALSE
-            rightExternal FALSE
-            bottomExternal FALSE
-            leftExternal FALSE
+            tile1Walls [ 0, 0, 0, 0 ]
+            tile2Walls [ 0, 0, 0, 0 ]
+            tile3Walls [ 0, 0, 0, 0 ]
+            tile4Walls [ 0, 0, 0, 0 ]
+            tile1External [ FALSE, FALSE, FALSE, TRUE ]
+            tile2External [ FALSE, FALSE, FALSE, FALSE ]
+            tile3External [ FALSE, FALSE, FALSE, TRUE ]
+            tile4External [ FALSE, FALSE, FALSE, FALSE ]
+            curve [0,0,0,0]
             start FALSE
             trap FALSE
             checkpoint FALSE
@@ -2461,21 +2426,26 @@
             yScale 0.4
             zScale 0.4
             tileColor 0.635 0.635 0.635
-            room 4
+            room 3
           }
         
-        DEF TILE worldTile {
+        DEF TILE halfTile {
             xPos 7
             zPos 2
             floor TRUE
             topWall 0
             rightWall 0
-            bottomWall 3
+            bottomWall 0
             leftWall 0
-            topExternal FALSE
-            rightExternal FALSE
-            bottomExternal FALSE
-            leftExternal FALSE
+            tile1Walls [ 0, 0, 0, 0 ]
+            tile2Walls [ 0, 0, 0, 0 ]
+            tile3Walls [ 0, 0, 0, 0 ]
+            tile4Walls [ 0, 0, 0, 0 ]
+            tile1External [ FALSE, FALSE, FALSE, TRUE ]
+            tile2External [ FALSE, FALSE, FALSE, FALSE ]
+            tile3External [ FALSE, FALSE, FALSE, TRUE ]
+            tile4External [ FALSE, FALSE, FALSE, FALSE ]
+            curve [0,1,0,2]
             start FALSE
             trap FALSE
             checkpoint FALSE
@@ -2487,21 +2457,26 @@
             yScale 0.4
             zScale 0.4
             tileColor 0.635 0.635 0.635
-            room 4
+            room 3
           }
         
-        DEF TILE worldTile {
+        DEF TILE halfTile {
             xPos 7
             zPos 3
             floor TRUE
             topWall 0
-            rightWall 2
+            rightWall 0
             bottomWall 0
             leftWall 0
-            topExternal FALSE
-            rightExternal FALSE
-            bottomExternal FALSE
-            leftExternal FALSE
+            tile1Walls [ 0, 0, 0, 0 ]
+            tile2Walls [ 0, 0, 0, 0 ]
+            tile3Walls [ 0, 0, 0, 0 ]
+            tile4Walls [ 0, 0, 0, 0 ]
+            tile1External [ FALSE, FALSE, FALSE, FALSE ]
+            tile2External [ FALSE, FALSE, FALSE, FALSE ]
+            tile3External [ FALSE, FALSE, FALSE, FALSE ]
+            tile4External [ FALSE, FALSE, FALSE, FALSE ]
+            curve [0,1,3,2]
             start FALSE
             trap FALSE
             checkpoint FALSE
@@ -2513,21 +2488,26 @@
             yScale 0.4
             zScale 0.4
             tileColor 0.635 0.635 0.635
-            room 4
+            room 3
           }
         
-        DEF TILE worldTile {
+        DEF TILE halfTile {
             xPos 7
             zPos 4
             floor TRUE
             topWall 0
-            rightWall 3
-            bottomWall 3
+            rightWall 0
+            bottomWall 1
             leftWall 0
-            topExternal FALSE
-            rightExternal FALSE
-            bottomExternal FALSE
-            leftExternal FALSE
+            tile1Walls [ 0, 0, 0, 0 ]
+            tile2Walls [ 0, 0, 0, 0 ]
+            tile3Walls [ 0, 0, 0, 0 ]
+            tile4Walls [ 0, 0, 0, 0 ]
+            tile1External [ FALSE, FALSE, FALSE, FALSE ]
+            tile2External [ FALSE, FALSE, FALSE, FALSE ]
+            tile3External [ FALSE, FALSE, FALSE, FALSE ]
+            tile4External [ FALSE, FALSE, FALSE, FALSE ]
+            curve [0,0,0,0]
             start FALSE
             trap FALSE
             checkpoint FALSE
@@ -2539,23 +2519,28 @@
             yScale 0.4
             zScale 0.4
             tileColor 0.635 0.635 0.635
-            room 4
+            room 3
           }
         
-        DEF TILE worldTile {
+        DEF TILE halfTile {
             xPos 7
             zPos 5
-            floor FALSE
+            floor TRUE
             topWall 0
-            rightWall 6
-            bottomWall 3
+            rightWall 0
+            bottomWall 0
             leftWall 0
-            topExternal FALSE
-            rightExternal FALSE
-            bottomExternal FALSE
-            leftExternal FALSE
+            tile1Walls [ 0, 0, 0, 0 ]
+            tile2Walls [ 0, 0, 0, 0 ]
+            tile3Walls [ 0, 0, 0, 0 ]
+            tile4Walls [ 0, 0, 0, 0 ]
+            tile1External [ FALSE, FALSE, FALSE, FALSE ]
+            tile2External [ FALSE, FALSE, FALSE, FALSE ]
+            tile3External [ FALSE, FALSE, FALSE, FALSE ]
+            tile4External [ FALSE, FALSE, FALSE, FALSE ]
+            curve [0,0,0,0]
             start FALSE
-            trap TRUE
+            trap FALSE
             checkpoint FALSE
             swamp FALSE
             width 12
@@ -2565,21 +2550,26 @@
             yScale 0.4
             zScale 0.4
             tileColor 0.635 0.635 0.635
-            room 4
+            room 3
           }
         
-        DEF TILE worldTile {
+        DEF TILE halfTile {
             xPos 7
             zPos 6
             floor TRUE
             topWall 0
-            rightWall 0
-            bottomWall 0
+            rightWall 3
+            bottomWall 3
             leftWall 0
-            topExternal FALSE
-            rightExternal FALSE
-            bottomExternal FALSE
-            leftExternal FALSE
+            tile1Walls [ 0, 0, 0, 0 ]
+            tile2Walls [ 0, 0, 0, 0 ]
+            tile3Walls [ 0, 0, 0, 0 ]
+            tile4Walls [ 0, 0, 0, 0 ]
+            tile1External [ FALSE, FALSE, FALSE, FALSE ]
+            tile2External [ FALSE, FALSE, FALSE, FALSE ]
+            tile3External [ FALSE, FALSE, FALSE, FALSE ]
+            tile4External [ FALSE, FALSE, FALSE, FALSE ]
+            curve [0,0,0,0]
             start FALSE
             trap FALSE
             checkpoint FALSE
@@ -2591,21 +2581,26 @@
             yScale 0.4
             zScale 0.4
             tileColor 0.635 0.635 0.635
-            room 4
+            room 3
           }
         
-        DEF TILE worldTile {
+        DEF TILE halfTile {
             xPos 7
             zPos 7
             floor TRUE
             topWall 0
-            rightWall 2
+            rightWall 0
             bottomWall 0
             leftWall 0
-            topExternal FALSE
-            rightExternal FALSE
-            bottomExternal FALSE
-            leftExternal FALSE
+            tile1Walls [ 0, 0, 0, 0 ]
+            tile2Walls [ 0, 0, 0, 0 ]
+            tile3Walls [ 0, 0, 0, 0 ]
+            tile4Walls [ 0, 0, 0, 0 ]
+            tile1External [ FALSE, FALSE, FALSE, FALSE ]
+            tile2External [ FALSE, FALSE, FALSE, FALSE ]
+            tile3External [ FALSE, FALSE, FALSE, FALSE ]
+            tile4External [ FALSE, FALSE, FALSE, FALSE ]
+            curve [0,0,0,0]
             start FALSE
             trap FALSE
             checkpoint FALSE
@@ -2617,21 +2612,26 @@
             yScale 0.4
             zScale 0.4
             tileColor 0.635 0.635 0.635
-            room 4
+            room 2
           }
         
-        DEF TILE worldTile {
+        DEF TILE halfTile {
             xPos 7
             zPos 8
             floor TRUE
             topWall 0
-            rightWall 3
+            rightWall 6
             bottomWall 3
             leftWall 0
-            topExternal FALSE
-            rightExternal FALSE
-            bottomExternal FALSE
-            leftExternal FALSE
+            tile1Walls [ 0, 0, 0, 0 ]
+            tile2Walls [ 0, 0, 0, 0 ]
+            tile3Walls [ 0, 0, 0, 0 ]
+            tile4Walls [ 0, 0, 0, 0 ]
+            tile1External [ FALSE, FALSE, FALSE, FALSE ]
+            tile2External [ FALSE, FALSE, FALSE, FALSE ]
+            tile3External [ FALSE, FALSE, FALSE, FALSE ]
+            tile4External [ FALSE, FALSE, FALSE, FALSE ]
+            curve [0,0,0,0]
             start FALSE
             trap FALSE
             checkpoint FALSE
@@ -2643,7 +2643,7 @@
             yScale 0.4
             zScale 0.4
             tileColor 0.635 0.635 0.635
-            room 4
+            room 2
           }
         
         DEF TILE halfTile {
@@ -2674,7 +2674,7 @@
             yScale 0.4
             zScale 0.4
             tileColor 0.635 0.635 0.635
-            room 3
+            room 2
           }
         
         DEF TILE halfTile {
@@ -2683,38 +2683,7 @@
             floor TRUE
             topWall 0
             rightWall 0
-            bottomWall 0
-            leftWall 0
-            tile1Walls [ 0, 0, 0, 0 ]
-            tile2Walls [ 0, 0, 0, 0 ]
-            tile3Walls [ 0, 0, 0, 0 ]
-            tile4Walls [ 0, 0, 0, 0 ]
-            tile1External [ FALSE, FALSE, FALSE, FALSE ]
-            tile2External [ FALSE, FALSE, FALSE, FALSE ]
-            tile3External [ FALSE, FALSE, FALSE, FALSE ]
-            tile4External [ FALSE, FALSE, FALSE, FALSE ]
-            curve [0,2,2,0]
-            start FALSE
-            trap FALSE
-            checkpoint FALSE
-            swamp FALSE
-            width 12
-            height 12
-            id "94"
-            xScale 0.4
-            yScale 0.4
-            zScale 0.4
-            tileColor 0.635 0.635 0.635
-            room 3
-          }
-        
-        DEF TILE halfTile {
-            xPos 7
-            zPos 11
-            floor TRUE
-            topWall 0
-            rightWall 0
-            bottomWall 1
+            bottomWall 3
             leftWall 0
             tile1Walls [ 0, 0, 0, 0 ]
             tile2Walls [ 0, 0, 0, 0 ]
@@ -2731,96 +2700,18 @@
             swamp FALSE
             width 12
             height 12
-            id "95"
+            id "94"
             xScale 0.4
             yScale 0.4
             zScale 0.4
             tileColor 0.635 0.635 0.635
-            room 3
+            room 2
           }
         
         DEF TILE worldTile {
-            xPos 8
-            zPos 0
-            floor TRUE
-            topWall 3
-            rightWall 2
-            bottomWall 0
-            leftWall 0
-            topExternal TRUE
-            rightExternal FALSE
-            bottomExternal FALSE
-            leftExternal FALSE
-            start FALSE
-            trap FALSE
-            checkpoint FALSE
-            swamp FALSE
-            width 12
-            height 12
-            id "96"
-            xScale 0.4
-            yScale 0.4
-            zScale 0.4
-            tileColor 0.635 0.635 0.635
-            room 4
-          }
-        
-        DEF TILE worldTile {
-            xPos 8
-            zPos 1
-            floor TRUE
-            topWall 0
-            rightWall 3
-            bottomWall 0
-            leftWall 0
-            topExternal FALSE
-            rightExternal FALSE
-            bottomExternal FALSE
-            leftExternal FALSE
-            start FALSE
-            trap FALSE
-            checkpoint FALSE
-            swamp FALSE
-            width 12
-            height 12
-            id "97"
-            xScale 0.4
-            yScale 0.4
-            zScale 0.4
-            tileColor 0.635 0.635 0.635
-            room 4
-          }
-        
-        DEF TILE worldTile {
-            xPos 8
-            zPos 2
-            floor TRUE
-            topWall 0
-            rightWall 0
-            bottomWall 6
-            leftWall 0
-            topExternal FALSE
-            rightExternal FALSE
-            bottomExternal FALSE
-            leftExternal FALSE
-            start FALSE
-            trap FALSE
-            checkpoint FALSE
-            swamp FALSE
-            width 12
-            height 12
-            id "98"
-            xScale 0.4
-            yScale 0.4
-            zScale 0.4
-            tileColor 0.635 0.635 0.635
-            room 4
-          }
-        
-        DEF TILE worldTile {
-            xPos 8
-            zPos 3
-            floor TRUE
+            xPos 7
+            zPos 11
+            floor FALSE
             topWall 0
             rightWall 6
             bottomWall 0
@@ -2835,26 +2726,155 @@
             swamp FALSE
             width 12
             height 12
+            id "95"
+            xScale 0.4
+            yScale 0.4
+            zScale 0.4
+            tileColor 0.635 0.635 0.635
+            room 1
+          }
+        
+        DEF TILE halfTile {
+            xPos 8
+            zPos 0
+            floor TRUE
+            topWall 2
+            rightWall 0
+            bottomWall 0
+            leftWall 0
+            tile1Walls [ 0, 0, 0, 0 ]
+            tile2Walls [ 0, 0, 0, 0 ]
+            tile3Walls [ 0, 0, 0, 0 ]
+            tile4Walls [ 0, 0, 0, 0 ]
+            tile1External [ TRUE, FALSE, FALSE, FALSE ]
+            tile2External [ TRUE, FALSE, FALSE, FALSE ]
+            tile3External [ FALSE, FALSE, FALSE, FALSE ]
+            tile4External [ FALSE, FALSE, FALSE, FALSE ]
+            curve [0,0,0,0]
+            start FALSE
+            trap FALSE
+            checkpoint FALSE
+            swamp FALSE
+            width 12
+            height 12
+            id "96"
+            xScale 0.4
+            yScale 0.4
+            zScale 0.4
+            tileColor 0.635 0.635 0.635
+            room 3
+          }
+        
+        DEF TILE halfTile {
+            xPos 8
+            zPos 1
+            floor TRUE
+            topWall 0
+            rightWall 0
+            bottomWall 0
+            leftWall 0
+            tile1Walls [ 0, 0, 0, 0 ]
+            tile2Walls [ 0, 0, 0, 0 ]
+            tile3Walls [ 0, 0, 0, 0 ]
+            tile4Walls [ 0, 0, 0, 0 ]
+            tile1External [ FALSE, FALSE, FALSE, FALSE ]
+            tile2External [ FALSE, FALSE, FALSE, FALSE ]
+            tile3External [ FALSE, FALSE, FALSE, FALSE ]
+            tile4External [ FALSE, FALSE, FALSE, FALSE ]
+            curve [0,0,0,0]
+            start FALSE
+            trap FALSE
+            checkpoint FALSE
+            swamp FALSE
+            width 12
+            height 12
+            id "97"
+            xScale 0.4
+            yScale 0.4
+            zScale 0.4
+            tileColor 0.635 0.635 0.635
+            room 3
+          }
+        
+        DEF TILE halfTile {
+            xPos 8
+            zPos 2
+            floor TRUE
+            topWall 0
+            rightWall 0
+            bottomWall 0
+            leftWall 0
+            tile1Walls [ 0, 0, 0, 0 ]
+            tile2Walls [ 0, 0, 0, 0 ]
+            tile3Walls [ 0, 0, 0, 0 ]
+            tile4Walls [ 0, 0, 0, 0 ]
+            tile1External [ FALSE, FALSE, FALSE, FALSE ]
+            tile2External [ FALSE, FALSE, FALSE, FALSE ]
+            tile3External [ FALSE, FALSE, FALSE, FALSE ]
+            tile4External [ FALSE, FALSE, FALSE, FALSE ]
+            curve [0,0,0,0]
+            start FALSE
+            trap FALSE
+            checkpoint FALSE
+            swamp FALSE
+            width 12
+            height 12
+            id "98"
+            xScale 0.4
+            yScale 0.4
+            zScale 0.4
+            tileColor 0.635 0.635 0.635
+            room 3
+          }
+        
+        DEF TILE halfTile {
+            xPos 8
+            zPos 3
+            floor TRUE
+            topWall 0
+            rightWall 0
+            bottomWall 0
+            leftWall 0
+            tile1Walls [ 0, 0, 0, 0 ]
+            tile2Walls [ 0, 0, 0, 0 ]
+            tile3Walls [ 0, 0, 0, 0 ]
+            tile4Walls [ 0, 0, 0, 0 ]
+            tile1External [ FALSE, FALSE, FALSE, FALSE ]
+            tile2External [ FALSE, FALSE, FALSE, FALSE ]
+            tile3External [ FALSE, FALSE, FALSE, FALSE ]
+            tile4External [ FALSE, FALSE, FALSE, FALSE ]
+            curve [0,0,0,0]
+            start FALSE
+            trap FALSE
+            checkpoint FALSE
+            swamp FALSE
+            width 12
+            height 12
             id "99"
             xScale 0.4
             yScale 0.4
             zScale 0.4
             tileColor 0.635 0.635 0.635
-            room 4
+            room 3
           }
         
-        DEF TILE worldTile {
+        DEF TILE halfTile {
             xPos 8
             zPos 4
             floor TRUE
             topWall 0
-            rightWall 2
+            rightWall 0
             bottomWall 0
             leftWall 0
-            topExternal FALSE
-            rightExternal FALSE
-            bottomExternal FALSE
-            leftExternal FALSE
+            tile1Walls [ 0, 0, 0, 0 ]
+            tile2Walls [ 0, 0, 0, 0 ]
+            tile3Walls [ 0, 0, 0, 0 ]
+            tile4Walls [ 0, 0, 0, 0 ]
+            tile1External [ FALSE, FALSE, FALSE, FALSE ]
+            tile2External [ FALSE, FALSE, FALSE, FALSE ]
+            tile3External [ FALSE, FALSE, FALSE, FALSE ]
+            tile4External [ FALSE, FALSE, FALSE, FALSE ]
+            curve [0,0,0,0]
             start FALSE
             trap FALSE
             checkpoint FALSE
@@ -2866,21 +2886,26 @@
             yScale 0.4
             zScale 0.4
             tileColor 0.635 0.635 0.635
-            room 4
+            room 3
           }
         
-        DEF TILE worldTile {
+        DEF TILE halfTile {
             xPos 8
             zPos 5
             floor TRUE
             topWall 0
             rightWall 0
-            bottomWall 2
+            bottomWall 0
             leftWall 0
-            topExternal FALSE
-            rightExternal FALSE
-            bottomExternal FALSE
-            leftExternal FALSE
+            tile1Walls [ 0, 0, 0, 0 ]
+            tile2Walls [ 0, 0, 0, 0 ]
+            tile3Walls [ 0, 0, 0, 0 ]
+            tile4Walls [ 0, 0, 0, 0 ]
+            tile1External [ FALSE, FALSE, FALSE, FALSE ]
+            tile2External [ FALSE, FALSE, FALSE, FALSE ]
+            tile3External [ FALSE, FALSE, FALSE, FALSE ]
+            tile4External [ FALSE, FALSE, FALSE, FALSE ]
+            curve [0,0,0,0]
             start FALSE
             trap FALSE
             checkpoint FALSE
@@ -2892,7 +2917,7 @@
             yScale 0.4
             zScale 0.4
             tileColor 0.635 0.635 0.635
-            room 4
+            room 3
           }
         
         DEF TILE halfTile {
@@ -2901,7 +2926,7 @@
             floor TRUE
             topWall 0
             rightWall 0
-            bottomWall 5
+            bottomWall 2
             leftWall 0
             tile1Walls [ 0, 0, 0, 0 ]
             tile2Walls [ 0, 0, 0, 0 ]
@@ -2922,7 +2947,7 @@
             xScale 0.4
             yScale 0.4
             zScale 0.4
-            tileColor 0.9058823529411765 0.10196078431372549 0.10196078431372549 
+            tileColor 0.635 0.635 0.635
             room 3
           }
         
@@ -2932,7 +2957,7 @@
             floor TRUE
             topWall 0
             rightWall 0
-            bottomWall 0
+            bottomWall 15
             leftWall 0
             tile1Walls [ 0, 0, 0, 0 ]
             tile2Walls [ 0, 0, 0, 0 ]
@@ -2954,7 +2979,7 @@
             yScale 0.4
             zScale 0.4
             tileColor 0.635 0.635 0.635
-            room 3
+            room 2
           }
         
         DEF TILE halfTile {
@@ -2962,7 +2987,7 @@
             zPos 8
             floor TRUE
             topWall 0
-            rightWall 0
+            rightWall 2
             bottomWall 0
             leftWall 0
             tile1Walls [ 0, 0, 0, 0 ]
@@ -2985,7 +3010,7 @@
             yScale 0.4
             zScale 0.4
             tileColor 0.635 0.635 0.635
-            room 3
+            room 2
           }
         
         DEF TILE halfTile {
@@ -2993,8 +3018,8 @@
             zPos 9
             floor TRUE
             topWall 0
-            rightWall 0
-            bottomWall 1
+            rightWall 3
+            bottomWall 3
             leftWall 0
             tile1Walls [ 0, 0, 0, 0 ]
             tile2Walls [ 0, 0, 0, 0 ]
@@ -3004,7 +3029,7 @@
             tile2External [ FALSE, FALSE, FALSE, FALSE ]
             tile3External [ FALSE, FALSE, FALSE, FALSE ]
             tile4External [ FALSE, FALSE, FALSE, FALSE ]
-            curve [0,4,2,0]
+            curve [0,0,0,0]
             start FALSE
             trap FALSE
             checkpoint FALSE
@@ -3016,7 +3041,7 @@
             yScale 0.4
             zScale 0.4
             tileColor 0.635 0.635 0.635
-            room 3
+            room 2
           }
         
         DEF TILE halfTile {
@@ -3024,7 +3049,7 @@
             zPos 10
             floor TRUE
             topWall 0
-            rightWall 0
+            rightWall 6
             bottomWall 0
             leftWall 0
             tile1Walls [ 0, 0, 0, 0 ]
@@ -3047,7 +3072,7 @@
             yScale 0.4
             zScale 0.4
             tileColor 0.635 0.635 0.635
-            room 3
+            room 2
           }
         
         DEF TILE halfTile {
@@ -3056,15 +3081,15 @@
             floor TRUE
             topWall 0
             rightWall 0
-            bottomWall 1
+            bottomWall 5
             leftWall 0
             tile1Walls [ 0, 0, 0, 0 ]
             tile2Walls [ 0, 0, 0, 0 ]
             tile3Walls [ 0, 0, 0, 0 ]
             tile4Walls [ 0, 0, 0, 0 ]
-            tile1External [ FALSE, FALSE, FALSE, FALSE ]
+            tile1External [ FALSE, FALSE, FALSE, TRUE ]
             tile2External [ FALSE, FALSE, FALSE, FALSE ]
-            tile3External [ FALSE, FALSE, TRUE, FALSE ]
+            tile3External [ FALSE, FALSE, TRUE, TRUE ]
             tile4External [ FALSE, FALSE, TRUE, FALSE ]
             curve [0,0,0,0]
             start FALSE
@@ -3078,21 +3103,26 @@
             yScale 0.4
             zScale 0.4
             tileColor 0.635 0.635 0.635
-            room 3
+            room 2
           }
         
-        DEF TILE worldTile {
+        DEF TILE halfTile {
             xPos 9
             zPos 0
             floor TRUE
-            topWall 6
-            rightWall 6
-            bottomWall 0
+            topWall 1
+            rightWall 0
+            bottomWall 3
             leftWall 0
-            topExternal TRUE
-            rightExternal TRUE
-            bottomExternal FALSE
-            leftExternal FALSE
+            tile1Walls [ 0, 0, 0, 0 ]
+            tile2Walls [ 0, 0, 0, 0 ]
+            tile3Walls [ 0, 0, 0, 0 ]
+            tile4Walls [ 0, 0, 0, 0 ]
+            tile1External [ TRUE, FALSE, FALSE, FALSE ]
+            tile2External [ TRUE, FALSE, FALSE, FALSE ]
+            tile3External [ FALSE, FALSE, FALSE, FALSE ]
+            tile4External [ FALSE, FALSE, FALSE, FALSE ]
+            curve [0,0,0,0]
             start FALSE
             trap FALSE
             checkpoint FALSE
@@ -3104,21 +3134,26 @@
             yScale 0.4
             zScale 0.4
             tileColor 0.635 0.635 0.635
-            room 4
+            room 3
           }
         
-        DEF TILE worldTile {
+        DEF TILE halfTile {
             xPos 9
             zPos 1
             floor TRUE
             topWall 0
-            rightWall 0
-            bottomWall 5
+            rightWall 6
+            bottomWall 3
             leftWall 0
-            topExternal FALSE
-            rightExternal FALSE
-            bottomExternal FALSE
-            leftExternal FALSE
+            tile1Walls [ 0, 0, 0, 0 ]
+            tile2Walls [ 0, 0, 0, 0 ]
+            tile3Walls [ 0, 0, 0, 0 ]
+            tile4Walls [ 0, 0, 0, 0 ]
+            tile1External [ FALSE, FALSE, FALSE, FALSE ]
+            tile2External [ FALSE, FALSE, FALSE, FALSE ]
+            tile3External [ FALSE, FALSE, FALSE, FALSE ]
+            tile4External [ FALSE, FALSE, FALSE, FALSE ]
+            curve [0,0,0,0]
             start FALSE
             trap FALSE
             checkpoint FALSE
@@ -3130,10 +3165,10 @@
             yScale 0.4
             zScale 0.4
             tileColor 0.635 0.635 0.635
-            room 4
+            room 3
           }
         
-        DEF TILE worldTile {
+        DEF TILE halfTile {
             xPos 9
             zPos 2
             floor TRUE
@@ -3141,10 +3176,15 @@
             rightWall 0
             bottomWall 0
             leftWall 0
-            topExternal FALSE
-            rightExternal FALSE
-            bottomExternal FALSE
-            leftExternal FALSE
+            tile1Walls [ 0, 0, 0, 0 ]
+            tile2Walls [ 0, 0, 0, 0 ]
+            tile3Walls [ 0, 0, 0, 0 ]
+            tile4Walls [ 0, 0, 0, 0 ]
+            tile1External [ FALSE, FALSE, FALSE, FALSE ]
+            tile2External [ FALSE, FALSE, FALSE, FALSE ]
+            tile3External [ FALSE, FALSE, FALSE, FALSE ]
+            tile4External [ FALSE, FALSE, FALSE, FALSE ]
+            curve [0,0,0,0]
             start FALSE
             trap FALSE
             checkpoint FALSE
@@ -3156,21 +3196,26 @@
             yScale 0.4
             zScale 0.4
             tileColor 0.635 0.635 0.635
-            room 4
+            room 3
           }
         
-        DEF TILE worldTile {
+        DEF TILE halfTile {
             xPos 9
             zPos 3
             floor TRUE
             topWall 0
             rightWall 0
-            bottomWall 5
+            bottomWall 0
             leftWall 0
-            topExternal FALSE
-            rightExternal FALSE
-            bottomExternal FALSE
-            leftExternal FALSE
+            tile1Walls [ 0, 0, 0, 0 ]
+            tile2Walls [ 0, 0, 0, 0 ]
+            tile3Walls [ 0, 0, 0, 0 ]
+            tile4Walls [ 0, 0, 0, 0 ]
+            tile1External [ FALSE, FALSE, FALSE, FALSE ]
+            tile2External [ FALSE, FALSE, FALSE, FALSE ]
+            tile3External [ FALSE, FALSE, FALSE, FALSE ]
+            tile4External [ FALSE, FALSE, FALSE, FALSE ]
+            curve [0,0,0,0]
             start FALSE
             trap FALSE
             checkpoint FALSE
@@ -3182,10 +3227,10 @@
             yScale 0.4
             zScale 0.4
             tileColor 0.635 0.635 0.635
-            room 4
+            room 3
           }
         
-        DEF TILE worldTile {
+        DEF TILE halfTile {
             xPos 9
             zPos 4
             floor TRUE
@@ -3193,14 +3238,19 @@
             rightWall 0
             bottomWall 0
             leftWall 0
-            topExternal FALSE
-            rightExternal FALSE
-            bottomExternal FALSE
-            leftExternal FALSE
+            tile1Walls [ 0, 0, 0, 0 ]
+            tile2Walls [ 0, 0, 0, 0 ]
+            tile3Walls [ 0, 0, 0, 0 ]
+            tile4Walls [ 0, 0, 0, 0 ]
+            tile1External [ FALSE, FALSE, FALSE, FALSE ]
+            tile2External [ FALSE, FALSE, FALSE, FALSE ]
+            tile3External [ FALSE, FALSE, FALSE, FALSE ]
+            tile4External [ FALSE, FALSE, FALSE, FALSE ]
+            curve [4,1,0,0]
             start FALSE
             trap FALSE
             checkpoint FALSE
-            swamp TRUE
+            swamp FALSE
             width 12
             height 12
             id "112"
@@ -3208,21 +3258,26 @@
             yScale 0.4
             zScale 0.4
             tileColor 0.635 0.635 0.635
-            room 4
+            room 3
           }
         
-        DEF TILE worldTile {
+        DEF TILE halfTile {
             xPos 9
             zPos 5
             floor TRUE
             topWall 0
             rightWall 0
-            bottomWall 1
+            bottomWall 0
             leftWall 0
-            topExternal FALSE
-            rightExternal FALSE
-            bottomExternal FALSE
-            leftExternal FALSE
+            tile1Walls [ 0, 0, 0, 0 ]
+            tile2Walls [ 0, 0, 0, 0 ]
+            tile3Walls [ 0, 0, 0, 0 ]
+            tile4Walls [ 0, 0, 0, 0 ]
+            tile1External [ FALSE, FALSE, FALSE, FALSE ]
+            tile2External [ FALSE, FALSE, FALSE, FALSE ]
+            tile3External [ FALSE, FALSE, FALSE, FALSE ]
+            tile4External [ FALSE, FALSE, FALSE, FALSE ]
+            curve [0,2,2,0]
             start FALSE
             trap FALSE
             checkpoint FALSE
@@ -3234,7 +3289,7 @@
             yScale 0.4
             zScale 0.4
             tileColor 0.635 0.635 0.635
-            room 4
+            room 3
           }
         
         DEF TILE halfTile {
@@ -3243,7 +3298,7 @@
             floor TRUE
             topWall 0
             rightWall 0
-            bottomWall 0
+            bottomWall 1
             leftWall 0
             tile1Walls [ 0, 0, 0, 0 ]
             tile2Walls [ 0, 0, 0, 0 ]
@@ -3296,7 +3351,7 @@
             yScale 0.4
             zScale 0.4
             tileColor 0.635 0.635 0.635
-            room 3
+            room 2
           }
         
         DEF TILE halfTile {
@@ -3305,7 +3360,7 @@
             floor TRUE
             topWall 0
             rightWall 0
-            bottomWall 3
+            bottomWall 0
             leftWall 0
             tile1Walls [ 0, 0, 0, 0 ]
             tile2Walls [ 0, 0, 0, 0 ]
@@ -3327,7 +3382,7 @@
             yScale 0.4
             zScale 0.4
             tileColor 0.635 0.635 0.635
-            room 3
+            room 2
           }
         
         DEF TILE halfTile {
@@ -3335,7 +3390,7 @@
             zPos 9
             floor TRUE
             topWall 0
-            rightWall 2
+            rightWall 1
             bottomWall 0
             leftWall 0
             tile1Walls [ 0, 0, 0, 0 ]
@@ -3358,7 +3413,7 @@
             yScale 0.4
             zScale 0.4
             tileColor 0.635 0.635 0.635
-            room 3
+            room 2
           }
         
         DEF TILE halfTile {
@@ -3366,8 +3421,8 @@
             zPos 10
             floor TRUE
             topWall 0
-            rightWall 0
-            bottomWall 1
+            rightWall 3
+            bottomWall 15
             leftWall 0
             tile1Walls [ 0, 0, 0, 0 ]
             tile2Walls [ 0, 0, 0, 0 ]
@@ -3389,7 +3444,7 @@
             yScale 0.4
             zScale 0.4
             tileColor 0.635 0.635 0.635
-            room 3
+            room 2
           }
         
         DEF TILE halfTile {
@@ -3420,21 +3475,26 @@
             yScale 0.4
             zScale 0.4
             tileColor 0.635 0.635 0.635
-            room 3
+            room 2
           }
         
-        DEF TILE worldTile {
+        DEF TILE halfTile {
             xPos 10
             zPos 0
-            floor FALSE
-            topWall 0
-            rightWall 0
-            bottomWall 5
+            floor TRUE
+            topWall 3
+            rightWall 6
+            bottomWall 0
             leftWall 0
-            topExternal FALSE
-            rightExternal FALSE
-            bottomExternal FALSE
-            leftExternal FALSE
+            tile1Walls [ 0, 0, 0, 0 ]
+            tile2Walls [ 0, 0, 0, 0 ]
+            tile3Walls [ 0, 0, 0, 0 ]
+            tile4Walls [ 0, 0, 0, 0 ]
+            tile1External [ TRUE, FALSE, FALSE, FALSE ]
+            tile2External [ TRUE, TRUE, FALSE, FALSE ]
+            tile3External [ FALSE, FALSE, FALSE, FALSE ]
+            tile4External [ FALSE, TRUE, FALSE, FALSE ]
+            curve [0,0,0,0]
             start FALSE
             trap FALSE
             checkpoint FALSE
@@ -3446,21 +3506,26 @@
             yScale 0.4
             zScale 0.4
             tileColor 0.635 0.635 0.635
-            room 1
+            room 3
           }
         
-        DEF TILE worldTile {
+        DEF TILE halfTile {
             xPos 10
             zPos 1
             floor TRUE
             topWall 0
             rightWall 0
-            bottomWall 3
+            bottomWall 6
             leftWall 0
-            topExternal TRUE
-            rightExternal FALSE
-            bottomExternal FALSE
-            leftExternal FALSE
+            tile1Walls [ 0, 0, 0, 0 ]
+            tile2Walls [ 0, 0, 0, 0 ]
+            tile3Walls [ 0, 0, 0, 0 ]
+            tile4Walls [ 0, 0, 0, 0 ]
+            tile1External [ FALSE, FALSE, FALSE, FALSE ]
+            tile2External [ FALSE, FALSE, FALSE, FALSE ]
+            tile3External [ FALSE, FALSE, FALSE, FALSE ]
+            tile4External [ FALSE, FALSE, FALSE, FALSE ]
+            curve [0,0,0,0]
             start FALSE
             trap FALSE
             checkpoint FALSE
@@ -3472,10 +3537,10 @@
             yScale 0.4
             zScale 0.4
             tileColor 0.635 0.635 0.635
-            room 4
+            room 3
           }
         
-        DEF TILE worldTile {
+        DEF TILE halfTile {
             xPos 10
             zPos 2
             floor TRUE
@@ -3483,10 +3548,15 @@
             rightWall 2
             bottomWall 0
             leftWall 0
-            topExternal FALSE
-            rightExternal FALSE
-            bottomExternal FALSE
-            leftExternal FALSE
+            tile1Walls [ 0, 0, 0, 0 ]
+            tile2Walls [ 0, 0, 0, 0 ]
+            tile3Walls [ 0, 0, 0, 0 ]
+            tile4Walls [ 0, 0, 0, 0 ]
+            tile1External [ FALSE, FALSE, FALSE, FALSE ]
+            tile2External [ FALSE, FALSE, FALSE, FALSE ]
+            tile3External [ FALSE, FALSE, FALSE, FALSE ]
+            tile4External [ FALSE, FALSE, FALSE, FALSE ]
+            curve [0,0,0,0]
             start FALSE
             trap FALSE
             checkpoint FALSE
@@ -3498,21 +3568,26 @@
             yScale 0.4
             zScale 0.4
             tileColor 0.635 0.635 0.635
-            room 4
+            room 3
           }
         
-        DEF TILE worldTile {
+        DEF TILE halfTile {
             xPos 10
             zPos 3
             floor TRUE
             topWall 0
-            rightWall 1
+            rightWall 0
             bottomWall 0
             leftWall 0
-            topExternal FALSE
-            rightExternal FALSE
-            bottomExternal FALSE
-            leftExternal FALSE
+            tile1Walls [ 0, 0, 0, 0 ]
+            tile2Walls [ 0, 0, 0, 0 ]
+            tile3Walls [ 0, 0, 0, 0 ]
+            tile4Walls [ 0, 0, 0, 0 ]
+            tile1External [ FALSE, FALSE, FALSE, FALSE ]
+            tile2External [ FALSE, FALSE, FALSE, FALSE ]
+            tile3External [ FALSE, FALSE, FALSE, FALSE ]
+            tile4External [ FALSE, FALSE, FALSE, FALSE ]
+            curve [1,0,0,1]
             start FALSE
             trap FALSE
             checkpoint FALSE
@@ -3524,10 +3599,10 @@
             yScale 0.4
             zScale 0.4
             tileColor 0.635 0.635 0.635
-            room 4
+            room 3
           }
         
-        DEF TILE worldTile {
+        DEF TILE halfTile {
             xPos 10
             zPos 4
             floor TRUE
@@ -3535,14 +3610,19 @@
             rightWall 0
             bottomWall 0
             leftWall 0
-            topExternal FALSE
-            rightExternal FALSE
-            bottomExternal FALSE
-            leftExternal FALSE
+            tile1Walls [ 0, 0, 0, 0 ]
+            tile2Walls [ 0, 0, 0, 0 ]
+            tile3Walls [ 0, 0, 0, 0 ]
+            tile4Walls [ 0, 0, 0, 0 ]
+            tile1External [ FALSE, FALSE, FALSE, FALSE ]
+            tile2External [ FALSE, FALSE, FALSE, FALSE ]
+            tile3External [ FALSE, FALSE, FALSE, FALSE ]
+            tile4External [ FALSE, FALSE, FALSE, FALSE ]
+            curve [0,0,0,0]
             start FALSE
             trap FALSE
             checkpoint FALSE
-            swamp FALSE
+            swamp TRUE
             width 12
             height 12
             id "124"
@@ -3550,21 +3630,26 @@
             yScale 0.4
             zScale 0.4
             tileColor 0.635 0.635 0.635
-            room 4
+            room 3
           }
         
-        DEF TILE worldTile {
+        DEF TILE halfTile {
             xPos 10
             zPos 5
             floor TRUE
             topWall 0
             rightWall 0
-            bottomWall 1
+            bottomWall 0
             leftWall 0
-            topExternal FALSE
-            rightExternal FALSE
-            bottomExternal FALSE
-            leftExternal FALSE
+            tile1Walls [ 0, 0, 0, 0 ]
+            tile2Walls [ 0, 0, 0, 0 ]
+            tile3Walls [ 0, 0, 0, 0 ]
+            tile4Walls [ 0, 0, 0, 0 ]
+            tile1External [ FALSE, FALSE, FALSE, FALSE ]
+            tile2External [ FALSE, FALSE, FALSE, FALSE ]
+            tile3External [ FALSE, FALSE, FALSE, FALSE ]
+            tile4External [ FALSE, FALSE, FALSE, FALSE ]
+            curve [0,0,0,0]
             start FALSE
             trap FALSE
             checkpoint FALSE
@@ -3576,7 +3661,7 @@
             yScale 0.4
             zScale 0.4
             tileColor 0.635 0.635 0.635
-            room 4
+            room 3
           }
         
         DEF TILE halfTile {
@@ -3584,17 +3669,17 @@
             zPos 6
             floor TRUE
             topWall 0
-            rightWall 0
-            bottomWall 3
+            rightWall 6
+            bottomWall 0
             leftWall 0
             tile1Walls [ 0, 0, 0, 0 ]
             tile2Walls [ 0, 0, 0, 0 ]
             tile3Walls [ 0, 0, 0, 0 ]
             tile4Walls [ 0, 0, 0, 0 ]
             tile1External [ FALSE, FALSE, FALSE, FALSE ]
-            tile2External [ FALSE, FALSE, FALSE, FALSE ]
+            tile2External [ FALSE, TRUE, FALSE, FALSE ]
             tile3External [ FALSE, FALSE, FALSE, FALSE ]
-            tile4External [ FALSE, FALSE, FALSE, FALSE ]
+            tile4External [ FALSE, TRUE, FALSE, FALSE ]
             curve [0,0,0,0]
             start FALSE
             trap FALSE
@@ -3610,10 +3695,36 @@
             room 3
           }
         
-        DEF TILE halfTile {
+        DEF TILE worldTile {
             xPos 10
             zPos 7
             floor TRUE
+            topWall 0
+            rightWall 0
+            bottomWall 3
+            leftWall 0
+            topExternal FALSE
+            rightExternal FALSE
+            bottomExternal FALSE
+            leftExternal FALSE
+            start FALSE
+            trap FALSE
+            checkpoint FALSE
+            swamp FALSE
+            width 12
+            height 12
+            id "127"
+            xScale 0.4
+            yScale 0.4
+            zScale 0.4
+            tileColor 0.30196078431372547 0.10196078431372549 0.6 
+            room 1
+          }
+        
+        DEF TILE halfTile {
+            xPos 10
+            zPos 8
+            floor FALSE
             topWall 0
             rightWall 2
             bottomWall 0
@@ -3628,38 +3739,7 @@
             tile4External [ FALSE, FALSE, FALSE, FALSE ]
             curve [0,0,0,0]
             start FALSE
-            trap FALSE
-            checkpoint FALSE
-            swamp FALSE
-            width 12
-            height 12
-            id "127"
-            xScale 0.4
-            yScale 0.4
-            zScale 0.4
-            tileColor 0.635 0.635 0.635
-            room 3
-          }
-        
-        DEF TILE halfTile {
-            xPos 10
-            zPos 8
-            floor TRUE
-            topWall 0
-            rightWall 1
-            bottomWall 0
-            leftWall 0
-            tile1Walls [ 0, 0, 0, 0 ]
-            tile2Walls [ 0, 0, 0, 0 ]
-            tile3Walls [ 0, 0, 0, 0 ]
-            tile4Walls [ 0, 0, 0, 0 ]
-            tile1External [ FALSE, FALSE, FALSE, FALSE ]
-            tile2External [ FALSE, FALSE, FALSE, FALSE ]
-            tile3External [ FALSE, FALSE, FALSE, FALSE ]
-            tile4External [ FALSE, FALSE, FALSE, FALSE ]
-            curve [0,0,0,0]
-            start FALSE
-            trap FALSE
+            trap TRUE
             checkpoint FALSE
             swamp FALSE
             width 12
@@ -3669,7 +3749,7 @@
             yScale 0.4
             zScale 0.4
             tileColor 0.635 0.635 0.635
-            room 3
+            room 2
           }
         
         DEF TILE halfTile {
@@ -3691,7 +3771,7 @@
             curve [0,0,0,0]
             start FALSE
             trap FALSE
-            checkpoint FALSE
+            checkpoint TRUE
             swamp FALSE
             width 12
             height 12
@@ -3700,7 +3780,7 @@
             yScale 0.4
             zScale 0.4
             tileColor 0.635 0.635 0.635
-            room 3
+            room 2
           }
         
         DEF TILE halfTile {
@@ -3708,17 +3788,17 @@
             zPos 10
             floor TRUE
             topWall 0
-            rightWall 6
-            bottomWall 3
+            rightWall 0
+            bottomWall 0
             leftWall 0
             tile1Walls [ 0, 0, 0, 0 ]
             tile2Walls [ 0, 0, 0, 0 ]
             tile3Walls [ 0, 0, 0, 0 ]
             tile4Walls [ 0, 0, 0, 0 ]
             tile1External [ FALSE, FALSE, FALSE, FALSE ]
-            tile2External [ FALSE, TRUE, FALSE, FALSE ]
+            tile2External [ FALSE, FALSE, FALSE, FALSE ]
             tile3External [ FALSE, FALSE, FALSE, FALSE ]
-            tile4External [ FALSE, TRUE, FALSE, FALSE ]
+            tile4External [ FALSE, FALSE, FALSE, FALSE ]
             curve [0,0,0,0]
             start FALSE
             trap FALSE
@@ -3731,7 +3811,7 @@
             yScale 0.4
             zScale 0.4
             tileColor 0.635 0.635 0.635
-            room 3
+            room 2
           }
         
         DEF TILE halfTile {
@@ -3739,17 +3819,17 @@
             zPos 11
             floor TRUE
             topWall 0
-            rightWall 6
-            bottomWall 3
+            rightWall 0
+            bottomWall 1
             leftWall 0
             tile1Walls [ 0, 0, 0, 0 ]
             tile2Walls [ 0, 0, 0, 0 ]
             tile3Walls [ 0, 0, 0, 0 ]
             tile4Walls [ 0, 0, 0, 0 ]
             tile1External [ FALSE, FALSE, FALSE, FALSE ]
-            tile2External [ FALSE, TRUE, FALSE, FALSE ]
+            tile2External [ FALSE, FALSE, FALSE, FALSE ]
             tile3External [ FALSE, FALSE, TRUE, FALSE ]
-            tile4External [ FALSE, TRUE, TRUE, FALSE ]
+            tile4External [ FALSE, FALSE, TRUE, FALSE ]
             curve [0,0,0,0]
             start FALSE
             trap FALSE
@@ -3762,7 +3842,7 @@
             yScale 0.4
             zScale 0.4
             tileColor 0.635 0.635 0.635
-            room 3
+            room 2
           }
         
         DEF TILE worldTile {
@@ -3771,7 +3851,7 @@
             floor FALSE
             topWall 0
             rightWall 0
-            bottomWall 3
+            bottomWall 15
             leftWall 0
             topExternal FALSE
             rightExternal FALSE
@@ -3791,7 +3871,7 @@
             room 1
           }
         
-        DEF TILE worldTile {
+        DEF TILE halfTile {
             xPos 11
             zPos 1
             floor TRUE
@@ -3799,10 +3879,15 @@
             rightWall 2
             bottomWall 0
             leftWall 0
-            topExternal TRUE
-            rightExternal TRUE
-            bottomExternal FALSE
-            leftExternal FALSE
+            tile1Walls [ 0, 0, 0, 0 ]
+            tile2Walls [ 0, 0, 0, 0 ]
+            tile3Walls [ 0, 0, 0, 0 ]
+            tile4Walls [ 0, 0, 0, 0 ]
+            tile1External [ TRUE, FALSE, FALSE, FALSE ]
+            tile2External [ TRUE, TRUE, FALSE, FALSE ]
+            tile3External [ FALSE, FALSE, FALSE, FALSE ]
+            tile4External [ FALSE, TRUE, FALSE, FALSE ]
+            curve [0,0,0,0]
             start FALSE
             trap FALSE
             checkpoint FALSE
@@ -3814,119 +3899,15 @@
             yScale 0.4
             zScale 0.4
             tileColor 0.635 0.635 0.635
-            room 4
+            room 3
           }
         
-        DEF TILE worldTile {
+        DEF TILE halfTile {
             xPos 11
             zPos 2
             floor TRUE
             topWall 0
             rightWall 1
-            bottomWall 0
-            leftWall 0
-            topExternal FALSE
-            rightExternal TRUE
-            bottomExternal FALSE
-            leftExternal FALSE
-            start FALSE
-            trap FALSE
-            checkpoint FALSE
-            swamp FALSE
-            width 12
-            height 12
-            id "134"
-            xScale 0.4
-            yScale 0.4
-            zScale 0.4
-            tileColor 0.635 0.635 0.635
-            room 4
-          }
-        
-        DEF TILE worldTile {
-            xPos 11
-            zPos 3
-            floor TRUE
-            topWall 0
-            rightWall 1
-            bottomWall 0
-            leftWall 0
-            topExternal FALSE
-            rightExternal TRUE
-            bottomExternal FALSE
-            leftExternal FALSE
-            start FALSE
-            trap FALSE
-            checkpoint FALSE
-            swamp FALSE
-            width 12
-            height 12
-            id "135"
-            xScale 0.4
-            yScale 0.4
-            zScale 0.4
-            tileColor 0.635 0.635 0.635
-            room 4
-          }
-        
-        DEF TILE worldTile {
-            xPos 11
-            zPos 4
-            floor TRUE
-            topWall 0
-            rightWall 1
-            bottomWall 0
-            leftWall 0
-            topExternal FALSE
-            rightExternal TRUE
-            bottomExternal FALSE
-            leftExternal FALSE
-            start FALSE
-            trap FALSE
-            checkpoint FALSE
-            swamp FALSE
-            width 12
-            height 12
-            id "136"
-            xScale 0.4
-            yScale 0.4
-            zScale 0.4
-            tileColor 0.635 0.635 0.635
-            room 4
-          }
-        
-        DEF TILE worldTile {
-            xPos 11
-            zPos 5
-            floor TRUE
-            topWall 0
-            rightWall 3
-            bottomWall 3
-            leftWall 0
-            topExternal FALSE
-            rightExternal TRUE
-            bottomExternal FALSE
-            leftExternal FALSE
-            start FALSE
-            trap FALSE
-            checkpoint FALSE
-            swamp FALSE
-            width 12
-            height 12
-            id "137"
-            xScale 0.4
-            yScale 0.4
-            zScale 0.4
-            tileColor 0.635 0.635 0.635
-            room 4
-          }
-        
-        DEF TILE halfTile {
-            xPos 11
-            zPos 6
-            floor TRUE
-            topWall 0
-            rightWall 2
             bottomWall 0
             leftWall 0
             tile1Walls [ 0, 0, 0, 0 ]
@@ -3940,11 +3921,11 @@
             curve [0,0,0,0]
             start FALSE
             trap FALSE
-            checkpoint TRUE
+            checkpoint FALSE
             swamp FALSE
             width 12
             height 12
-            id "138"
+            id "134"
             xScale 0.4
             yScale 0.4
             zScale 0.4
@@ -3954,7 +3935,7 @@
         
         DEF TILE halfTile {
             xPos 11
-            zPos 7
+            zPos 3
             floor TRUE
             topWall 0
             rightWall 1
@@ -3966,6 +3947,125 @@
             tile4Walls [ 0, 0, 0, 0 ]
             tile1External [ FALSE, FALSE, FALSE, FALSE ]
             tile2External [ FALSE, TRUE, FALSE, FALSE ]
+            tile3External [ FALSE, FALSE, FALSE, FALSE ]
+            tile4External [ FALSE, TRUE, FALSE, FALSE ]
+            curve [0,0,0,0]
+            start FALSE
+            trap FALSE
+            checkpoint FALSE
+            swamp FALSE
+            width 12
+            height 12
+            id "135"
+            xScale 0.4
+            yScale 0.4
+            zScale 0.4
+            tileColor 0.635 0.635 0.635
+            room 3
+          }
+        
+        DEF TILE halfTile {
+            xPos 11
+            zPos 4
+            floor TRUE
+            topWall 0
+            rightWall 1
+            bottomWall 0
+            leftWall 0
+            tile1Walls [ 0, 0, 0, 0 ]
+            tile2Walls [ 0, 0, 0, 0 ]
+            tile3Walls [ 0, 0, 0, 0 ]
+            tile4Walls [ 0, 0, 0, 0 ]
+            tile1External [ FALSE, FALSE, FALSE, FALSE ]
+            tile2External [ FALSE, TRUE, FALSE, FALSE ]
+            tile3External [ FALSE, FALSE, FALSE, FALSE ]
+            tile4External [ FALSE, TRUE, FALSE, FALSE ]
+            curve [0,0,0,0]
+            start FALSE
+            trap FALSE
+            checkpoint FALSE
+            swamp FALSE
+            width 12
+            height 12
+            id "136"
+            xScale 0.4
+            yScale 0.4
+            zScale 0.4
+            tileColor 0.635 0.635 0.635
+            room 3
+          }
+        
+        DEF TILE halfTile {
+            xPos 11
+            zPos 5
+            floor TRUE
+            topWall 0
+            rightWall 3
+            bottomWall 15
+            leftWall 0
+            tile1Walls [ 0, 0, 0, 0 ]
+            tile2Walls [ 0, 0, 0, 0 ]
+            tile3Walls [ 0, 0, 0, 0 ]
+            tile4Walls [ 0, 0, 0, 0 ]
+            tile1External [ FALSE, FALSE, FALSE, FALSE ]
+            tile2External [ FALSE, TRUE, FALSE, FALSE ]
+            tile3External [ FALSE, FALSE, TRUE, FALSE ]
+            tile4External [ FALSE, TRUE, TRUE, FALSE ]
+            curve [0,0,0,0]
+            start FALSE
+            trap FALSE
+            checkpoint FALSE
+            swamp FALSE
+            width 12
+            height 12
+            id "137"
+            xScale 0.4
+            yScale 0.4
+            zScale 0.4
+            tileColor 0.635 0.635 0.635
+            room 3
+          }
+        
+        DEF TILE worldTile {
+            xPos 11
+            zPos 6
+            floor FALSE
+            topWall 0
+            rightWall 0
+            bottomWall 15
+            leftWall 0
+            topExternal FALSE
+            rightExternal FALSE
+            bottomExternal FALSE
+            leftExternal FALSE
+            start FALSE
+            trap FALSE
+            checkpoint FALSE
+            swamp FALSE
+            width 12
+            height 12
+            id "138"
+            xScale 0.4
+            yScale 0.4
+            zScale 0.4
+            tileColor 0.635 0.635 0.635
+            room 1
+          }
+        
+        DEF TILE halfTile {
+            xPos 11
+            zPos 7
+            floor TRUE
+            topWall 0
+            rightWall 2
+            bottomWall 0
+            leftWall 0
+            tile1Walls [ 0, 0, 0, 0 ]
+            tile2Walls [ 0, 0, 0, 0 ]
+            tile3Walls [ 0, 0, 0, 0 ]
+            tile4Walls [ 0, 0, 0, 0 ]
+            tile1External [ TRUE, FALSE, FALSE, FALSE ]
+            tile2External [ TRUE, TRUE, FALSE, FALSE ]
             tile3External [ FALSE, FALSE, FALSE, FALSE ]
             tile4External [ FALSE, TRUE, FALSE, FALSE ]
             curve [0,0,0,0]
@@ -3980,7 +4080,7 @@
             yScale 0.4
             zScale 0.4
             tileColor 0.635 0.635 0.635
-            room 3
+            room 2
           }
         
         DEF TILE halfTile {
@@ -4011,7 +4111,7 @@
             yScale 0.4
             zScale 0.4
             tileColor 0.635 0.635 0.635
-            room 3
+            room 2
           }
         
         DEF TILE halfTile {
@@ -4019,8 +4119,70 @@
             zPos 9
             floor TRUE
             topWall 0
+            rightWall 1
+            bottomWall 0
+            leftWall 0
+            tile1Walls [ 0, 0, 0, 0 ]
+            tile2Walls [ 0, 0, 0, 0 ]
+            tile3Walls [ 0, 0, 0, 0 ]
+            tile4Walls [ 0, 0, 0, 0 ]
+            tile1External [ FALSE, FALSE, FALSE, FALSE ]
+            tile2External [ FALSE, TRUE, FALSE, FALSE ]
+            tile3External [ FALSE, FALSE, FALSE, FALSE ]
+            tile4External [ FALSE, TRUE, FALSE, FALSE ]
+            curve [0,0,0,0]
+            start FALSE
+            trap FALSE
+            checkpoint FALSE
+            swamp FALSE
+            width 12
+            height 12
+            id "141"
+            xScale 0.4
+            yScale 0.4
+            zScale 0.4
+            tileColor 0.635 0.635 0.635
+            room 2
+          }
+        
+        DEF TILE halfTile {
+            xPos 11
+            zPos 10
+            floor TRUE
+            topWall 0
+            rightWall 1
+            bottomWall 0
+            leftWall 0
+            tile1Walls [ 0, 0, 0, 0 ]
+            tile2Walls [ 0, 0, 0, 0 ]
+            tile3Walls [ 0, 0, 0, 0 ]
+            tile4Walls [ 0, 0, 0, 0 ]
+            tile1External [ FALSE, FALSE, FALSE, FALSE ]
+            tile2External [ FALSE, TRUE, FALSE, FALSE ]
+            tile3External [ FALSE, FALSE, FALSE, FALSE ]
+            tile4External [ FALSE, TRUE, FALSE, FALSE ]
+            curve [0,0,0,0]
+            start FALSE
+            trap FALSE
+            checkpoint FALSE
+            swamp FALSE
+            width 12
+            height 12
+            id "142"
+            xScale 0.4
+            yScale 0.4
+            zScale 0.4
+            tileColor 0.635 0.635 0.635
+            room 2
+          }
+        
+        DEF TILE halfTile {
+            xPos 11
+            zPos 11
+            floor TRUE
+            topWall 0
             rightWall 3
-            bottomWall 15
+            bottomWall 3
             leftWall 0
             tile1Walls [ 0, 0, 0, 0 ]
             tile2Walls [ 0, 0, 0, 0 ]
@@ -4037,64 +4199,12 @@
             swamp FALSE
             width 12
             height 12
-            id "141"
-            xScale 0.4
-            yScale 0.4
-            zScale 0.4
-            tileColor 0.635 0.635 0.635
-            room 3
-          }
-        
-        DEF TILE worldTile {
-            xPos 11
-            zPos 10
-            floor FALSE
-            topWall 0
-            rightWall 0
-            bottomWall 0
-            leftWall 0
-            topExternal FALSE
-            rightExternal FALSE
-            bottomExternal FALSE
-            leftExternal FALSE
-            start FALSE
-            trap FALSE
-            checkpoint FALSE
-            swamp FALSE
-            width 12
-            height 12
-            id "142"
-            xScale 0.4
-            yScale 0.4
-            zScale 0.4
-            tileColor 0.635 0.635 0.635
-            room 1
-          }
-        
-        DEF TILE worldTile {
-            xPos 11
-            zPos 11
-            floor FALSE
-            topWall 0
-            rightWall 0
-            bottomWall 0
-            leftWall 0
-            topExternal FALSE
-            rightExternal FALSE
-            bottomExternal FALSE
-            leftExternal FALSE
-            start FALSE
-            trap FALSE
-            checkpoint FALSE
-            swamp FALSE
-            width 12
-            height 12
             id "143"
             xScale 0.4
             yScale 0.4
             zScale 0.4
             tileColor 0.635 0.635 0.635
-            room 1
+            room 2
           }
         
             ]
@@ -4106,10 +4216,10 @@
         DEF boundary Group {
             children [
               DEF checkpoint0min Transform {
-                    translation -0.6599999999999999 -0.03 -0.3
+                    translation -0.78 -0.03 -0.06
               }
               DEF checkpoint0max Transform {
-                    translation -0.54 -0.03 -0.18
+                    translation -0.6599999999999999 -0.03 0.06
               }
             ]
           }
@@ -4117,10 +4227,10 @@
         DEF boundary Group {
             children [
               DEF checkpoint1min Transform {
-                    translation -0.54 -0.03 0.54
+                    translation -0.42 -0.03 0.2999999999999999
               }
               DEF checkpoint1max Transform {
-                    translation -0.42 -0.03 0.6600000000000001
+                    translation -0.3 -0.03 0.4199999999999999
               }
             ]
           }
@@ -4128,10 +4238,10 @@
         DEF boundary Group {
             children [
               DEF checkpoint2min Transform {
-                    translation -0.3 -0.03 -0.42
+                    translation -0.17999999999999988 -0.03 -0.06
               }
               DEF checkpoint2max Transform {
-                    translation -0.18 -0.03 -0.3
+                    translation -0.05999999999999989 -0.03 0.06
               }
             ]
           }
@@ -4139,10 +4249,10 @@
         DEF boundary Group {
             children [
               DEF checkpoint3min Transform {
-                    translation 0.54 -0.03 -0.06
+                    translation 0.4200000000000002 -0.03 0.2999999999999999
               }
               DEF checkpoint3max Transform {
-                    translation 0.6600000000000001 -0.03 0.06
+                    translation 0.5400000000000003 -0.03 0.4199999999999999
               }
             ]
           }
@@ -4156,10 +4266,10 @@
         DEF boundary Group {
             children [
               DEF trap0min Transform {
-                    translation -0.42 -0.03 0.06000000000000011
+                    translation -0.06 -0.03 0.18
               }
               DEF trap0max Transform {
-                    translation -0.3 -0.03 0.1800000000000001
+                    translation 0.06 -0.03 0.3
               }
             ]
           }
@@ -4167,21 +4277,10 @@
         DEF boundary Group {
             children [
               DEF trap1min Transform {
-                    translation -0.06 -0.03 -0.6599999999999999
+                    translation 0.4200000000000002 -0.03 0.18
               }
               DEF trap1max Transform {
-                    translation 0.06 -0.03 -0.54
-              }
-            ]
-          }
-        
-        DEF boundary Group {
-            children [
-              DEF trap2min Transform {
-                    translation 0.06000000000000011 -0.03 -0.17999999999999988
-              }
-              DEF trap2max Transform {
-                    translation 0.1800000000000001 -0.03 -0.05999999999999989
+                    translation 0.5400000000000003 -0.03 0.3
               }
             ]
           }
@@ -4195,10 +4294,10 @@
         DEF boundary Group {
             children [
               DEF start0min Transform {
-                    translation -0.78 -0.03 -0.78
+                    translation -0.78 -0.03 0.4200000000000002
               }
               DEF start0max Transform {
-                    translation -0.6599999999999999 -0.03 -0.6599999999999999
+                    translation -0.6599999999999999 -0.03 0.5400000000000003
               }
             ]
           }
@@ -4212,10 +4311,10 @@
         DEF boundary Group {
             children [
               DEF swamp0min Transform {
-                    translation -0.54 -0.03 -0.6599999999999999
+                    translation -0.54 -0.03 0.54
               }
               DEF swamp0max Transform {
-                    translation -0.42 -0.03 -0.54
+                    translation -0.42 -0.03 0.6600000000000001
               }
             ]
           }
@@ -4223,10 +4322,10 @@
         DEF boundary Group {
             children [
               DEF swamp1min Transform {
-                    translation -0.17999999999999988 -0.03 -0.17999999999999988
+                    translation -0.17999999999999988 -0.03 -0.3
               }
               DEF swamp1max Transform {
-                    translation -0.05999999999999989 -0.03 -0.05999999999999989
+                    translation -0.05999999999999989 -0.03 -0.18
               }
             ]
           }
@@ -4234,10 +4333,10 @@
         DEF boundary Group {
             children [
               DEF swamp2min Transform {
-                    translation 0.2999999999999999 -0.03 -0.3
+                    translation 0.4200000000000002 -0.03 -0.3
               }
               DEF swamp2max Transform {
-                    translation 0.4199999999999999 -0.03 -0.18
+                    translation 0.5400000000000003 -0.03 -0.18
               }
             ]
           }
@@ -4249,8 +4348,8 @@
             children [
               
         DEF OBSTACLE0 Solid {
-            translation 0.3354299999999999 0 -0.39098
-			rotation 0 1 0 2.482
+            translation -0.46874 0 -0.25546
+			rotation 0 1 0 1.2550000000000001
             children [
                 Shape {
                     appearance Appearance {
@@ -4259,7 +4358,7 @@
 						}
                     }
                     geometry DEF OBSTACLEBOX0 Box {
-						size 0.04822618108134014 0.06 0.022256355791059567
+						size 0.05485313169170883 0.06 0.036258388329222783
                     }
                 }
             ]
@@ -4271,8 +4370,8 @@
         }
         
         DEF OBSTACLE1 Solid {
-            translation 0.4677400000000002 0 0.1349900000000001
-			rotation 0 1 0 2.024
+            translation -0.49262999999999996 0 0.32167999999999985
+			rotation 0 1 0 5.404
             children [
                 Shape {
                     appearance Appearance {
@@ -4281,12 +4380,34 @@
 						}
                     }
                     geometry DEF OBSTACLEBOX1 Box {
-						size 0.057678837542976105 0.06 0.032889107543430614
+						size 0.026177099296854224 0.06 0.026406422285961108
                     }
                 }
             ]
             name "obstacle1"
             boundingObject USE OBSTACLEBOX1
+	    recognitionColors [
+			0.45 0.45 0.45
+		]
+        }
+        
+        DEF OBSTACLE2 Solid {
+            translation -0.07461999999999988 0 -0.75633
+			rotation 0 1 0 4.029
+            children [
+                Shape {
+                    appearance Appearance {
+						material Material {
+						diffuseColor 0.45 0.45 0.45
+						}
+                    }
+                    geometry DEF OBSTACLEBOX2 Box {
+						size 0.030089457118149743 0.06 0.02086137946215572
+                    }
+                }
+            ]
+            name "obstacle2"
+            boundingObject USE OBSTACLEBOX2
 	    recognitionColors [
 			0.45 0.45 0.45
 		]
@@ -4299,82 +4420,58 @@
             children [
               
         Victim {
-            translation -0.775 0 0.24
-            rotation 0 1 0 -1.57
+            translation -0.72 0 -0.775
+            rotation 0 1 0 3.14
             name "Victim0"
-            type "stable"
+            type "harmed"
             scoreWorth 5
         }
         
         Victim {
-            translation -0.655 0 -0.365
-            rotation 0 1 0 -1.57
+            translation -0.72 0 -0.295
+            rotation 0 1 0 3.14
             name "Victim1"
             type "stable"
             scoreWorth 5
         }
         
         Victim {
-            translation -0.611 0 0.1750000000000001
-            rotation 0 1 0 0
+            translation -0.47 0 -0.535
+            rotation 0 1 0 3.14
             name "Victim2"
             type "unharmed"
             scoreWorth 5
         }
         
         Victim {
-            translation -0.34199999999999997 0 -0.415
+            translation -0.272 0 0.185
             rotation 0 1 0 3.14
             name "Victim3"
             type "unharmed"
-            scoreWorth 15
+            scoreWorth 5
         }
         
         Victim {
-            translation -0.17499999999999988 0 0
+            translation -0.05500000000000001 0 -0.24
             rotation 0 1 0 -1.57
             name "Victim4"
-            type "stable"
-            scoreWorth 15
-        }
-        
-        Victim {
-            translation -0.06499999999999988 0 0.1200000000000001
-            rotation 0 1 0 1.57
-            name "Victim5"
             type "unharmed"
             scoreWorth 15
         }
         
         Victim {
-            translation 0.24 0 -0.415
+            translation 0.1200000000000001 0 -0.775
+            rotation 0 1 0 3.14
+            name "Victim5"
+            type "unharmed"
+            scoreWorth 5
+        }
+        
+        Victim {
+            translation 0.22599999999999998 0 0.185
             rotation 0 1 0 3.14
             name "Victim6"
             type "unharmed"
-            scoreWorth 5
-        }
-        
-        Victim {
-            translation 0.3599999999999999 0 -0.775
-            rotation 0 1 0 3.14
-            name "Victim7"
-            type "stable"
-            scoreWorth 5
-        }
-        
-        Victim {
-            translation 0.35199999999999987 0 0.3049999999999999
-            rotation 0 1 0 3.14
-            name "Victim8"
-            type "unharmed"
-            scoreWorth 15
-        }
-        
-        Victim {
-            translation 0.5350000000000003 0 0.6000000000000001
-            rotation 0 1 0 1.57
-            name "Victim9"
-            type "stable"
             scoreWorth 5
         }
         
@@ -4385,67 +4482,99 @@
             children [
               
         HazardMap {
-            translation -0.6544 0 0.4930000000000002
-            rotation 0 1 0 -1.57
+            translation -0.621 0 0.4143999999999999
+            rotation 0 1 0 0
             name "Hazard0"
-            type "P"
-            scoreWorth 30
+            type "F"
+            scoreWorth 10
         }
         
         HazardMap {
-            translation -0.2944 0 -0.216
-            rotation 0 1 0 -1.57
-            name "Hazard1"
-            type "C"
-            scoreWorth 30
-        }
-        
-        HazardMap {
-            translation -0.248 0 0.30559999999999987
+            translation -0.48 0 -0.7744
             rotation 0 1 0 3.14
+            name "Hazard1"
+            type "O"
+            scoreWorth 10
+        }
+        
+        HazardMap {
+            translation -0.4256 0 -0.11299999999999988
+            rotation 0 1 0 1.57
             name "Hazard2"
             type "O"
             scoreWorth 30
         }
         
         HazardMap {
-            translation -0.054400000000000004 0 -0.72
-            rotation 0 1 0 -1.57
-            name "Hazard3"
-            type "F"
-            scoreWorth 10
-        }
-        
-        HazardMap {
-            translation 0.1744000000000001 0 -0.36
+            translation -0.4256 0 0.215
             rotation 0 1 0 1.57
-            name "Hazard4"
+            name "Hazard3"
             type "O"
             scoreWorth 10
         }
         
         HazardMap {
-            translation 0.09000000000000011 0 0.30559999999999987
+            translation -0.36 0 -0.7744
             rotation 0 1 0 3.14
-            name "Hazard5"
+            name "Hazard4"
             type "C"
-            scoreWorth 30
+            scoreWorth 10
         }
         
         HazardMap {
-            translation 0.1856 0 -0.10899999999999989
-            rotation 0 1 0 -1.57
+            translation -0.24 0 -0.7744
+            rotation 0 1 0 3.14
+            name "Hazard5"
+            type "F"
+            scoreWorth 10
+        }
+        
+        HazardMap {
+            translation -0.06559999999999988 0 0.3739999999999999
+            rotation 0 1 0 1.57
             name "Hazard6"
             type "C"
             scoreWorth 10
         }
         
         HazardMap {
-            translation 0.6544000000000001 0 0.1200000000000001
-            rotation 0 1 0 1.57
+            translation 0 0 -0.4144
+            rotation 0 1 0 3.14
             name "Hazard7"
+            type "C"
+            scoreWorth 10
+        }
+        
+        HazardMap {
+            translation 0.24 0 0.4256000000000002
+            rotation 0 1 0 3.14
+            name "Hazard8"
             type "O"
             scoreWorth 10
+        }
+        
+        HazardMap {
+            translation 0.4143999999999999 0 -0.585
+            rotation 0 1 0 1.57
+            name "Hazard9"
+            type "O"
+            scoreWorth 30
+        }
+        
+        HazardMap {
+            translation 0.3599999999999999 0 0.5344000000000002
+            rotation 0 1 0 0
+            name "Hazard10"
+            type "C"
+            scoreWorth 10
+        }
+        
+        HazardMap {
+            translation 0.4640000000000002 0 -0.5344
+            rotation 0 1 0 3.14
+            name "Hazard11"
+            type "O"
+            scoreWorth 30
         }
         
             ]

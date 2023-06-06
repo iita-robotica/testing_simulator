@@ -241,8 +241,8 @@
             floor TRUE
             topWall 0
             rightWall 0
-            bottomWall 0
-            leftWall 1
+            bottomWall 5
+            leftWall 3
             topExternal TRUE
             rightExternal FALSE
             bottomExternal FALSE
@@ -268,7 +268,7 @@
             topWall 0
             rightWall 0
             bottomWall 5
-            leftWall 3
+            leftWall 6
             topExternal FALSE
             rightExternal FALSE
             bottomExternal TRUE
@@ -510,8 +510,8 @@
             zPos 5
             floor TRUE
             topWall 0
-            rightWall 2
-            bottomWall 0
+            rightWall 6
+            bottomWall 6
             leftWall 0
             tile1Walls [ 0, 0, 0, 0 ]
             tile2Walls [ 0, 0, 0, 0 ]
@@ -972,7 +972,7 @@
             floor TRUE
             topWall 0
             rightWall 0
-            bottomWall 0
+            bottomWall 2
             leftWall 0
             topExternal FALSE
             rightExternal FALSE
@@ -1250,7 +1250,7 @@
             start FALSE
             trap FALSE
             checkpoint FALSE
-            swamp FALSE
+            swamp TRUE
             width 12
             height 12
             id "42"
@@ -1551,7 +1551,7 @@
             zPos 5
             floor TRUE
             topWall 0
-            rightWall 0
+            rightWall 1
             bottomWall 0
             leftWall 0
             tile1Walls [ 0, 0, 0, 0 ]
@@ -1582,7 +1582,7 @@
             zPos 6
             floor TRUE
             topWall 0
-            rightWall 0
+            rightWall 3
             bottomWall 0
             leftWall 0
             topExternal FALSE
@@ -2380,7 +2380,7 @@
             start FALSE
             trap FALSE
             checkpoint FALSE
-            swamp TRUE
+            swamp FALSE
             width 12
             height 12
             id "82"
@@ -2609,7 +2609,7 @@
             floor TRUE
             topWall 0
             rightWall 0
-            bottomWall 0
+            bottomWall 3
             leftWall 0
             topExternal FALSE
             rightExternal FALSE
@@ -2634,7 +2634,7 @@
             zPos 7
             floor TRUE
             topWall 0
-            rightWall 3
+            rightWall 6
             bottomWall 15
             leftWall 0
             topExternal FALSE
@@ -2832,7 +2832,7 @@
             tile1Walls [ 0, 0, 0, 0 ]
             tile2Walls [ 0, 0, 0, 0 ]
             tile3Walls [ 0, 0, 0, 0 ]
-            tile4Walls [ 0, 1, 0, 0 ]
+            tile4Walls [ 0, 3, 3, 0 ]
             tile1External [ FALSE, FALSE, FALSE, FALSE ]
             tile2External [ FALSE, FALSE, FALSE, FALSE ]
             tile3External [ FALSE, FALSE, FALSE, FALSE ]
@@ -3003,7 +3003,7 @@
             floor TRUE
             topWall 0
             rightWall 0
-            bottomWall 5
+            bottomWall 15
             leftWall 0
             topExternal FALSE
             rightExternal FALSE
@@ -3026,9 +3026,9 @@
         DEF TILE worldTile {
             xPos 8
             zPos 9
-            floor TRUE
+            floor FALSE
             topWall 0
-            rightWall 0
+            rightWall 2
             bottomWall 0
             leftWall 0
             topExternal FALSE
@@ -3036,7 +3036,7 @@
             bottomExternal FALSE
             leftExternal FALSE
             start FALSE
-            trap FALSE
+            trap TRUE
             checkpoint FALSE
             swamp FALSE
             width 12
@@ -3055,7 +3055,7 @@
             floor TRUE
             topWall 0
             rightWall 0
-            bottomWall 0
+            bottomWall 2
             leftWall 0
             topExternal FALSE
             rightExternal FALSE
@@ -3221,7 +3221,7 @@
             floor TRUE
             topWall 0
             rightWall 0
-            bottomWall 0
+            bottomWall 2
             leftWall 0
             tile1Walls [ 0, 0, 0, 0 ]
             tile2Walls [ 0, 0, 0, 0 ]
@@ -3335,7 +3335,7 @@
             floor TRUE
             topWall 0
             rightWall 0
-            bottomWall 0
+            bottomWall 2
             leftWall 0
             topExternal FALSE
             rightExternal FALSE
@@ -3625,7 +3625,7 @@
             floor TRUE
             topWall 0
             rightWall 0
-            bottomWall 0
+            bottomWall 3
             leftWall 0
             topExternal FALSE
             rightExternal FALSE
@@ -3650,8 +3650,8 @@
             zPos 7
             floor TRUE
             topWall 0
-            rightWall 2
-            bottomWall 0
+            rightWall 6
+            bottomWall 3
             leftWall 0
             topExternal FALSE
             rightExternal FALSE
@@ -3933,7 +3933,7 @@
         DEF TILE halfTile {
             xPos 11
             zPos 5
-            floor TRUE
+            floor FALSE
             topWall 0
             rightWall 3
             bottomWall 3
@@ -3948,7 +3948,7 @@
             tile4External [ FALSE, TRUE, FALSE, FALSE ]
             curve [0,0,0,0]
             start FALSE
-            trap FALSE
+            trap TRUE
             checkpoint FALSE
             swamp FALSE
             width 12
@@ -3967,7 +3967,7 @@
             floor TRUE
             topWall 0
             rightWall 6
-            bottomWall 15
+            bottomWall 6
             leftWall 0
             topExternal FALSE
             rightExternal TRUE
@@ -4044,8 +4044,8 @@
             zPos 9
             floor TRUE
             topWall 0
-            rightWall 0
-            bottomWall 1
+            rightWall 3
+            bottomWall 3
             leftWall 0
             topExternal FALSE
             rightExternal TRUE
@@ -4116,19 +4116,6 @@
             tileColor 0.635 0.635 0.635
             room 1
           }
-        
-        Area4_2 {
-            X 7
-            Y 7
-            DIR 0
-            width 12
-            height 12
-            xScale 0.4
-            zScale 0.4
-            yScale 0.4
-            area4Width 6
-            area4Height 6
-        }
         
             ]
         }
@@ -4219,6 +4206,28 @@
             ]
           }
         
+        DEF boundary Group {
+            children [
+              DEF trap3min Transform {
+                    translation 0.18 -0.03 0.2999999999999999
+              }
+              DEF trap3max Transform {
+                    translation 0.3 -0.03 0.4199999999999999
+              }
+            ]
+          }
+        
+        DEF boundary Group {
+            children [
+              DEF trap4min Transform {
+                    translation 0.54 -0.03 -0.17999999999999988
+              }
+              DEF trap4max Transform {
+                    translation 0.6600000000000001 -0.03 -0.05999999999999989
+              }
+            ]
+          }
+        
             ]
         }
         
@@ -4245,10 +4254,10 @@
         DEF boundary Group {
             children [
               DEF swamp0min Transform {
-                    translation -0.06 -0.03 0.4200000000000002
+                    translation -0.42 -0.03 -0.06
               }
               DEF swamp0max Transform {
-                    translation 0.06 -0.03 0.5400000000000003
+                    translation -0.3 -0.03 0.06
               }
             ]
           }
@@ -4271,8 +4280,8 @@
             children [
               
         DEF OBSTACLE0 Solid {
-            translation -0.62058 0 0.25956999999999997
-			rotation 0 1 0 2.274
+            translation -0.60635 0 0.22307
+			rotation 0 1 0 4.892
             children [
                 Shape {
                     appearance Appearance {
@@ -4281,34 +4290,12 @@
 						}
                     }
                     geometry DEF OBSTACLEBOX0 Box {
-						size 0.03902093971676593 0.06 0.047946962414637084
+						size 0.0475733838857121 0.06 0.022521990886145916
                     }
                 }
             ]
             name "obstacle0"
             boundingObject USE OBSTACLEBOX0
-	    recognitionColors [
-			0.45 0.45 0.45
-		]
-        }
-        
-        DEF OBSTACLE1 Solid {
-            translation -0.35719 0 -0.24173999999999998
-			rotation 0 1 0 1.711
-            children [
-                Shape {
-                    appearance Appearance {
-						material Material {
-						diffuseColor 0.45 0.45 0.45
-						}
-                    }
-                    geometry DEF OBSTACLEBOX1 Box {
-						size 0.04666545839344885 0.06 0.03747068397006672
-                    }
-                }
-            ]
-            name "obstacle1"
-            boundingObject USE OBSTACLEBOX1
 	    recognitionColors [
 			0.45 0.45 0.45
 		]
@@ -4321,17 +4308,25 @@
             children [
               
         Victim {
-            translation -0.775 0 0.4800000000000002
+            translation -0.775 0 0.1200000000000001
             rotation 0 1 0 -1.57
             name "Victim0"
+            type "harmed"
+            scoreWorth 5
+        }
+        
+        Victim {
+            translation -0.775 0 0.4800000000000002
+            rotation 0 1 0 -1.57
+            name "Victim1"
             type "unharmed"
             scoreWorth 5
         }
         
         Victim {
-            translation -0.305 0 -0.62
+            translation -0.305 0 -0.624
             rotation 0 1 0 1.57
-            name "Victim1"
+            name "Victim2"
             type "harmed"
             scoreWorth 5
         }
@@ -4339,49 +4334,57 @@
         Victim {
             translation -0.185 0 0.6000000000000001
             rotation 0 1 0 1.57
-            name "Victim2"
-            type "stable"
-            scoreWorth 5
-        }
-        
-        Victim {
-            translation -0.023 0 -0.295
-            rotation 0 1 0 3.14
             name "Victim3"
             type "stable"
-            scoreWorth 15
-        }
-        
-        Victim {
-            translation 0.1180000000000001 0 0.185
-            rotation 0 1 0 3.14
-            name "Victim4"
-            type "unharmed"
-            scoreWorth 15
-        }
-        
-        Victim {
-            translation 0.32699999999999985 0 -0.535
-            rotation 0 1 0 3.14
-            name "Victim5"
-            type "unharmed"
             scoreWorth 5
         }
         
         Victim {
-            translation 0.4500000000000001 0 0.4200000000000001
+            translation -0.15299999999999989 0 0.05500000000000001
             rotation 0 1 0 0
+            name "Victim4"
+            type "harmed"
+            scoreWorth 15
+        }
+        
+        Victim {
+            translation 0.015 0 -0.295
+            rotation 0 1 0 3.14
+            name "Victim5"
+            type "stable"
+            scoreWorth 15
+        }
+        
+        Victim {
+            translation 0.1200000000000001 0 0.185
+            rotation 0 1 0 3.14
             name "Victim6"
             type "unharmed"
             scoreWorth 15
         }
         
         Victim {
-            translation 0.6191000000000001 0 0.3936600000000001
-            rotation 0 1 0 2.0944
+            translation 0.3619999999999999 0 -0.535
+            rotation 0 1 0 3.14
             name "Victim7"
-            type "harmed"
-            scoreWorth 15
+            type "unharmed"
+            scoreWorth 5
+        }
+        
+        Victim {
+            translation 0.3049999999999999 0 -0.22299999999999998
+            rotation 0 1 0 -1.57
+            name "Victim8"
+            type "stable"
+            scoreWorth 5
+        }
+        
+        Victim {
+            translation 0.4990000000000002 0 0.1750000000000001
+            rotation 0 1 0 0
+            name "Victim9"
+            type "unharmed"
+            scoreWorth 5
         }
         
             ]
@@ -4391,41 +4394,81 @@
             children [
               
         HazardMap {
-            translation -0.5344 0 -0.1289999999999999
+            translation -0.7744 0 -0.72
             rotation 0 1 0 -1.57
             name "Hazard0"
             type "P"
-            scoreWorth 30
+            scoreWorth 10
         }
         
         HazardMap {
-            translation -0.2944 0 -0.505
-            rotation 0 1 0 -1.57
+            translation -0.5456 0 -0.12399999999999989
+            rotation 0 1 0 1.57
             name "Hazard1"
+            type "O"
+            scoreWorth 10
+        }
+        
+        HazardMap {
+            translation -0.2944 0 -0.469
+            rotation 0 1 0 -1.57
+            name "Hazard2"
             type "F"
             scoreWorth 10
         }
         
         HazardMap {
-            translation -0.06559999999999988 0 0.4580000000000002
-            rotation 0 1 0 1.57
-            name "Hazard2"
+            translation -0.11999999999999988 0 -0.7744
+            rotation 0 1 0 3.14
+            name "Hazard3"
             type "C"
             scoreWorth 10
         }
         
         HazardMap {
+            translation -0.06559999999999988 0 0.5110000000000002
+            rotation 0 1 0 1.57
+            name "Hazard4"
+            type "C"
+            scoreWorth 10
+        }
+        
+        HazardMap {
+            translation -0.054400000000000004 0 -0.72
+            rotation 0 1 0 -1.57
+            name "Hazard5"
+            type "F"
+            scoreWorth 10
+        }
+        
+        HazardMap {
+            translation 0.1744000000000001 0 0.1200000000000001
+            rotation 0 1 0 1.57
+            name "Hazard6"
+            type "O"
+            scoreWorth 30
+        }
+        
+        HazardMap {
             translation 0.1744000000000001 0 0.6000000000000001
             rotation 0 1 0 1.57
-            name "Hazard3"
+            name "Hazard7"
             type "F"
+            scoreWorth 10
+        }
+        
+        HazardMap {
+            translation 0.1856 0 0.6000000000000001
+            rotation 0 1 0 -1.57
+            name "Hazard8"
+            type "C"
             scoreWorth 10
         }
         
         HazardMap {
             translation 0.4800000000000002 0 -0.7744
             rotation 0 1 0 3.14
-            name "Hazard4"
+            name "Hazard9"
             type "O"
             scoreWorth 10
         }
@@ -4433,7 +4476,7 @@
         HazardMap {
             translation 0.6000000000000001 0 -0.7744
             rotation 0 1 0 3.14
-            name "Hazard5"
+            name "Hazard10"
             type "C"
             scoreWorth 10
         }
@@ -4441,25 +4484,9 @@
         HazardMap {
             translation 0.6544000000000001 0 0
             rotation 0 1 0 1.57
-            name "Hazard6"
+            name "Hazard11"
             type "C"
             scoreWorth 10
-        }
-        
-        HazardMap {
-            translation 0.2600000000000001 0 0.4190000000000001
-            rotation 0 1 0 0
-            name "Hazard7"
-            type "C"
-            scoreWorth 30
-        }
-        
-        HazardMap {
-            translation 0.6841420000000001 0 0.5941420000000002
-            rotation 0 1 0 0.785398
-            name "Hazard8"
-            type "P"
-            scoreWorth 30
         }
         
             ]

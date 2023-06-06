@@ -566,8 +566,8 @@
             zPos 6
             floor TRUE
             topWall 0
-            rightWall 2
-            bottomWall 0
+            rightWall 6
+            bottomWall 3
             leftWall 0
             tile1Walls [ 0, 0, 0, 0 ]
             tile2Walls [ 0, 0, 0, 0 ]
@@ -814,7 +814,7 @@
             leftWall 0
             tile1Walls [ 0, 0, 0, 0 ]
             tile2Walls [ 0, 0, 0, 0 ]
-            tile3Walls [ 0, 0, 0, 0 ]
+            tile3Walls [ 0, 0, 2, 0 ]
             tile4Walls [ 0, 0, 0, 0 ]
             tile1External [ FALSE, FALSE, FALSE, FALSE ]
             tile2External [ FALSE, FALSE, FALSE, FALSE ]
@@ -1311,7 +1311,7 @@
             tile1Walls [ 0, 0, 0, 0 ]
             tile2Walls [ 0, 0, 0, 0 ]
             tile3Walls [ 0, 0, 0, 0 ]
-            tile4Walls [ 0, 0, 0, 0 ]
+            tile4Walls [ 0, 0, 3, 0 ]
             tile1External [ FALSE, FALSE, FALSE, FALSE ]
             tile2External [ FALSE, FALSE, FALSE, FALSE ]
             tile3External [ FALSE, FALSE, FALSE, FALSE ]
@@ -1492,7 +1492,7 @@
             floor TRUE
             topWall 2
             rightWall 0
-            bottomWall 0
+            bottomWall 6
             leftWall 0
             topExternal TRUE
             rightExternal FALSE
@@ -1595,8 +1595,8 @@
             zPos 4
             floor TRUE
             topWall 0
-            rightWall 2
-            bottomWall 0
+            rightWall 6
+            bottomWall 3
             leftWall 0
             tile1Walls [ 0, 0, 0, 0 ]
             tile2Walls [ 0, 0, 0, 0 ]
@@ -1626,7 +1626,7 @@
             zPos 5
             floor TRUE
             topWall 0
-            rightWall 3
+            rightWall 6
             bottomWall 15
             leftWall 0
             tile1Walls [ 0, 0, 0, 0 ]
@@ -1658,7 +1658,7 @@
             floor TRUE
             topWall 0
             rightWall 0
-            bottomWall 15
+            bottomWall 6
             leftWall 0
             topExternal FALSE
             rightExternal FALSE
@@ -1839,7 +1839,7 @@
             floor TRUE
             topWall 1
             rightWall 0
-            bottomWall 5
+            bottomWall 2
             leftWall 0
             topExternal TRUE
             rightExternal FALSE
@@ -1968,7 +1968,7 @@
             zPos 5
             floor TRUE
             topWall 0
-            rightWall 0
+            rightWall 3
             bottomWall 0
             leftWall 0
             topExternal FALSE
@@ -2169,8 +2169,8 @@
             xPos 6
             zPos 0
             floor TRUE
-            topWall 1
-            rightWall 0
+            topWall 3
+            rightWall 2
             bottomWall 0
             leftWall 0
             topExternal TRUE
@@ -2222,8 +2222,8 @@
             zPos 2
             floor TRUE
             topWall 0
-            rightWall 0
-            bottomWall 5
+            rightWall 6
+            bottomWall 15
             leftWall 0
             topExternal FALSE
             rightExternal FALSE
@@ -2301,7 +2301,7 @@
             floor TRUE
             topWall 0
             rightWall 3
-            bottomWall 3
+            bottomWall 15
             leftWall 0
             topExternal FALSE
             rightExternal FALSE
@@ -2327,7 +2327,7 @@
             floor TRUE
             topWall 0
             rightWall 0
-            bottomWall 0
+            bottomWall 1
             leftWall 0
             topExternal FALSE
             rightExternal FALSE
@@ -2496,7 +2496,7 @@
             xPos 7
             zPos 0
             floor TRUE
-            topWall 1
+            topWall 2
             rightWall 0
             bottomWall 0
             leftWall 0
@@ -2524,7 +2524,7 @@
             floor TRUE
             topWall 0
             rightWall 0
-            bottomWall 0
+            bottomWall 5
             leftWall 0
             topExternal FALSE
             rightExternal FALSE
@@ -2653,7 +2653,7 @@
             zPos 6
             floor TRUE
             topWall 0
-            rightWall 0
+            rightWall 2
             bottomWall 0
             leftWall 0
             topExternal FALSE
@@ -3135,8 +3135,8 @@
             xPos 9
             zPos 0
             floor TRUE
-            topWall 1
-            rightWall 0
+            topWall 3
+            rightWall 2
             bottomWall 0
             leftWall 0
             topExternal TRUE
@@ -3447,7 +3447,7 @@
             xPos 10
             zPos 0
             floor TRUE
-            topWall 1
+            topWall 2
             rightWall 0
             bottomWall 0
             leftWall 0
@@ -3759,8 +3759,8 @@
             xPos 11
             zPos 0
             floor TRUE
-            topWall 1
-            rightWall 0
+            topWall 3
+            rightWall 2
             bottomWall 0
             leftWall 0
             topExternal TRUE
@@ -4067,19 +4067,6 @@
             room 4
           }
         
-        Area4_1 {
-            X 5
-            Y 6
-            DIR 0
-            width 12
-            height 12
-            xScale 0.4
-            zScale 0.4
-            yScale 0.4
-            area4Width 7
-            area4Height 5
-        }
-        
             ]
         }
         
@@ -4210,8 +4197,8 @@
             children [
               
         DEF OBSTACLE0 Solid {
-            translation -0.48984 0 -0.35568
-			rotation 0 1 0 3.767
+            translation -0.48934 0 -0.35725999999999997
+			rotation 0 1 0 0.431
             children [
                 Shape {
                     appearance Appearance {
@@ -4220,12 +4207,34 @@
 						}
                     }
                     geometry DEF OBSTACLEBOX0 Box {
-						size 0.059297913615853196 0.06 0.0392950522558963
+						size 0.03904553621335741 0.06 0.04947290918396108
                     }
                 }
             ]
             name "obstacle0"
             boundingObject USE OBSTACLEBOX0
+	    recognitionColors [
+			0.45 0.45 0.45
+		]
+        }
+        
+        DEF OBSTACLE1 Solid {
+            translation 0.24359999999999998 0 -0.00489
+			rotation 0 1 0 5.682
+            children [
+                Shape {
+                    appearance Appearance {
+						material Material {
+						diffuseColor 0.45 0.45 0.45
+						}
+                    }
+                    geometry DEF OBSTACLEBOX1 Box {
+						size 0.02606249692558741 0.06 0.046032970526015536
+                    }
+                }
+            ]
+            name "obstacle1"
+            boundingObject USE OBSTACLEBOX1
 	    recognitionColors [
 			0.45 0.45 0.45
 		]
@@ -4238,9 +4247,17 @@
             children [
               
         Victim {
-            translation -0.655 0 -0.48
+            translation -0.775 0 0.6000000000000001
             rotation 0 1 0 -1.57
             name "Victim0"
+            type "harmed"
+            scoreWorth 5
+        }
+        
+        Victim {
+            translation -0.655 0 -0.48
+            rotation 0 1 0 -1.57
+            name "Victim1"
             type "stable"
             scoreWorth 5
         }
@@ -4248,7 +4265,7 @@
         Victim {
             translation -0.655 0 -0.36
             rotation 0 1 0 -1.57
-            name "Victim1"
+            name "Victim2"
             type "unharmed"
             scoreWorth 5
         }
@@ -4256,29 +4273,21 @@
         Victim {
             translation -0.305 0 -0.72
             rotation 0 1 0 1.57
-            name "Victim2"
-            type "unharmed"
-            scoreWorth 5
-        }
-        
-        Victim {
-            translation -0.258 0 0.4250000000000002
-            rotation 0 1 0 3.14
             name "Victim3"
             type "unharmed"
             scoreWorth 5
         }
         
         Victim {
-            translation -0.17499999999999988 0 -0.565
-            rotation 0 1 0 -1.57
+            translation -0.185 0 -0.13999999999999987
+            rotation 0 1 0 1.57
             name "Victim4"
-            type "stable"
+            type "unharmed"
             scoreWorth 15
         }
         
         Victim {
-            translation 0.3599999999999999 0 -0.535
+            translation -0.22699999999999998 0 0.4250000000000002
             rotation 0 1 0 3.14
             name "Victim5"
             type "unharmed"
@@ -4286,19 +4295,43 @@
         }
         
         Victim {
-            translation 0.4990000000000002 0 0.0650000000000001
-            rotation 0 1 0 3.14
+            translation -0.17499999999999988 0 -0.633
+            rotation 0 1 0 -1.57
             name "Victim6"
             type "stable"
             scoreWorth 5
         }
         
         Victim {
-            translation -0.10999999999999989 0 0.238
-            rotation 0 1 0 1.5708
+            translation 0.3049999999999999 0 -0.72
+            rotation 0 1 0 -1.57
             name "Victim7"
-            type "harmed"
-            scoreWorth 15
+            type "stable"
+            scoreWorth 5
+        }
+        
+        Victim {
+            translation 0.3599999999999999 0 -0.535
+            rotation 0 1 0 3.14
+            name "Victim8"
+            type "unharmed"
+            scoreWorth 5
+        }
+        
+        Victim {
+            translation 0.5020000000000002 0 0.0650000000000001
+            rotation 0 1 0 3.14
+            name "Victim9"
+            type "stable"
+            scoreWorth 5
+        }
+        
+        Victim {
+            translation 0.6000000000000001 0 0.6550000000000001
+            rotation 0 1 0 0
+            name "Victim10"
+            type "stable"
+            scoreWorth 5
         }
         
             ]
@@ -4308,7 +4341,7 @@
             children [
               
         HazardMap {
-            translation -0.5456 0 -0.02
+            translation -0.5456 0 0.024
             rotation 0 1 0 1.57
             name "Hazard0"
             type "O"
@@ -4324,7 +4357,7 @@
         }
         
         HazardMap {
-            translation -0.4144 0 0.27699999999999997
+            translation -0.4144 0 0.253
             rotation 0 1 0 -1.57
             name "Hazard2"
             type "P"
@@ -4332,25 +4365,57 @@
         }
         
         HazardMap {
-            translation 0.036000000000000004 0 -0.06559999999999988
-            rotation 0 1 0 0
+            translation -0.06559999999999988 0 0.6000000000000001
+            rotation 0 1 0 1.57
             name "Hazard3"
+            type "O"
+            scoreWorth 10
+        }
+        
+        HazardMap {
+            translation -0.012 0 -0.4256
+            rotation 0 1 0 0
+            name "Hazard4"
+            type "F"
+            scoreWorth 10
+        }
+        
+        HazardMap {
+            translation 0.037 0 -0.06559999999999988
+            rotation 0 1 0 0
+            name "Hazard5"
             type "C"
             scoreWorth 10
         }
         
         HazardMap {
-            translation 0.1744000000000001 0 0.221
+            translation 0.1580000000000001 0 -0.2944
+            rotation 0 1 0 3.14
+            name "Hazard6"
+            type "C"
+            scoreWorth 10
+        }
+        
+        HazardMap {
+            translation 0.1744000000000001 0 0.21
             rotation 0 1 0 1.57
-            name "Hazard4"
+            name "Hazard7"
             type "O"
             scoreWorth 30
         }
         
         HazardMap {
-            translation 0.30559999999999987 0 0.276
+            translation 0.1200000000000001 0 0.6544000000000001
+            rotation 0 1 0 0
+            name "Hazard8"
+            type "P"
+            scoreWorth 10
+        }
+        
+        HazardMap {
+            translation 0.30559999999999987 0 0.262
             rotation 0 1 0 -1.57
-            name "Hazard5"
+            name "Hazard9"
             type "F"
             scoreWorth 10
         }
@@ -4358,7 +4423,7 @@
         HazardMap {
             translation 0.4800000000000002 0 -0.4256
             rotation 0 1 0 0
-            name "Hazard6"
+            name "Hazard10"
             type "C"
             scoreWorth 10
         }
@@ -4366,17 +4431,9 @@
         HazardMap {
             translation 0.6544000000000001 0 0
             rotation 0 1 0 1.57
-            name "Hazard7"
+            name "Hazard11"
             type "O"
             scoreWorth 10
-        }
-        
-        HazardMap {
-            translation 0.42800000000000016 0 0.193396
-            rotation 0 1 0 1.05
-            name "Hazard8"
-            type "P"
-            scoreWorth 30
         }
         
             ]
