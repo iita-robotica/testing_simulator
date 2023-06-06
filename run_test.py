@@ -111,7 +111,8 @@ def processLogs(world: Path, fileName: Path, time_taken, log_directory: Path):
             writer = csv.writer(file)
 
             writer.writerow([world.stem, 
-                             finalScore, 
+                             finalScore,
+                             "",
                              finalTime, 
                              time_taken,
                              completion_percentage,
@@ -164,7 +165,8 @@ def make_output_file(config):
     with open(output_file, "w") as output:
         writer = csv.writer(output)
         writer.writerow(["World", 
-                         "Score", 
+                         "Score",
+                         "Score Percentage",
                          "Simulation Time", 
                          "Real Time",
                          "final map correctness",
