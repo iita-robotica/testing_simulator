@@ -1,3 +1,0 @@
-room4.wbt
-world1.wbt
-world2.wbt
