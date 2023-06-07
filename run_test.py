@@ -6,6 +6,7 @@ import sys
 import json
 from pathlib import Path
 import platform
+import random
 
 """
 parametros:
@@ -53,86 +54,97 @@ def killWebots():
     script = getKillScript()
     rc = subprocess.Popen(script, shell=True)
 
-def processLogs(world: Path, fileName: Path, time_taken, log_directory: Path):
-    lastLog = sorted(os.listdir(log_directory))[-1]
-
-    if "gameLog" in lastLog:
-        with open(log_directory / lastLog, "r") as log:
-            lines = log.readlines()
-        
-        # Time
-        finalLine = lines[-1]
-        finalTime = (int(finalLine[0:2]) * 60) + int(finalLine[3:5])
-        print("Final time:", finalTime, "seconds")
-
-        # Score
-        for line in lines:
-            if "ROBOT_0_SCORE: " in line:
-                line = line.replace("ROBOT_0_SCORE: ", "")
-                line = line.replace("\n", "")
-                finalScore = float(line)
-                print("Final score:", finalScore)
-
+def processLog(world: Path, input_file_name: Path, output_file_name: Path, time_taken, log_directory: Path):
+    if "gameLog" not in input_file_name:
+        return
     
-        # Hazards
-        hazards_detected = 0
-        hazards_correctly_identified = 0
-        victims_detected = 0
-        victims_correctly_identified = 0
-        checkpoints_found = 0
-        fixture_type_missidentification = 0
-        completion_percentage = 0
-   
-        for line in lines:
-            if "Successful Hazard Identification" in line:
-                hazards_detected += 1
-            elif "Successful Hazard Type Correct Bonus" in line:
-                hazards_correctly_identified += 1
+    with open(log_directory / input_file_name, "r") as log:
+        lines = log.readlines()
+    
+    # Time
+    finalLine = lines[-1]
+    finalTime = (int(finalLine[0:2]) * 60) + int(finalLine[3:5])
+    print("Final time:", finalTime, "seconds")
 
-            elif "Successful Victim Identification" in line:
-                victims_detected += 1
-            
-            elif "Successful Victim Type Correct Bonus" in line:
-                victims_correctly_identified += 1
-
-            elif "Found checkpoint" in line:
-                checkpoints_found += 1
-
-            elif "Map Correctness" in line:
-                completion_percentage = line[-7:-2].replace(".", "").replace(" ", "")
-                completion_percentage = int(completion_percentage) / 10000
-
-            elif "Misidentification" in line:
-                fixture_type_missidentification += 1
+    # Score
+    for line in lines:
+        if "ROBOT_0_SCORE: " in line:
+            line = line.replace("ROBOT_0_SCORE: ", "")
+            line = line.replace("\n", "")
+            finalScore = float(line)
+            print("Final score:", finalScore)
 
 
+    # Hazards
+    hazards_detected = 0
+    hazards_correctly_identified = 0
+    victims_detected = 0
+    victims_correctly_identified = 0
+    checkpoints_found = 0
+    fixture_type_missidentification = 0
+    completion_percentage = 0
+
+    for line in lines:
+        if "Successful Hazard Identification" in line:
+            hazards_detected += 1
+        elif "Successful Hazard Type Correct Bonus" in line:
+            hazards_correctly_identified += 1
+
+        elif "Successful Victim Identification" in line:
+            victims_detected += 1
         
-        with open(fileName, "a") as file:
-            writer = csv.writer(file)
+        elif "Successful Victim Type Correct Bonus" in line:
+            victims_correctly_identified += 1
 
-            writer.writerow([world.stem, 
-                             finalScore,
-                             "",
-                             finalTime, 
-                             time_taken,
-                             completion_percentage,
-                             hazards_detected, 
-                             hazards_correctly_identified,
-                             victims_detected,
-                             victims_correctly_identified,
-                             fixture_type_missidentification,
-                             checkpoints_found])
+        elif "Found checkpoint" in line:
+            checkpoints_found += 1
 
-def testRun(world: Path, fileName, log_directory: Path):
+        elif "Map Correctness" in line:
+            completion_percentage = line[-7:-2].replace(".", "").replace(" ", "")
+            completion_percentage = int(completion_percentage) / 10000
+
+        elif "Misidentification" in line:
+            fixture_type_missidentification += 1
+    
+    with open(output_file_name, "a") as file:
+        writer = csv.writer(file)
+
+        writer.writerow([world.stem, 
+                         finalScore,
+                         "",
+                         finalTime,
+                         time_taken, 
+                         completion_percentage,
+                         hazards_detected, 
+                         hazards_correctly_identified,
+                         victims_detected,
+                         victims_correctly_identified,
+                         fixture_type_missidentification,
+                         checkpoints_found])
+        
+
+def processLogs(world: Path, file_name: Path, time_taken, log_directory: Path, number_of_logs: int):
+    log_list = sorted(os.listdir(log_directory))
+    for log in log_list[-number_of_logs:]:
+        processLog(world, log, file_name, time_taken, log_directory)
+    
+
+def testRun(world: Path, fileName, log_directory: Path, reps: int, timeout):
     initialLogNumber = len(os.listdir(log_directory))
     newLogNumber = len(os.listdir(log_directory))
 
     print("Opening webots with world:", world)
     start_time = time.time()
 
-    openWebots(world)
-    while initialLogNumber == newLogNumber:
+    for _ in range(reps):
+        time.sleep(random.randint(1, 8))
+        openWebots(world)
+    
+    while True:
         newLogNumber = len(os.listdir(log_directory))
+
+        if newLogNumber - initialLogNumber >= reps or time.time() - start_time > timeout:
+            break
 
     print("Finished run")
     time_taken = time.time() - start_time
@@ -145,7 +157,7 @@ def testRun(world: Path, fileName, log_directory: Path):
     
 
     print("Processing data...")
-    processLogs(world, fileName, time_taken, log_directory)
+    processLogs(world, fileName, time_taken, log_directory, reps)
 
 def get_output_file_name(run_name: str, world_set_dir: Path):
     actual_time = time.strftime("%d-%m-%Y_%H-%M-%S")
@@ -180,7 +192,9 @@ def make_output_file(config):
     return output_file
 
 def test_runs(config):
+    print("#########################################################")
     erebus_directory = Path(config["erebus_directory"])
+    reps = int(config["reps"])
 
     log_directory = erebus_directory / "game/logs/"
 
@@ -197,11 +211,11 @@ def test_runs(config):
         for world in lines:
             world = world.replace("\n", "")
             world = erebus_directory / ("game/worlds/" + world)
-            for _ in range(int(config["reps"])):
-                testRun(world, output_file, log_directory)
-                actualRuns += 1
-                time.sleep(1)
-                print("Tested", actualRuns, "/", totalRuns, "simulations")
+            
+            testRun(world, output_file, log_directory, reps, timeout=60*2.5)
+            actualRuns += reps
+            time.sleep(1)
+            print("Tested", actualRuns, "/", totalRuns, "simulations")
 
 if __name__ == "__main__":
     with open(sys.argv[1], "r") as config_file:
