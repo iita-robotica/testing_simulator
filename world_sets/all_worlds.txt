@@ -1,4 +1,2 @@
-room4_small.wbt
 Talos#02.wbt
 Talos#04.wbt
-Talos#07.wbt
