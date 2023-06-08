@@ -14,6 +14,7 @@ parametros:
 1. Archivo de mundos
 """
 
+port = 1234
 
 def loadController(erebus_directory, controller):
     erebusControllerPath = erebus_directory / "game/controllers/robot0Controller/robot0Controller.py"
@@ -25,16 +26,19 @@ def loadController(erebus_directory, controller):
     print(f"Loaded {controller}")
 
 def getOpenScript(world):
+    global port
+    port += 1
     if platform.system() == "Linux":
         return f"""#!/bin/bash
-        webots {world} --mode=fast --minimize --no-rendering
+        webots {world} --mode=fast --minimize --no-rendering --port={port}
         """
     elif platform.system() == "Windows":
-        return f"""webots {world} --mode=fast --minimize --no-rendering"""
+        return f"""webots {world} --mode=fast --minimize --no-rendering --port={port}"""
     else:
         raise OSError("OS not supported. Please use either Windows or Linux")
 
 def openWebots(world):
+    print("Opening webots with world:", world)
     script = getOpenScript(world)
     rc = subprocess.Popen(script, shell=True)
 
@@ -61,18 +65,13 @@ def processLog(world: Path, input_file_name: Path, output_file_name: Path, time_
     with open(log_directory / input_file_name, "r") as log:
         lines = log.readlines()
     
-    # Time
-    finalLine = lines[-1]
-    finalTime = (int(finalLine[0:2]) * 60) + int(finalLine[3:5])
-    print("Final time:", finalTime, "seconds")
-
     # Score
     for line in lines:
         if "ROBOT_0_SCORE: " in line:
             line = line.replace("ROBOT_0_SCORE: ", "")
             line = line.replace("\n", "")
             finalScore = float(line)
-            print("Final score:", finalScore)
+            
 
 
     # Hazards
@@ -83,8 +82,12 @@ def processLog(world: Path, input_file_name: Path, output_file_name: Path, time_
     checkpoints_found = 0
     fixture_type_missidentification = 0
     completion_percentage = 0
+    finalTime = 8*60
 
     for line in lines:
+        if "Successful Exit" in line:
+            finalTime = (int(line[0:2]) * 60) + int(line[3:5])
+
         if "Successful Hazard Identification" in line:
             hazards_detected += 1
         elif "Successful Hazard Type Correct Bonus" in line:
@@ -100,12 +103,15 @@ def processLog(world: Path, input_file_name: Path, output_file_name: Path, time_
             checkpoints_found += 1
 
         elif "Map Correctness" in line:
-            completion_percentage = line[-7:-2].replace(".", "").replace(" ", "")
-            completion_percentage = int(completion_percentage) / 10000
+            completion_percentage = line[-7:-2].replace(" ", "")
+            completion_percentage = float(completion_percentage) / 100
 
         elif "Misidentification" in line:
             fixture_type_missidentification += 1
-    
+
+    print("Final time:", finalTime, "seconds")
+    print("Final score:", finalScore)
+
     with open(output_file_name, "a") as file:
         writer = csv.writer(file)
 
@@ -129,11 +135,11 @@ def processLogs(world: Path, file_name: Path, time_taken, log_directory: Path, n
         processLog(world, log, file_name, time_taken, log_directory)
     
 
-def testRun(world: Path, fileName, log_directory: Path, reps: int, timeout):
+def testRunsUntilDone(world: Path, fileName, log_directory: Path, reps: int, timeout):
     initialLogNumber = len(os.listdir(log_directory))
     newLogNumber = len(os.listdir(log_directory))
 
-    print("Opening webots with world:", world)
+    
     start_time = time.time()
 
     for _ in range(reps):
@@ -143,7 +149,13 @@ def testRun(world: Path, fileName, log_directory: Path, reps: int, timeout):
     while True:
         newLogNumber = len(os.listdir(log_directory))
 
-        if newLogNumber - initialLogNumber >= reps or time.time() - start_time > timeout:
+        new_logs_count = newLogNumber - initialLogNumber
+
+        if time.time() - start_time > timeout:
+            killWebots()
+            testRunsUntilDone(world, fileName, log_directory, reps - new_logs_count, timeout)
+
+        if new_logs_count >= reps:
             break
 
     print("Finished run")
@@ -154,7 +166,12 @@ def testRun(world: Path, fileName, log_directory: Path, reps: int, timeout):
 
     print("Closing webots...")
     killWebots()
+
+    return time_taken
+
+def testRun(world: Path, fileName, log_directory: Path, reps: int, timeout):
     
+    time_taken = testRunsUntilDone(world, fileName, log_directory, reps, timeout)
 
     print("Processing data...")
     processLogs(world, fileName, time_taken, log_directory, reps)
@@ -208,14 +225,22 @@ def test_runs(config):
         actualRuns = 0
         totalRuns = len(lines) * int(config["reps"])
 
+        init_time = time.time()
+
         for world in lines:
             world = world.replace("\n", "")
             world = erebus_directory / ("game/worlds/" + world)
             
-            testRun(world, output_file, log_directory, reps, timeout=60*2.5)
+            
+            testRun(world, output_file, log_directory, reps, timeout=60*3)
             actualRuns += reps
             time.sleep(1)
             print("Tested", actualRuns, "/", totalRuns, "simulations")
+
+            time_so_far = time.time() - init_time
+            print("Total time so far:", time_so_far / 60, "minutes")
+            print("Estimated time left:", time_so_far / actualRuns * (totalRuns - actualRuns) / 60, "minutes")
+
 
 if __name__ == "__main__":
     with open(sys.argv[1], "r") as config_file:
