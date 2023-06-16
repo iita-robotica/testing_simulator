@@ -263,6 +263,7 @@ function startup (){
 	setEnableRemoteBtn();
 	getWorlds();
 	
+	//HERE
 	window.robotWindow.send("run");
 }
 
