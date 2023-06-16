@@ -115,7 +115,8 @@ def processLog(world: Path, input_file_name: Path, output_file_name: Path, time_
     with open(output_file_name, "a") as file:
         writer = csv.writer(file)
 
-        writer.writerow([world.stem, 
+        writer.writerow([world.stem,
+                         "",
                          finalScore,
                          "",
                          finalTime,
@@ -153,7 +154,7 @@ def testRunsUntilDone(world: Path, fileName, log_directory: Path, reps: int, tim
 
         if time.time() - start_time > timeout:
             killWebots()
-            testRunsUntilDone(world, fileName, log_directory, reps - new_logs_count, timeout)
+            testRunsUntilDone(world, fileName, log_directory, reps - new_logs_count, timeout + 60)
 
         if new_logs_count >= reps:
             break
@@ -193,7 +194,8 @@ def make_output_file(config):
 
     with open(output_file, "w") as output:
         writer = csv.writer(output)
-        writer.writerow(["World", 
+        writer.writerow(["World",
+                         "Max Score",
                          "Score",
                          "Score Percentage",
                          "Simulation Time", 
@@ -209,7 +211,7 @@ def make_output_file(config):
     return output_file
 
 def test_runs(config):
-    print("#########################################################")
+    
     erebus_directory = Path(config["erebus_directory"])
     reps = int(config["reps"])
 
@@ -228,11 +230,12 @@ def test_runs(config):
         init_time = time.time()
 
         for world in lines:
+            print("#########################################################")
             world = world.replace("\n", "")
             world = erebus_directory / ("game/worlds/" + world)
             
             
-            testRun(world, output_file, log_directory, reps, timeout=60*3)
+            testRun(world, output_file, log_directory, reps, timeout=60*4)
             actualRuns += reps
             time.sleep(1)
             print("Tested", actualRuns, "/", totalRuns, "simulations")
