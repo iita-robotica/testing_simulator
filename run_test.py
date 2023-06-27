@@ -83,6 +83,7 @@ def processLog(world: Path, input_file_name: Path, output_file_name: Path, time_
     fixture_type_missidentification = 0
     completion_percentage = 0
     finalTime = 8*60
+    lack_of_progress_n = 0
 
     for line in lines:
         if "Successful Exit" in line:
@@ -109,6 +110,9 @@ def processLog(world: Path, input_file_name: Path, output_file_name: Path, time_
         elif "Misidentification" in line:
             fixture_type_missidentification += 1
 
+        elif "Lack of Progress" in line:
+            lack_of_progress_n += 1
+
     print("Final time:", finalTime, "seconds")
     print("Final score:", finalScore)
 
@@ -126,8 +130,11 @@ def processLog(world: Path, input_file_name: Path, output_file_name: Path, time_
                          hazards_correctly_identified,
                          victims_detected,
                          victims_correctly_identified,
+                         "",
+                         "",
                          fixture_type_missidentification,
-                         checkpoints_found])
+                         checkpoints_found,
+                         lack_of_progress_n,])
         
 
 def processLogs(world: Path, file_name: Path, time_taken, log_directory: Path, number_of_logs: int):
@@ -167,8 +174,10 @@ def testRunsUntilDone(world: Path, fileName, log_directory: Path, reps: int, tim
 
     print("Closing webots...")
     killWebots()
-
-    return time_taken
+    if reps == 0:
+        return 0
+    else:
+        return time_taken / reps
 
 def testRun(world: Path, fileName, log_directory: Path, reps: int, timeout):
     
@@ -205,8 +214,11 @@ def make_output_file(config):
                          "hazards_correctly_identified",
                          "victims_detected",
                          "victims_correctly_identified",
+                         "max_fixture_total",
+                         "fixture_total",
                          "fixture_type_missidentification",
-                         "checkpoints found"])
+                         "checkpoints found",
+                         "lack_of_progress_count"])
     
     return output_file
 
@@ -214,6 +226,7 @@ def test_runs(config):
     
     erebus_directory = Path(config["erebus_directory"])
     reps = int(config["reps"])
+    batch_number = int(config["batch_number"])
 
     log_directory = erebus_directory / "game/logs/"
 
@@ -225,24 +238,25 @@ def test_runs(config):
         lines = worlds.readlines()
 
         actualRuns = 0
-        totalRuns = len(lines) * int(config["reps"])
+        totalRuns = len(lines) * int(config["reps"]) * batch_number
 
         init_time = time.time()
 
         for world in lines:
+            
             print("#########################################################")
             world = world.replace("\n", "")
             world = erebus_directory / ("game/worlds/" + world)
             
-            
-            testRun(world, output_file, log_directory, reps, timeout=60*4)
-            actualRuns += reps
-            time.sleep(1)
-            print("Tested", actualRuns, "/", totalRuns, "simulations")
+            for _ in range(batch_number):
+                testRun(world, output_file, log_directory, reps, timeout=60*4)
+                actualRuns += reps
+                time.sleep(1)
+                print("Tested", actualRuns, "/", totalRuns, "simulations")
 
-            time_so_far = time.time() - init_time
-            print("Total time so far:", time_so_far / 60, "minutes")
-            print("Estimated time left:", time_so_far / actualRuns * (totalRuns - actualRuns) / 60, "minutes")
+                time_so_far = time.time() - init_time
+                print("Total time so far:", time_so_far / 60, "minutes")
+                print("Estimated time left:", time_so_far / actualRuns * (totalRuns - actualRuns) / 60, "minutes")
 
 
 if __name__ == "__main__":

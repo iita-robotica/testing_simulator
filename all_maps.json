@@ -2,6 +2,7 @@
     "erebus_directory": "./erebus",
     "controller": "/home/iitaadmin/simulated_rescue_maze//rescate_laberinto/src/run.py",
     "world_set": "./world_sets/all_worlds.txt",
-    "reps":6,
+    "reps":5,
+    "batch_number":3,
     "run_name": "camera_up-lidar_down"
 }

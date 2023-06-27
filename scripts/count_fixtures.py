@@ -22,4 +22,4 @@ def count_victims(json_file):
     return fixture_count
 
 
-print(count_victims("/home/ale/IITA/testing_simulator/new_jsons/Talos#18_weird.json"))
+print(count_victims("/home/iitaadmin/simulated_rescue_maze/testing_simulator/rcj_eu_jsons/RCJ-EU-2023-map-6.json"))

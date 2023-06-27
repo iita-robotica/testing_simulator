@@ -3,5 +3,6 @@
     "controller": "home/myfolder/erebus_controller",
     "world_set": "./world_sets/my_worlds.txt",
     "reps":1,
+    "batch_number":3,
     "run_name": "my_run"
 }
