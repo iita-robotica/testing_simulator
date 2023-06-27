@@ -1,6 +1,6 @@
 # This is the automatic testing environment of the Talos team for the RoboCup 2023 competition
 
-This is a program capable of testing a program by running many webots simulations and compilating analytics in a .csv file that can then be analyzed in the spread-sheet program of your choice.
+This is a program capable of testing an erebus controller by running many webots simulations and compilating analytics in a .csv file that can then be analyzed in the spread-sheet program of your choice.
 
 ## How it works
 
