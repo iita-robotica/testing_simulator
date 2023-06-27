@@ -4,5 +4,6 @@
     "world_set": "./world_sets/one_world.txt",
     "reps":6,
     "batch_number":1,
+    "timeout_minutes": 4.0,
     "run_name": "Talos#01"
 }

@@ -249,7 +249,7 @@ def test_runs(config):
             world = erebus_directory / ("game/worlds/" + world)
             
             for _ in range(batch_number):
-                testRun(world, output_file, log_directory, reps, timeout=60*4)
+                testRun(world, output_file, log_directory, reps, timeout=float(config["timeout_minutes"]) * 60)
                 actualRuns += reps
                 time.sleep(1)
                 print("Tested", actualRuns, "/", totalRuns, "simulations")

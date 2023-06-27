@@ -4,5 +4,6 @@
     "world_set": "./world_sets/all_worlds.txt",
     "reps":6,
     "batch_number":3,
+    "timeout_minutes": 4.0,
     "run_name": "massive_test"
 }

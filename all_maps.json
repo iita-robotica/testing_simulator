@@ -4,5 +4,6 @@
     "world_set": "./world_sets/all_worlds.txt",
     "reps":5,
     "batch_number":3,
+    "timeout_minutes": 4.0,
     "run_name": "camera_up-lidar_down"
 }

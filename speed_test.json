@@ -4,5 +4,6 @@
     "world_set": "./world_sets/speed_test_worlds.txt",
     "reps":6,
     "batch_number":3,
+    "timeout_minutes": 4.0,
     "run_name": "send map not start"
 }
