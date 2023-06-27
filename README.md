@@ -68,6 +68,10 @@ You will see that there are empty columns. You can optionally fill them if you h
 
 In the ```scripts``` directory you will find some scripts that can help you obtain data from the .json files of the worlds. More data can also be found by loading the world in the erebus world editor [https://osaka.rcj.cloud/service/editor/simulation/2023] and pressing the calculator icon.
 
+## Licence
+
+Our code is free and open-source under the MIT license! That means you can do whatever you want with it. We encourage you to see our code, take inspiration and copy it. You can also make your own fork of this repsitory and share your innovations upon it. We are exited to share and innovate together, and in this spirit we would like to encourage you to do the same, so we can all grow together. Only one thing: if you end up copyign big parts as-is, it would be nice if you gave us some credit ;).
+
 ``` txt
          .--.             .---.
         /:.  '.         .' ..  '._.---.
