@@ -1,7 +1,7 @@
 # Erebus
-Erebus is a simulation competition environment for a new sub-league for [RoboCupJunior(RCJ) Rescue](https://rescue.rcj.cloud/), running as a demonstration in 2021. The challenge is designed for semi-experienced to highly experienced programmers. The aim of the competition is to program a customizable robot to autonomously navigate and map a complex maze environment whilst detecting victims and avoiding obstacles.
+Erebus is a simulation competition environment for a sub-league of [RoboCupJunior(RCJ) Rescue](https://junior.robocup.org/), that was first introduced as a demonstration in 2021. Since 2022, simulation (Erebus) has been an integral part of RCJ Rescue. The challenge is designed for semi-experienced to highly experienced programmers. The aim of the competition is to program a customizable robot to autonomously navigate and map a complex maze environment whilst detecting victims and avoiding obstacles.
 
-Later releases of this platform will be used for the RCJ Rescue 2021 International Event as a demonstration competition based on [these rules](https://cdn.robocup.org/junior/wp/2021/06/2021_RescueSimulation_Rules_final02.pdf).
+Erebus is under constant development and will continue to serve as the basis for future RCJ Rescue international events. The competitions will be conducted under the [official rules](https://junior.robocup.org/wp-content/uploads/2023/02/RCJRescueSimulation2023RulesFinal.pdf).
 
 ### [Erebus Official Website](https://erebus.rcj.cloud/)
 
@@ -54,16 +54,21 @@ Announcements will be made in a number of different locations.
 Please report bugs and potential fixes either through:
 
 - Raising issues on this repository
-    - [Erebus issues](https://gitlab.com/rcj-rescue-tc/erebus/erebus/-/issues)
+    - [Erebus issues page](https://gitlab.com/rcj-rescue-tc/erebus/erebus/-/issues)
     - [Robot Customization issue page](https://gitlab.com/rcj-rescue-tc/erebus/robot-customisation/-/issues)
 - Pull requests
 - Through the community Discord server
 
 ## [Changelog](https://gitlab.com/rcj-rescue-tc/erebus/erebus/-/blob/master/CHANGELOG.md)
 
-## [Latest Release v23.0.3](https://gitlab.com/rcj-rescue-tc/erebus/erebus/-/releases/v23.0.3) - 2023-04-04
+## [Release v23.0.5](https://gitlab.com/rcj-rescue-tc/erebus/erebus/-/releases/v23.0.5) - 2023-06-12
+
+### Changed
+
+- Updated room4_small json to work with the new world generator room 4 scoring bug update (Thanks @aZeroTickPulse)
+
+- Changed a victim in the room4_small world's room 4 to be a hazard.
 
 ### Fixed
 
-- Fixed a bug where controllers weren't correctly being uploaded on linux/mac
-- Fixed a bug in the map scorer where the last tile wasn't being calculated correctly
+- Fixed a bug causing the map scorer to not count a starting tile if it was the last tile (Thanks @aZeroTickPulse)
