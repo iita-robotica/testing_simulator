@@ -45,8 +45,8 @@ The parameters mean the following:
 * **erebus_directory:** path to erebus. You can use any version you like, but you will have to modify it so that it automatically starts when a new webots instance is launched.
 * **controller:** path of your controller file. The program will load it automatically when starting.
 * **world_set:** path of your world set txt file.
-* **batch_number:** how many times to run the same world in parallel. This number depends on your computer. More doesn't mean faster. We recommend a maximum of 5, because above that number the logs that are written at the same time overwrite eachother and the testing environment has to run the missing tests again, wasting time.
-* **reps:** how many times to run each batch of simulations consecutively. This depends on how accurate you want your results to be. There is no limit to this, only more time.
+* **reps:** how many times to run the same world in parallel. This number depends on your computer. More doesn't mean faster. We recommend a maximum of 5, because above that number the logs that are written at the same time overwrite eachother and the testing environment has to run the missing tests again, wasting time.
+* **batch_number:** how many times to run each batch of simulations consecutively. This depends on how accurate you want your results to be. There is no limit to this, only more time.
 * **timeout_minutes:** How much real time has to pass before the script decides that an error has occured or that some log data has been lost. The current real-time limit of erebus is 9 minutes, so a 9 minute timeout is very reasonable. If you program normally goes considerably faster than real time, you might get away with less, but remember that it could cause some skew in the data if one of the runs takes more time than normal.
 * **run_name:** What are you testing? A folder of this name will be created (or used if it already exists), and there all runs with that name will be saved.
 
